@@ -3,13 +3,13 @@
 This example can be run from the command line and will show you how the
 OAuth 2.0 flow should be handled if you are a web based application.
 
-Prequisites:
+Prerequisites:
     * Create an SSO application at developers.eveonline.com with the scope
       "esi-characters.read_blueprints.v1" and the callback URL
       "https://localhost/callback/". Note: never use localhost as a callback
-      in your real application.
+      in released applications.
     * Have a Python 3 environment available to you (possibly by using a
-      virtual environment: https://virtualenv.pypa.io/en/stable/)
+      virtual environment: https://virtualenv.pypa.io/en/stable/).
     * Run pip install -r requirements.txt with this directory as your root.
 
 To run this example, make sure you have completed the prerequisites and then
@@ -36,11 +36,11 @@ def main():
           "application. Follow the prompts and enter the info asked for.")
 
     # Generate the PKCE code challenge
-    random = secrets.token_bytes(32)
+    random = base64.urlsafe_b64encode(secrets.token_bytes(32))
     m = hashlib.sha256()
     m.update(random)
     d = m.digest()
-    code_challenge = base64.urlsafe_b64encode(d).decode().replace('=', '')
+    code_challenge = base64.urlsafe_b64encode(d).decode().replace("=", "")
 
     client_id = input("Copy your SSO application's client ID and enter it "
                       "here: ")

@@ -30,7 +30,7 @@ You will need to ensure three things when validating a JWT token from the EVE SS
     The [SSO metadata endpoint](https://login.eveonline.com/.well-known/oauth-authorization-server) contains a description of the supported operations for the SSO. That endpoint lists the supported endpoints as well as provides a link to the SSO JWT key set which is currently located at <https://login.eveonline.com/oauth/jwks>. You will need to load that key set using whatever JWT library available. Currently the SSO uses the RS-256 signature method, but will also support ES-256 in the near future.
 
 1. ### Validate the issuer
-    The issuer is always the hostname of the SSO instance you are using (mos tlikely login.eveonline.com). Make sure it matches the `iss` claim in the JWT token payload.
+    The issuer will either be the host name or the URI of the SSO instance you are using (e.g. login.eveonline.com or https://login.eveonline.com). Your application should handle looking for both the host name and the URI in the `iss` claim and should reject any JWT tokens where `iss` does not equal the host name or URI of EVE's SSO.
 
 1. ### Validate the expiry date
     The `exp` claim contains the expiry date of the token as a UNIX timestamp. You can use that to know when to refresh the token and to make sure that the token is valid.

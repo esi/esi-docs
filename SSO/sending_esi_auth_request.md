@@ -5,7 +5,7 @@ After having retrieved a valid access token from EVE's SSO, add the following he
 
     Authorization: Bearer <access token>
 
-where you will replace any text between `<>` with the actual access token.
+where you will replace any text between `<>`, including `<>` with the actual access token.
 
 As an example, if you wanted to get CCP Zoetrope's blueprints and you had a valid access token, you would make the following request:
 
@@ -13,4 +13,4 @@ As an example, if you wanted to get CCP Zoetrope's blueprints and you had a vali
 
     Authorization: Bearer <access token>
 
-where all text between `<>` should be replaced with the actual access token. 
+where all text between `<>`, including `<>` should be replaced with the actual access token.

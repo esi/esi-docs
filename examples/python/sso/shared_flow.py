@@ -15,7 +15,7 @@ def print_auth_url(client_id, code_challenge=None):
     """Prints the URL to redirect users to.
 
     Args:
-        client_id: The client ID of a EVE SSO application
+        client_id: The client ID of an EVE SSO application
         code_challenge: A PKCE code challenge
     """
 
@@ -94,8 +94,7 @@ def handle_sso_token_response(sso_response):
               "\nYou can use the access_token to make an authenticated "
               "request to {}".format(data, blueprint_path))
 
-        input("\nPress any key to see have this program make the request for "
-              "you:")
+        input("\nPress any key to have this program make the request for you:")
 
         headers = {
             "Authorization": "Bearer {}".format(access_token)

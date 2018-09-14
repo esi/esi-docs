@@ -1,6 +1,6 @@
 """Validates a given JWT token originating from the EVE SSO.
 
-Prequisites:
+Prerequisites:
     * Have a Python 3 environment available to you (possibly by using a
       virtual environment: https://virtualenv.pypa.io/en/stable/)
     * Run pip install -r requirements.txt with this directory as your root.
@@ -59,9 +59,17 @@ def validate_eve_jwt(jwt_token):
         print("The JWT signature was invalid: {}").format(str(e))
         sys.exit(1)
     except JWTClaimsError as e:
-        print("The issuer claim was not from login.eveonline.com: "
-              "{}".format(str(e)))
-        sys.exit(1)
+        try:
+            return jwt.decode(
+                        jwt_token,
+                        jwk_set,
+                        algorithms=jwk_set["alg"],
+                        issuer="https://login.eveonline.com"
+                    )
+        except JWTClaimsError as e:
+            print("The issuer claim was not from login.eveonline.com or "
+                  "https://login.eveonline.com: {}".format(str(e)))
+            sys.exit(1)
 
 
 def main():

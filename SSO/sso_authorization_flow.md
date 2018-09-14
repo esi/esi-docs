@@ -1,15 +1,15 @@
 # SSO Authorization Flow
 
-This page covers the basic concepts of the authorization flow your application will need to perform with EVE's Single Sign On (SSO). This is meant to be a high level view and the gritty details can be found [here](#TODO determine what here is).
+This page covers the basic concepts of the authorization flow your application will need to perform with EVE's Single Sign On (SSO). This is meant to be a high level overview and the more specific instructions are linked to at the end of this page.
 
 In order to access authenticated ESI routes for you or other user's characters your application will need to follow the [OAuth 2.0](https://oauth.net/2/) protocol (more specifically using the [Authorization code grant type](https://oauth.net/2/grant-types/authorization-code/)).
 
 
-Here is the basic Oauth2 flow, details are omitted for the sake of simplicity that other documentation found here will cover:
+Here is the basic OAuth 2.0 flow, details are omitted for the sake of simplicity that other documentation found here will cover:
 
 1. Your application will redirect a user to a login page provided by EVE's SSO.
 
-2. After a user logs in as a specific character the SSO will send a GET request to a URL provided by your application containing a one use only authorization code that expires in 5 minutes (you define this callback URL when [Creating an SSO Application](#TODO put link)).
+2. After a user logs in as a specific character the SSO will send a GET request to a URL provided by your application containing a one use only authorization code that expires in 5 minutes (you define this callback URL when [Creating an SSO Application](creating_sso_application.md)).
 
 3. After receiving the authorization code from EVE's SSO, your application will make one more request to the SSO that contains this code.
 
@@ -33,7 +33,7 @@ As can be seen, there are three tokens that are particularly important to have a
 
 ## Implementing OAuth 2.0 for Your Applications
 
-Now that you understand the basic flow of OAuth 2.0, you can continue on to more detailed documentation that will teach you how to actually apply it to your application. We suggest slightly different ways of executing OAuth 2.0 depending on what type of application you're building. These two distinctions are whether you're building a mobile/desktop application or a web based application. It is important to follow the instructions that apply to the application type you are building as the different flows shown will become mandatory and enforced sometime in the future by the EVE SSO.
+Now that you understand the basic flow of OAuth 2.0, you can continue on to more detailed documentation that will teach you how to actually apply it to your application. We suggest slightly different ways of executing OAuth 2.0 depending on what type of application you're building. These two distinctions are whether you're building a mobile/desktop application or a web based application. **It is important to follow the instructions that apply to the application type you are building as the different flows shown will become mandatory and enforced sometime in the future by the EVE SSO.**
 
 Click on your application type to begin:
 

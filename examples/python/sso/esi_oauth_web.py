@@ -3,13 +3,13 @@
 This example can be run from the command line and will show you how the
 OAuth 2.0 flow should be handled if you are a web based application.
 
-Prequisites:
+Prerequisites:
     * Create an SSO application at developers.eveonline.com with the scope
       "esi-characters.read_blueprints.v1" and the callback URL
       "https://localhost/callback/". Note: never use localhost as a callback
-      in your real application.
+      in released applications.
     * Have a Python 3 environment available to you (possibly by using a
-      virtual environment: https://virtualenv.pypa.io/en/stable/)
+      virtual environment: https://virtualenv.pypa.io/en/stable/).
     * Run pip install -r requirements.txt with this directory as your root.
 
 To run this example, make sure you have completed the prerequisites and then
@@ -21,15 +21,13 @@ then follow the prompts.
 """
 import base64
 
-import requests
-
 from shared_flow import print_auth_url
 from shared_flow import send_token_request
 from shared_flow import handle_sso_token_response
 
 
 def main():
-    """ Takes you through a local example of the Oauth 2.0 web flow."""
+    """ Takes you through a local example of the OAuth 2.0 web flow."""
 
     print("This program will take you through an example OAuth 2.0 flow "
           "that you should be using if you are building a web based "
