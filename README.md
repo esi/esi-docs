@@ -34,13 +34,13 @@ If you're adding a new document, please be sure to include a link here somewhere
 ### SSO
 
 - [Introduction](docs/sso/README.md)
-    - [High level overview of SSO authorization flow](sso_authorization_flow.md)
-    - [Creating an EVE Online SSO application](creating_sso_application.md)
-    - [OAuth 2.0 for web based applications](web_based_sso_flow.md)
-    - [OAuth 2.0 for desktop/mobile applications](native_sso_flow.md)
-    - [Refreshing access tokens](refreshing_access_tokens.md)
-    - [Validating EVE SSO JWT tokens](validating_eve_jwt.md)
-    - [Sending authenticated requests to ESI](sending_esi_auth_request.md)
+    - [High level overview of SSO authorization flow](docs/sso/sso_authorization_flow.md)
+    - [Creating an EVE Online SSO application](docs/sso/creating_sso_application.md)
+    - [OAuth 2.0 for web based applications](docs/sso/web_based_sso_flow.md)
+    - [OAuth 2.0 for desktop/mobile applications](docs/sso/native_sso_flow.md)
+    - [Refreshing access tokens](docs/sso/refreshing_access_tokens.md)
+    - [Validating EVE SSO JWT tokens](docs/sso/validating_eve_jwt.md)
+    - [Sending authenticated requests to ESI](docs/sso/sending_esi_auth_request.md)
 
 ### Static Data Export
 
