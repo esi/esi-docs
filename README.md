@@ -1,5 +1,3 @@
-# This repo under ccpgames github is only temporary until it is reviewed. At which time it will be remade under the esi organization.
-
 # ESI Documentation
 ESI is the name of EVE Online's publicly available API, allowing you to query the game itself to get info about your character, corporation and more. This documentation can be used as a jumping off point to learn how to begin developing against ESI or as a place to learn some of the ESI concepts that are harder to grasp.
 
@@ -32,6 +30,17 @@ If you're adding a new document, please be sure to include a link here somewhere
 - [Dogma](docs/dogma.md)
 - [Useful Formulae](docs/useful_formulae.md)
 - [Asset location_id](docs/asset_location_id.md)
+
+### SSO
+
+- [Introduction](docs/sso/README.md)
+    - [High level overview of SSO authorization flow](sso_authorization_flow.md)
+    - [Creating an EVE Online SSO application](creating_sso_application.md)
+    - [OAuth 2.0 for web based applications](web_based_sso_flow.md)
+    - [OAuth 2.0 for desktop/mobile applications](native_sso_flow.md)
+    - [Refreshing access tokens](refreshing_access_tokens.md)
+    - [Validating EVE SSO JWT tokens](validating_eve_jwt.md)
+    - [Sending authenticated requests to ESI](sending_esi_auth_request.md)
 
 ### Static Data Export
 
