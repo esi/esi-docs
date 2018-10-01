@@ -49,7 +49,7 @@ def main():
     basic_auth = base64.urlsafe_b64encode(user_pass.encode('utf-8')).decode()
     auth_header = "Basic {}".format(basic_auth)
 
-    body = {
+    form_values = {
         "grant_type": "authorization_code",
         "code": auth_code,
     }
@@ -61,7 +61,7 @@ def main():
 
     input("\nPress any key to continue:")
 
-    res = send_token_request(body, add_headers=headers)
+    res = send_token_request(form_values, add_headers=headers)
 
     handle_sso_token_response(res)
 

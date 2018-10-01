@@ -42,11 +42,12 @@ def print_auth_url(client_id, code_challenge=None):
           "https://localhost/callback/.".format(full_auth_url))
 
 
-def send_token_request(body, add_headers={}):
+def send_token_request(form_values, add_headers={}):
     """Sends a request for an authorization token to the EVE SSO.
 
     Args:
-        body: A dict containing the body you that should be sent
+        form_values: A dict containing the form encoded values that should be
+                     sent with the request
         add_headers: A dict containing additional headers to send
     Returns:
         requests.Response: A requests Response object
@@ -62,9 +63,12 @@ def send_token_request(body, add_headers={}):
 
     res = requests.post(
         "https://login.eveonline.com/v2/oauth/token",
-        data=body,
+        data=form_values,
         headers=headers,
     )
+
+    print("Request sent to URL {} with headers {} and form values: "
+          "{}\n".format(res.url, headers, form_values))
     res.raise_for_status()
 
     return res

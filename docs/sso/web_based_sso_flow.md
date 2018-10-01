@@ -33,12 +33,9 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 
 5. Now that your application has the authorization code, it needs to send a POST request to `https://login.eveonline.com/v2/oauth/token` with a payload containing the authorization code using [Basic authentication](https://swagger.io/docs/specification/authentication/basic-authentication/) where your application's client ID will be the user and your secret key will be the password. Here is a little more detail on how to craft this request:
 
-* Create a JSON payload that looks like this (replace anything between `<>`, including `<>`):
+* Create form encoded values that look like this (replace anything between `<>`, including `<>`):
 
-            {
-                "grant_type": "authorization_code",
-                "code": <authorization code from callback URL>
-            }
+        grant_type=authorization_code&code=<authorization code from callback URL>
 
 * Create a URL safe Base64 encoded string where the contents before encoding are your application's client ID, followed by a `:`, followed by your application's secret key (e.g. `URL safe Base64(<client_id>:<secret_key>)`).
 
@@ -47,7 +44,7 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
         * `Content-Type: application/x-www-form-urlencoded`
         * `Host: login.eveonline.com`
 
-* Finally, send a POST request to `https://login.eveonline.com/v2/oauth/token` with your JSON payload and the headers from the last step.
+* Finally, send a POST request to `https://login.eveonline.com/v2/oauth/token` with your form encoded values and the headers from the last step.
 
 
 6. If the previous step was done correctly, the EVE SSO will respond with a JSON payload containing an access token (which is a [Json Web Token](https://jwt.io/introduction/)) and a refresh token that looks like this (Anything wrapped by `<>` will look different for you):

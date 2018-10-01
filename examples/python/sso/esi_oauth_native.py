@@ -62,7 +62,7 @@ def main():
 
     code_verifier = base64.urlsafe_b64encode(random).decode().replace("=", "")
 
-    body = {
+    form_values = {
         "grant_type": "authorization_code",
         "client_id": client_id,
         "code": auth_code,
@@ -79,7 +79,7 @@ def main():
 
     input("\nPress any key to continue:")
 
-    res = send_token_request(body)
+    res = send_token_request(form_values)
 
     handle_sso_token_response(res)
 

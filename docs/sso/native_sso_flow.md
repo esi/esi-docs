@@ -41,16 +41,11 @@ If you wanted access to a character's blueprints and your callback URL was `http
 
 Here is a little more detail on how to craft this request:
 
-* Create a JSON payload that looks like this (replace anything between `<>`, including `<>`):
+* Create form encoded values that look like this (replace anything between `<>`, including `<>`):
 
-            {
-                "grant_type": "authorization_code",
-                "code": <authorization code from callback URL>,
-                "client_id": <your application's client ID>,
-                "code_verifier": <URL safe Base64(32 byte string) generated in step 3>  
-            }
+        grant_type=authorization_code&code=<authorization code from callback URL>&client_id=<your application's client ID>&code_verifier=<URL safe Base64(32 byte string) generated in step 3>  
 
-* Send a POST request to `https://login.eveonline.com/v2/oauth/token` with your JSON payload and the following headers:
+* Send a POST request to `https://login.eveonline.com/v2/oauth/token` with your form encoded values and the following headers:
 
         * `Content-Type: application/x-www-form-urlencoded`
         * `Host: login.eveonline.com`
