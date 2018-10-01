@@ -40,4 +40,4 @@ When creating a button to direct users to login to your site or application with
 ## Community and Bug Reports
 If you want real time help with using SSO join the [tweetfleet slack](https://www.fuzzwork.co.uk/tweetfleet-slack-invites/) and navigate to the #sso channel.
 
-If you run into an issue when using EVE's SSO you can report these issues at https://github.com/ccpgames/sso-issues.
+If you run into an issue when using EVE's SSO you can report these issues at <https://github.com/esi/esi-docs>.
