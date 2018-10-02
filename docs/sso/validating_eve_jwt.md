@@ -1,8 +1,8 @@
 # Validating JWT tokens from the EVE SSO
 
-This documentation assumes you have read through either the [web based OAuth 2.0 flow](web_based_sso_flow) or the [mobile/desktop OAuth 2.0 flow](native_sso_flow).
+This documentation assumes you have read through either the [web based OAuth 2.0 flow](web_based_sso_flow.md) or the [mobile/desktop OAuth 2.0 flow](native_sso_flow.md).
 
-Your application should validate access tokens gotten from the EVE SSO. There are many libraries for most programming languages available and listed on [JWT.IO](https://jwt.io). Auth0 also has a good and detailed introduction to [JWT token validation](https://auth0.com/docs/api-auth/tutorials/verify-access-token).
+Your application should validate the access tokens received from the EVE SSO. There are many libraries for most programming languages available and listed on [JWT.IO](https://jwt.io). Auth0 also has a good and detailed introduction to [JWT token validation](https://auth0.com/docs/api-auth/tutorials/verify-access-token).
 
 Listed below are the most important things to validate when using the JWT tokens issued by the EVE Online SSO. To explain, here is the payload from a typical SSO JWT Token.
 
