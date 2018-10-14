@@ -10,18 +10,19 @@ To get a new access token you must make a POST request to `https://login.eveonli
 
 - `scope=<subset of scopes from the original OAuth 2.0 flow>` **[OPTIONAL]**: Replace everything after `=` with your own value. A subset of the original scopes assigned to the authorization and refresh token. If omitted, all original scopes will be assigned to the new access token.
 
->If your application is web based (and you followed the [web based sso flow](web_based_sso_flow.md)) you also need to include an Authentication header ([basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) with the client ID as the username and secret key as the password).
+- `client_id=<your application's client ID>`: Replace everything after `=` with the client ID assigned to your application.
 
-The request should look like this (**don't include the `Authorization` header if your application is a mobile or desktop application**):
+- `client_secret=<your application's client secret>` **[OPTIONAL]**: Replace everything after `=` with the client secret assigned to your application. This is only required if your application is web based (you followed the [web based sso flow](web_based_sso_flow.md)).
+
+The request should look like this:
 
 ```http
 POST https://login.eveonline.com/v2/oauth/token HTTP/1.1
 
-Authorization: Basic bG9...ZXQ=
 Content-Type: application/x-www-form-urlencoded
 Host: login.eveonline.com
 
-grant_type=refresh_token&refresh_token=gEy...fM0
+grant_type=refresh_token&refresh_token=gEy...fM0&client_id=9f1...8d2
 ```
 
 The response should contain details about the new access token for that user. Example:
