@@ -48,4 +48,4 @@ If you know your refresh token has been compromised, it is important to revoke i
 
 3. If the revocation was successful you will get an HTTP response code of 200 back from the EVE SSO.
 
-If you'd like to look at an example of revoking a refresh token written in Python you can find one [here](../examples/python/sso/revoke_refresh_token.py).
+If you'd like to look at an example of revoking a refresh token written in Python you can find one [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/revoke_refresh_token.py).

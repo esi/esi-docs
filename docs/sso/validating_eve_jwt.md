@@ -36,4 +36,4 @@ You will need to ensure three things when validating a JWT token from the EVE SS
     The `exp` claim contains the expiry date of the token as a UNIX timestamp. You can use that to know when to refresh the token and to make sure that the token is valid.
 
 
-You can look [here](../../examples/python/sso/validate_jwt.py) for a code example in Python showing you how to validate a JWT token.
+You can look [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/validate_jwt.py) for a code example in Python showing you how to validate a JWT token.
