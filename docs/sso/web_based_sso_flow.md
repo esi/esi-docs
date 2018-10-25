@@ -66,7 +66,7 @@ The following diagram is a visual representation of the steps above. Any number 
 
 ![Web based OAuth 2.0 Flow Diagram](img/web_oauth_flow.svg)
 
-If any of this is confusing, there is a [code example](../examples/python/sso/esi_oauth_web.py) available in Python that you can run locally to see this flow in action.
+If any of this is confusing, there is a [code example](https://github.com/esi/esi-docs/blob/master/examples/python/sso/esi_oauth_web.py) available in Python that you can run locally to see this flow in action.
 
 ## Further reading
 You can continue by reading about [how to send an authorized request to ESI](sending_esi_auth_request.md) or you can read about [how to get a new access token using your refresh token](refreshing_access_tokens.md).
