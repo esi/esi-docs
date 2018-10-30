@@ -7,6 +7,7 @@ A number of third party libraries are available to speed your app development ra
 | Language   | Library                                                                | OAuth2  | Style   | ETags | h2             |
 |------------|------------------------------------------------------------------------|---------|---------|-------|----------------|
 | go         | [GoESI](https://github.com/antihax/goesi)                              | Yes     | codegen | Yes   | Yes            |
+| go         | [go-eveonline](https://github.com/pequalsnp/go-eveonline)              | Library | static  | No    | Yes            |
 | PHP        | [eseye](https://github.com/eveseat/eseye)                              | Library | dynamic | Yes   | Depends on PHP |
 | PowerShell | [POSH](https://github.com/markus-lassfolk/EVE-Online-ESI-Posh)         | Yes     | static  | No    | No             |
 | Python     | [EsiPy](https://github.com/Kyria/EsiPy)                                | Yes     | dynamic | Yes   | Yes            |
