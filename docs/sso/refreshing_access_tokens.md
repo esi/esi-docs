@@ -2,7 +2,7 @@
 
 If any valid scope was requested in the initial redirect to the SSO using the authorization code flow, a refresh token will be returned by the token endpoint, along with the access token. While the access token will expire after the listed interval, the refresh token can be stored and used indefinitely. Users can revoke access for individual apps on the [support site](https://community.eveonline.com/support/third-party-applications/).
 
-The method for refreshing access tokens is dependent on whether your application is a [web based](web_based_sso_flow) or [native](native_sso_flow) (e.g mobile/desktop) application. Jump to the section below that applies to your application.
+The method for refreshing access tokens is dependent on whether your application is a [web based](web_based_sso_flow.md) or [native](native_sso_flow.md) (e.g mobile/desktop) application. Jump to the section below that applies to your application.
 
 ## Web Based Applications
 As a web based application you will need to make a URL-encoded POST request to `https://login.eveonline.com/v2/oauth/token` using [basic authentication]((https://en.wikipedia.org/wiki/Basic_access_authentication)) where your application's client ID is the user and your secret key is the password.

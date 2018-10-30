@@ -21,7 +21,7 @@ In EVE Online's case, you can use their SSO to allow users of your application t
 [Sending authenticated requests to ESI](sending_esi_auth_request.md)
 
 ### How to read this documentation
-Start by reading the high level overview of the [OAuth 2.0 flow with the EVE SSO](sso_authorization_flow) and then follow the links there that apply to your specific application for more detailed instructions.
+Start by reading the high level overview of the [OAuth 2.0 flow with the EVE SSO](sso_authorization_flow.md) and then follow the links there that apply to your specific application for more detailed instructions.
 
 ### Singularity SSO
 All instances of https://login.eveonline.com found in this documentation can be swapped for https://sisilogin.testeveonline.com if you are developing against EVE's Singularity test server.

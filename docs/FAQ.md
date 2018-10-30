@@ -20,7 +20,7 @@ They embed the version in the path, resulting in more stable clients. [Please re
 
 ### Where can I see upcoming changes?
 
-[You can use ESI's diff interface](https://esi.evetech.net/diff/latest/dev/) for the exact differences per route. There is also the [ESI changelog](https://docs.esi.evetech.net/changelog) for historical reference and to know when upcoming changes will be promoted.
+[You can use ESI's diff interface](https://esi.evetech.net/diff/latest/dev/) for the exact differences per route. There is also the [ESI changelog](https://github.com/esi/esi-issues/blob/master/changelog.md) for historical reference and to know when upcoming changes will be promoted.
 
 ### Is there an ESI client library in &lt;language_x&gt;?
 
@@ -28,7 +28,7 @@ Probably. Check the [awesome-eve](https://github.com/devfleet/awesome-eve) repos
 
 ### What happened to CREST and XML API?
 
-After [18 months of notice](https://www.eveonline.com/article/introducing-esi/) both CREST and XML API were [shut down on May 8th, 2018](https://developers.eveonline.com/blog/article/a-eulogy-for-xml-crest). Please see either the [CREST to ESI](https://docs.esi.evetech.net/docs/CREST_to_ESI) or [XML to ESI](https://docs.esi.evetech.net/docs/XML_to_ESI) migration guides for assistance in porting your old applications to ESI.
+After [18 months of notice](https://www.eveonline.com/article/introducing-esi/) both CREST and XML API were [shut down on May 8th, 2018](https://developers.eveonline.com/blog/article/a-eulogy-for-xml-crest). Please see either the [CREST to ESI](CREST_to_ESI.md) or [XML to ESI](XML_to_ESI.md) migration guides for assistance in porting your old applications to ESI.
 
 
 ## Further Questions?

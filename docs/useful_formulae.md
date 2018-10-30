@@ -1,10 +1,12 @@
-# Warp-in Points
+# Useful Formulae
+
+## Warp-in Points
 
 A warp-in point is where your ship will land in space when warping to an object.
 
 Many external factors may disrupt a warp, e.g. warp disruption fields, insufficient electrical capacity, warp jitter, etc.; these formulas do not account for these phenomenas, they assume perfect conditions.
 
-## Ordinary Objects
+### Ordinary Objects
 
 An ordinary object is any object that does not fall withing any of the other categories described below.
 
@@ -12,7 +14,7 @@ Let the 3D vectors ``$ p_d $`` and ``$ p_s $`` represent the object's position a
 
 The object's warp-in point is the vector ``$ p_s + \vec{v} - r\hat{v} $``.
 
-## Large Objects
+### Large Objects
 
 A large object is any celestial body whose radius exceeds 90 kilometres (180 kilometres in diameter), except planets.
 
@@ -22,7 +24,7 @@ The object's warp-in point is the vector ``$ \left(x + (r + 5000000)\cos{r} \\,
   y + 1.3r - 7500 \\,
   z - (r + 5000000)\sin{r} \\  \right). $``
 
-## Planets
+### Planets
 
 The warp-in point of a planet is determined by the planet's ID, its location, and radius.
 
@@ -44,7 +46,7 @@ d = r(s + 1) + 1000000
 Now, ``$ j $`` is a special snowflake. Its value is the Python equivalent of<br/>
 `(random.Random(planetID).random() - 1.0) / 3.0`.
 
-### Example Implementation
+#### Example Implementation
 
 ```python
 import math
@@ -60,9 +62,9 @@ def warpin(id, x, y, z, r):
     return (x + d * math.sin(t), y + 1.0/2.0 * r * math.sin(j), z - d * math.cos(t))
 ```
 
-# Skillpoints
+## Skillpoints
 
-## Skillpoints needed per level
+### Skillpoints needed per level
 
 The skillpoints needed for a level depend on the skill rank.
 
@@ -70,7 +72,7 @@ The skillpoints needed for a level depend on the skill rank.
  y_{skillpoints} = 2^{2.5(x_{skilllevel}-1)} \cdot 250 \cdot r_{skillrank}
  ```
 
-### Skillpoints for common ranks
+#### Skillpoints for common ranks
 
 <table>
 <thead>
@@ -96,7 +98,7 @@ The skillpoints needed for a level depend on the skill rank.
 </tbody>
 </table>
 
-## Skillpoints per minute
+### Skillpoints per minute
 
 The skillpoints generated each minute depend on the primary ``$ (a_{primary}) $`` and secondary attribute ``$ (a_{secondary}) $`` of the skill.
 
@@ -104,9 +106,9 @@ The skillpoints generated each minute depend on the primary ``$ (a_{primary}) $`
 y_{skillpointsPerMinute} = a_{primary} + {a_{secondary} \over 2}
 ```
 
-# Combat
+## Combat
 
-## Target lock time
+### Target lock time
 
 The target lock time (`$ t_{targetlock} $`) in seconds depends on the ship's scan resolution (`$ s $`) and the target's signature radius (`$ r $`)
 
@@ -114,7 +116,7 @@ The target lock time (`$ t_{targetlock} $`) in seconds depends on the ship's sca
 t_{targetlock} = {40000 \over s \cdot asinh(r)^2}
 ```
 
-## Alignment time
+### Alignment time
 
 The ship alignment time (`$ t_{align} $`) depends on the ship's inertia modifier (`$ i $`) and the ships mass (`$ m $`)
 
