@@ -3,7 +3,7 @@ ESI is the name of EVE Online's publicly available API, allowing you to query th
 
 This repo replaces https://github.com/ccpgames/eveonline-third-party-documentation, which used to be used for all documentation surrounding EVE Online third party development and the relevant resources from that repository have been moved to this one. Thank you to all who helped maintain it.
 
-We appreciate help from the EVE Online community and encourage pull requests if you feel any documentation is missing. Our wonderful [ESI community](https://github.com/esi/esi-issues#esi-community) helps to moderate this documentation.
+We appreciate help from the EVE Online community and encourage pull requests if you feel any documentation is missing. Our wonderful [ESI community](https://github.com/esi/esi-issues/blob/master/contributors.md#esi-community-members) helps to moderate this documentation.
 
 ## Important Online Resources
 The following is a list of important online resources for ESI development.
