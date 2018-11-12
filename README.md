@@ -31,8 +31,8 @@ If you're adding a new document, please be sure to include a link here somewhere
 - [Useful Formulae](docs/useful_formulae.md)
 - [Asset location_id](docs/asset_location_id.md)
 
-### SSO - Read the notice first!
-The documentation below is for the v2 SSO. While it offers several features not available in the "old" SSO, and is going to eventually replace it, it is still in beta, as evident from the list of its [unresolved issues](https://github.com/ccpgames/sso-issues/issues). If you don't want to subject yourself and the users of your app to those, refer to the [old documentation](https://github.com/ccpgames/eveonline-third-party-documentation/blob/master/docs/sso/index.md) for instructions on using the stable SSO.
+### SSO - Read this notice first!
+The documentation below is for the v2 SSO. While it offers several features not available in the v1 SSO, and is going to eventually replace it, it still has some [ongoing issues](https://github.com/ccpgames/sso-issues/issues). It is preferred your application use v2 SSO routes going forward but it may be the case that v2 is not stable enough for your application. If that is the case you can refer to the [old SSO documentation](https://github.com/ccpgames/eveonline-third-party-documentation/blob/master/docs/sso/index.md) for instructions on using the v1 routes.
 
 - [Introduction](docs/sso/README.md)
     - [High level overview of SSO authorization flow](docs/sso/sso_authorization_flow.md)
