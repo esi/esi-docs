@@ -12,7 +12,7 @@ A number of third party libraries are available to speed your app development ra
 | PowerShell | [POSH](https://github.com/markus-lassfolk/EVE-Online-ESI-Posh)         | Yes     | static  | No    | No             |
 | Python     | [EsiPy](https://github.com/Kyria/EsiPy)                                | Yes     | dynamic | Yes   | Yes            |
 | .NET       | [ESI.NET](https://github.com/seraphx2/ESI.NET)                         | Yes     | static  | No    | No             |
-| Ruby       | [EVEOnline ESI API](https://github.com/evemonk/eve_online)             | Library | static  | No    | No             |
+| Ruby       | [EVEOnline ESI API](https://github.com/evemonk/eve_online)             | Library | static  | No    | Yes             |
 | Java       | [eve-esi](https://github.com/burberius/eve-esi)                        | Yes     | codegen | Yes   | No             |
 | Java       | [eve-esi-client](https://github.com/OrbitalEnterprises/eve-esi-client) | Yes     | codegen | Yes   | No             |
 
