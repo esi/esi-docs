@@ -20,7 +20,6 @@ If you're adding a new document, please be sure to include a link here somewhere
 
 - [ESI Introduction](docs/esi_introduction.md)
 - [Frequently Asked Questions](docs/FAQ.md)
-- [Third Party Libraries](docs/third_party_libraries.md)
 - [Transitioning from XML](docs/XML_to_ESI.md)
 - [Transitioning from CREST](docs/CREST_to_ESI.md)
 - [What defines a breaking change](docs/breaking_changes.md)

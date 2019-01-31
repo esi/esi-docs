@@ -24,7 +24,7 @@ They embed the version in the path, resulting in more stable clients. [Please re
 
 ### Is there an ESI client library in &lt;language_x&gt;?
 
-Probably. Check the [awesome-eve](https://github.com/devfleet/awesome-eve) repository. If you can't find something there for your language, you can try the [Swagger open source integrations page](https://swagger.io/open-source-integrations/).
+Probably. Check the [awesome-eve](https://github.com/devfleet/awesome-eve#developer-tools--libraries) repository. If you can't find something there for your language, you can try the [Swagger open source integrations page](https://swagger.io/open-source-integrations/).
 
 ### What happened to CREST and XML API?
 
