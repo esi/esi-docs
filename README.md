@@ -29,6 +29,7 @@ If you're adding a new document, please be sure to include a link here somewhere
 ### Using ESI Data
 
 - [Dogma](docs/dogma.md)
+- [ID Ranges](docs/id_ranges.md)
 - [Useful Formulae](docs/useful_formulae.md)
 - [Asset location_id](docs/asset_location_id.md)
 
