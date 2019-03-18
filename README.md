@@ -12,6 +12,7 @@ The following is a list of important online resources for ESI development.
 * Follow [@TeamTechCo](https://twitter.com/TeamTechCo) on Twitter.
 * Make bug or feature requests at our [esi-issues](https://github.com/esi/esi-issues) Github page.
 * For real time discussion about ESI join us on our #esi channel in Slack by following [these instructions](https://www.fuzzwork.co.uk/tweetfleet-slack-invites/).
+* See the [esi changelog](https://github.com/esi/esi-issues/blob/master/changelog.md) for upcoming endpoint changes (you can also [watch the esi changelog](https://app.github-file-watcher.com/?repository=esi/esi-issues&glob=changelog.md))
 
 ## Table of Contents
 If you're adding a new document, please be sure to include a link here somewhere.
