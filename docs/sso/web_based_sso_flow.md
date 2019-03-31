@@ -40,7 +40,7 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 * Create a URL safe Base64 encoded string where the contents before encoding are your application's client ID, followed by a `:`, followed by your application's secret key (e.g. `URL safe Base64(<client_id>:<secret_key>)`).
 
     * You will need to send the following HTTP headers (replace anything between `<>`, including `<>`):
-        * `Authorization: <URL safe Base64 encoded credentials>`
+        * `Authorization: Basic <URL safe Base64 encoded credentials>`
         * `Content-Type: application/x-www-form-urlencoded`
         * `Host: login.eveonline.com`
 
