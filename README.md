@@ -34,8 +34,7 @@ If you're adding a new document, please be sure to include a link here somewhere
 - [Asset location_id](docs/asset_location_id.md)
 - [Notifications](docs/notifications.md)
 
-### SSO - Read this notice first!
-The documentation below is for the v2 SSO. While it offers several features not available in the v1 SSO, and is going to eventually replace it, it still has some [ongoing issues](https://github.com/ccpgames/sso-issues/issues). It is preferred your application use v2 SSO routes going forward but it may be the case that v2 is not stable enough for your application. If that is the case you can refer to the [old SSO documentation](https://github.com/ccpgames/eveonline-third-party-documentation/blob/master/docs/sso/index.md) for instructions on using the v1 routes.
+### SSO
 
 - [Introduction](docs/sso/README.md)
 - [High level overview of SSO authorization flow](docs/sso/sso_authorization_flow.md)
@@ -45,6 +44,7 @@ The documentation below is for the v2 SSO. While it offers several features not 
 - [Refreshing access tokens](docs/sso/refreshing_access_tokens.md)
 - [Validating EVE SSO JWT tokens](docs/sso/validating_eve_jwt.md)
 - [Sending authenticated requests to ESI](docs/sso/sending_esi_auth_request.md)
+- [Old documentation](https://github.com/ccpgames/eveonline-third-party-documentation/blob/master/docs/sso/index.md)
 
 ### Static Data Export
 
