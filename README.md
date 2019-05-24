@@ -45,15 +45,15 @@ The documentation below is for the v2 SSO. While it offers several features not 
 - [Validating EVE SSO JWT tokens](docs/sso/validating_eve_jwt.md)
 - [Sending authenticated requests to ESI](docs/sso/sending_esi_auth_request.md)
 
-### Static Data Export
+### Other Resources
 
 - [SDE Introduction](docs/sde_introduction.md)
 - [SDE Conversions](docs/sde_conversions.md)
+- [Image Server](docs/image_server.md)
 
 ### Community FAQs
 
 - [Guidelines](docs/guidelines.md)
 - [Best Practices](docs/best_practices.md)
 - [Quick URL Reference](docs/quick_reference.md)
-- [Image Server](docs/image_server.md)
 - [Developer License](docs/developer_license.md)
