@@ -55,6 +55,6 @@ The documentation below is for the v2 SSO. While it offers several features not 
 
 - [Guidelines](docs/guidelines.md)
 - [Best Practices](docs/best_practices.md)
-- [Quick Reference URLs](docs/quick_reference.md)
+- [Quick URL Reference](docs/quick_reference.md)
 - [Image Server](docs/image_server.md)
 - [Developer License](docs/developer_license.md)
