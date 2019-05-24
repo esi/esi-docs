@@ -9,7 +9,6 @@ We appreciate help from the EVE Online community and encourage pull requests if 
 The following is a list of important online resources for ESI development.
 
 * Watch the [third party developer blog](https://developers.eveonline.com/blog) for updates about ESI.
-* Follow [@TeamTechCo](https://twitter.com/TeamTechCo) on Twitter.
 * Make bug or feature requests at our [esi-issues](https://github.com/esi/esi-issues) Github page.
 * For real time discussion about ESI join us on our #esi channel in Slack by following [these instructions](https://www.fuzzwork.co.uk/tweetfleet-slack-invites/).
 * Watch the [ESI changelog](https://github.com/esi/esi-issues/blob/master/changelog.md) for upcoming endpoint changes. Updates are broadcast in the #esi channel, or you can [subscribe to email notifications](https://app.github-file-watcher.com/?repository=esi/esi-issues&glob=changelog.md).
