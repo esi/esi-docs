@@ -1,7 +1,7 @@
 
 ## Asset `location_id` quick reference
 
-- `item_id` of the parent asset (Used to build the assets tree, see example below)
+- `location_id` of the parent asset (Used to build the assets tree, see example below)
 - **Item ID of the active ship in space**
 If the active ship is in space, the fitting, but, not the ship itself will be returned by the asset endpoint
 You can get the active ship by combining data from following endpoints:
@@ -17,6 +17,7 @@ Resolvable via:
   - The [ESI bookmark endpoint](https://esi.evetech.net/ui/#/Bookmarks/get_characters_character_id_bookmarks) (all structures you have bookmarked, resolve structures regardless of docking rights)
 - **Customs Office ID** (Those are not resolvable, see [ESI feature request](https://github.com/esi/esi-issues/issues/685), Note: they share ID range with Item IDs and Structure IDs)
 - **Character ID** (when `location_flag` is `wardrobe`)
+- **Corporation Office ID** (Not resolvable, when `location_flag` is `OfficeFolder`, link between Hangars/Divisions (`location_flag`: `CorpSAGx`) and Structure/Station ID's.)
 
 ### Asset Tree example
 
