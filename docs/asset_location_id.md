@@ -1,7 +1,7 @@
 
 ## Asset `location_id` quick reference
 
-- `location_id` of the parent asset (Used to build the assets tree, see example below)
+- `item_id` of the parent asset (Used to build the assets tree, see example below)
 - **Item ID of the active ship in space**
 If the active ship is in space, the fitting, but, not the ship itself will be returned by the asset endpoint
 You can get the active ship by combining data from following endpoints:
