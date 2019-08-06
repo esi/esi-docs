@@ -17,7 +17,7 @@ bit of configuration (which will be replaced with tooling), EVE developers can a
 ### Authentication
 
 Auth is still handled by SSO. There are new scopes which ESI uses, you can make new developer keys (or alter your existing)
-to make use of the new scopes. If an ESI endpoint requires authentication, you will see a red exclamation mark on the route description in the
+to make use of the new scopes. If an ESI endpoint requires authentication, you will see a gray lock icon on the route description in the
 Swagger UI. Mouse hovering over this icon will tell you what scope the endpoint requires.
 
 ESI handles redirecting your authentication header to the correct SSO for verification (depending on the datasource query string argument).
