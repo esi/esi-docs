@@ -44,8 +44,6 @@ If you know your refresh token has been compromised, it is important to revoke i
 
     Replace all text wrapped with `<>` with a value provided by you.
 
-    *Note: it is currently a bug that basic authentication can only be used with the revocation endpoint. In the future, the EVE SSO will allow you use an access token instead for mobile/desktop applications.*
-
 3. If the revocation was successful you will get an HTTP response code of 200 back from the EVE SSO.
 
 If you'd like to look at an example of revoking a refresh token written in Python you can find one [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/revoke_refresh_token.py).
