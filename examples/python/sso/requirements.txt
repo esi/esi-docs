@@ -1,6 +1,6 @@
 certifi==2018.8.24
 chardet==3.0.4
-ecdsa==0.13
+ecdsa==0.13.3
 future==0.16.0
 idna==2.7
 pyasn1==0.4.4
