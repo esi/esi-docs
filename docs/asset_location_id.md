@@ -7,7 +7,7 @@ If the active ship is in space, the fitting, but, not the ship itself will be re
 You can get the active ship by combining data from following endpoints:
   - [ESI location endpoint](https://esi.evetech.net/ui/#/Location/get_characters_character_id_location)
   - [ESI ship endpoint](https://esi.evetech.net/ui/#/Location/get_characters_character_id_ship)
-- **Asset Safty** (`location_id` == 2004)
+- **Asset Safety** (`location_id` == 2004)
 - **System ID** (Range: 30000000 - 32000000)
 - **Abyssal System ID** (Range: 32000000 - 33000000)
 - **Station ID** (Range: 60000000 - 64000000)
