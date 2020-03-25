@@ -21,7 +21,7 @@ Optional parameter becomes required       | yes
 Required parameter becomes optional       | no
 Changing attribute or parameter name      | yes
 Changing values in an Enum                | yes
-Adding values to an attribute Enum        | yes
+Adding values to an attribute Enum        | no
 Removing values from an attribute Enum    | no
 Adding values to an parameter Enum        | no
 Removing values from an parameter Enum    | yes
