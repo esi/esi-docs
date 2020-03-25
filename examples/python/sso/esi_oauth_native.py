@@ -60,7 +60,7 @@ def main():
 
     auth_code = input("Copy the \"code\" query parameter and enter it here: ")
 
-    code_verifier = base64.urlsafe_b64encode(random).decode().replace("=", "")
+    code_verifier = random
 
     form_values = {
         "grant_type": "authorization_code",
