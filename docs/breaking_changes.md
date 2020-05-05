@@ -9,9 +9,9 @@ For the purposes of this document, parameter means input, whereas attribute refe
 Change Description                        | Version Bump Required
 ------------------------------------------|----------------------
 Update description/summary/example              | no
-Adding optional attribute or parameter          | no
+Adding attribute                                | no
+Adding optional parameter                       | no
 Adding required parameter                       | yes
-Adding required attribute                       | no
 Removing optional attribute                     | no
 Removing required attribute                     | yes
 Removing parameter                              | no
@@ -26,8 +26,18 @@ Removing values from an attribute Enum          | no
 Adding values to an parameter Enum              | no
 Removing values from an parameter Enum          | yes
 Adding pagination with `x-pages`                | no
+Adding attribute minItems                       | no
+Reducing attribute minItems                     | yes
+Increasing attribute minItems                   | no
+Removing attribute minItems=0                   | no
+Removing non-zero attribute minItems            | yes
 Reducing attribute maxItems                     | no
 Increasing attribute maxItems                   | yes
+Adding parameter minItems=0                     | no
+Adding non-zero parameter minItems              | yes
+Reducing parameter minItems                     | no
+Increasing parameter minItems                   | yes
+Removing parameter minItems                     | no
 Reducing parameter maxItems                     | yes
 Increasing parameter maxItems                   | no
 Changing cache expiry                           | no
