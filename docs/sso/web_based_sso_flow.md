@@ -13,7 +13,40 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 
 2. Store the `Client ID` and `Secret Key` assigned to your application somewhere that is accessible by your application. **The `Secret Key` in particular needs to be stored securely and should never be shared**.
 
-3. Redirect your user to https://login.eveonline.com/v2/oauth/authorize/ with the following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+<details><summary>⚠️Serenity notes</summary>
+- Before user's SSO flow, you must request a device id using https://mpay-web.g.mkey.163.com/device/init with following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+
+   * `game_id=aecfu6bgiuaaaal2-g-ma79` - Hardcoded value
+
+   * `device_type=PC`  - Hardcoded value
+
+   * `system_name=<OS type>` - User's OS name, it can be `Windows` or `MacOS` or `Linux` or anything
+
+   * `system_version=<OS version>` - User's OS version
+
+   * `device_model=<architecture>` - User's OS architecture, it can be `32` or `64`
+
+   * `resolution=<screen resolution>` - User's screen resolution, eg: `1024*768`
+
+   The response will like this 
+
+        {
+            "code": 0,
+            "device": {
+                "id": "<device_id>",
+                "key": "xxxx",
+                "urs_device_id": "xxxx"
+            },
+            "msg": "ok"
+        }
+
+   Store the `<device_id>` to your application session store. 
+
+</details>
+ 
+3. Prepare the authorize URL https://login.eveonline.com/v2/oauth/authorize/ (or https://login.evepc.163.com/v2/oauth/authorize/ if you are working for Serenity) with the following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+
+    * `device_id=<device id>` - For Serenity ONLY, device id requested from notes before, if `device_id` is the first parameter, change it to `&device_id`.
 
     * `response_type=code` - This tells the EVE SSO what kind of response you are expecting from it, in this case you are letting it know you are starting the handshake for an authorization code.
 
@@ -27,11 +60,20 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 
     If you wanted access to a character's blueprints and your callback URL was `https://localhost/callback/` you would have a URL that looks something like this (anything surrounded by `<>` should be replaced by you, including `<>`): `https://login.eveonline.com/v2/oauth/authorize/?response_type=code&redirect_uri=https%3A%2F%2Flocalhost%2Fcallback%2F&client_id=<your-client-id>&scope=esi-characters.read_blueprints.v1&state=<unique-string>`.
 
-4. The EVE SSO will send a GET request to your application's defined callback URL containing the query parameters `code` and `state` that looks like this (anything between `<>` will look different for you): `https://<your-callback-url>/?code=<super-secret-code>&state=<unique-state-string-from-you>`.
+4. If you are working for Tranquility, redirect your user to the URL prepared in step 3.
+
+<details><summary>⚠️Serenity notes</summary>
+
+- If you are working for Serenity, redirect your user to https://login.evepc.163.com/account/logoff with following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+
+   * `returnUrl=<URL encoded authorize URL>` - URL prepared in step 3.
+</details>
+
+5. The EVE SSO will send a GET request to your application's defined callback URL containing the query parameters `code` and `state` that looks like this (anything between `<>` will look different for you): `https://<your-callback-url>/?code=<super-secret-code>&state=<unique-state-string-from-you>`.
 
     Your application needs to lift the value of the `code` query parameter from the URL so that it can be used in the next step. This authorization code is a one time use only token that has a lifetime of 5 minutes. If you do not respond within 5 minutes you will have to start over at step 1 again.
 
-5. Now that your application has the authorization code, it needs to send a POST request to `https://login.eveonline.com/v2/oauth/token` with a payload containing the authorization code using [Basic authentication](https://swagger.io/docs/specification/authentication/basic-authentication/) where your application's client ID will be the user and your secret key will be the password. Here is a little more detail on how to craft this request:
+6. Now that your application has the authorization code, it needs to send a POST request to `https://login.eveonline.com/v2/oauth/token` (or `https://login.evepc.163.com/v2/oauth/token` if you are working for Serenity) with a payload containing the authorization code using [Basic authentication](https://swagger.io/docs/specification/authentication/basic-authentication/) where your application's client ID will be the user and your secret key will be the password. Here is a little more detail on how to craft this request:
 
 * Create form encoded values that look like this (replace anything between `<>`, including `<>`):
 
@@ -44,10 +86,10 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
         * `Content-Type: application/x-www-form-urlencoded`
         * `Host: login.eveonline.com`
 
-* Finally, send a POST request to `https://login.eveonline.com/v2/oauth/token` with your form encoded values and the headers from the last step.
+* Finally, send a POST request to `https://login.eveonline.com/v2/oauth/token` (or `https://login.evepc.163.com/v2/oauth/token` if you are working for Serenity) with your form encoded values and the headers from the last step.
 
 
-6. If the previous step was done correctly, the EVE SSO will respond with a JSON payload containing an access token (which is a [Json Web Token](https://jwt.io/introduction/)) and a refresh token that looks like this (Anything wrapped by `<>` will look different for you):
+7. If the previous step was done correctly, the EVE SSO will respond with a JSON payload containing an access token (which is a [Json Web Token](https://jwt.io/introduction/)) and a refresh token that looks like this (Anything wrapped by `<>` will look different for you):
 
         {
             "access_token": <JWT token>,
