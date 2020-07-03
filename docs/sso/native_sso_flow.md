@@ -23,9 +23,9 @@ Here is the OAuth 2.0 flow your native application should be implementing:
 
     * `scope=<A URL encoded, space delimited list of ESI scopes you would like to request permissions for>` - Replace all text after the `=` with a list of ESI scopes split up by a single space that you would like to request permissions for (e.g. `scope=esi-characters.read_blueprints.v1%20esi-corporations.read_contacts.v1`).
 
-    * `code_challenge=<URL safe Base64(SHA256(URL safe Base64(random 32 byte string)))>` - In the PCKE protocol, a code challenge is used instead of basic authentication to allow your application to ship without its secret key. The reason for this being to protect malicious actors from being able to decompile your programs and retrieve the secret key. A more detailed explanation of the kind of attacks this protects against can be found in [RFC7636](https://tools.ietf.org/html/rfc7636#section-1)
+    * `code_challenge=<base64url(SHA-256(code verifier))>` - In the PCKE protocol, a code challenge is used instead of basic authentication to allow your application to ship without its secret key. The reason for this being to protect malicious actors from being able to decompile your programs and retrieve the secret key. A more detailed explanation of the kind of attacks this protects against can be found in [RFC 7636](https://tools.ietf.org/html/rfc7636#section-1)
 
-        To correctly create a code challenge your application will need to make a one time use only 32 byte random string. You will then URL safe Base64 encode this random string, then hash that and finally URL safe Base64 encode the hashed value. The resulting Base64 encoded string is the code challenge. Make sure you keep the original Base64 encoded random value for later as you will need to use that in step 5. If you'd like to see an example of creating a code challenge in Python you can find that [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/esi_oauth_native.py). *Feel free to contribute examples in other languages to this repository to help others.*
+        To create a code challenge your application will first need to create a one time use code verifier. A simple way to do this is to generate 32 random bytes and base64url encode them. Store this code verifier as you'll need it in a later step. To create a corresponding code challenge, SHA-256 hash the code verifier, and then base64url encode the raw hash output. The base64url encoding is defined in [RFC 4648](https://tools.ietf.org/html/rfc4648#section-5) and should not contain padding. If you'd like to see an example of creating a code challenge in Python you can find that [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/esi_oauth_native.py). *Feel free to contribute examples in other languages to this repository to help others.*
 
     * `code_challenge_method=S256` - This is telling the EVE SSO that the code challenge was hashed using the [SHA-256 hashing algorithm](https://en.wikipedia.org/wiki/SHA-2) and is the only method currently accepted at this time.
 
@@ -43,7 +43,7 @@ Here is a little more detail on how to craft this request:
 
 * Create form encoded values that look like this (replace anything between `<>`, including `<>`):
 
-        grant_type=authorization_code&code=<authorization code from callback URL>&client_id=<your application's client ID>&code_verifier=<URL safe Base64(32 byte string) generated in step 3>  
+        grant_type=authorization_code&code=<authorization code from callback URL>&client_id=<your application's client ID>&code_verifier=<code verifier generated in step 3>  
 
 * Send a POST request to `https://login.eveonline.com/v2/oauth/token` with your form encoded values and the following headers:
 
