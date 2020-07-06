@@ -33,6 +33,10 @@ If you're adding a new document, please be sure to include a link here somewhere
 - [Asset location_id](docs/asset_location_id.md)
 - [Notifications](docs/notifications.md)
 
+### Common Scenarios
+- [Resolve Structure IDs](docs/scenarios/resolve_structure_ids.md)
+- [Retrieve Structure Markets](docs/scenarios/structure_markets.md)
+
 ### SSO
 
 - [Introduction](docs/sso/README.md)
