@@ -6,17 +6,17 @@ The endpoint returns the name of the structure, as well as some additional infor
 
 ## Discovering Upwell Structures
 
-There is currently no unified way discver accessible Upwell structures through ESI. The following methods can be used to discover Upwell structure IDs.
+There is currently no unified way to discover accessible Upwell structures through ESI. The following methods can be used to discover Upwell structure IDs.
 
 ### Public Structures
 
-The public `/universe/structures/` endpoint will return a flat list of IDs containing all fully public structures. *Fully public* in this context means a completely open Access Control List. If the ACL prevents anyone from docking the structure won't show up in this list.
+The public `/universe/structures/` endpoint will return a flat list of IDs containing all fully public structures. *Fully public* in this context means a completely open Access Control List. If the ACL prevents even one character from docking the structure won't show up in this list.
 
 This method has the advantage of not requiring any authentication but is limited in that it only resolves completely public structures. Additionally, most endpoints that consume structure IDs require authentication anyways, so you likely won't be possible to avoid supplying a token anyways.
 
 ### Corporation Structures
 
-The authenticated `/corporations/{corporation_id}/structures/` endpoit returns all structures owned by a particular corporation. It requires a token that grants the `esi-corporations.read_structures.v1` scope on a character with Director roles in the corporation.
+The authenticated `/corporations/{corporation_id}/structures/` endpoint returns all structures owned by a particular corporation. It requires a token that grants the `esi-corporations.read_structures.v1` scope on a character with the Director role in the corporation.
 
 This endpoint provides a lot of information about the structure, including what services are installed and active, when the fuel expires, what state it currently is in etc. Be aware that it currently *does not* provide the name of the structure.
 
@@ -29,5 +29,5 @@ Some other endpoints may also include structure ids in their results. Structure 
 - Character Location
 - Clone locations
 - Fleet member station_id may be structure ids
-- industry jobs may be located in structure ids
+- Industry jobs may be located in structure ids
 - Character and Corporation market orders may have location_ids that are structures.

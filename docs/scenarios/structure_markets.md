@@ -1,6 +1,6 @@
 ## Resolving Structure Markets
 
-Structure market orders, with the exception or ranged orders, are not included in the results of `/markets/{region_id}/orders/`. They have to be queried individually and then merged.
+Structure market orders, with the exception of ranged orders, are not included in the results of `/markets/{region_id}/orders/`. They have to be queried individually and then merged.
 
 ### Query individual structure markets
 
