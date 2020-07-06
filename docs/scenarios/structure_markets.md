@@ -6,7 +6,7 @@ Structure market orders, with the exception of ranged orders, are not included i
 
 The authenticated endpoint `/markets/structures/{structure_id}/` can be used to retrieve market orders for a single Upwell structure. It requires an access token that grants the scope `esi-markets.structure_markets.v1` for a character with docking access to the structure.
 
-See [Resolve Structure IDs](/docs/scenarios/resolve_structre_ids.md) for information on how to get the IDs of Upwell structures.
+See [Resolve Structure IDs](/docs/scenarios/resolve_structure_ids.html) for information on how to get the IDs of Upwell structures.
 
 The endpoint will return all orders in the structure, it does not support filtering by order type or type id.
 
