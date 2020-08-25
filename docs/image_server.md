@@ -7,52 +7,52 @@ If a given image is not found in the database, the service responds with a 302 M
 
 You are welcome to point your clients and applications directly at the image server and use it as a CDN. You do not need to cache the images and serve them yourself.
 
-The base URL for the image server is https://imageserver.eveonline.com
+The base URL for the image server is https://images.evetech.net/
 
 # Image Routes
 ## Alliance Images
-* URL Pattern: `/Alliance/{allianceID}_{width}.png`
-* Available Sizes: 32, 64, 128
+* URL Pattern: `/alliances/{alianceID}/logo?tenant={tenant}&size={size}`
+* Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Samples:
-    * [Band of Brothers](https://imageserver.eveonline.com/Alliance/632866070_128.png)
-    * [GoonSwarm](https://imageserver.eveonline.com/Alliance/824518128_32.png)
+    * [Band of Brothers](https://images.evetech.net/alliances/632866070/logo?tenant=tranquility&size=128)
+    * [GoonSwarm](https://images.evetech.net/alliances/824518128/logo?tenant=tranquility&size=128)
 
 ## Corporation Images
-* URL Pattern: `/Corporation/{corpID}_{width}.png`
-* Available Sizes: 32, 64, 128, 256
+* URL Pattern: `/corporations/{corpID}/logo?tenant={tenant}&size={size}`
+* Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Samples:
-    * [EVE University](https://imageserver.eveonline.com/Corporation/917701062_128.png)
-    * [Love Squad](https://imageserver.eveonline.com/Corporation/98076155_256.png)
+    * [EVE University](https://images.evetech.net/corporations/917701062/logo?tenant=tranquility&size=128)
+    * [Love Squad](https://images.evetech.net/corporations/98076155/logo?tenant=tranquility&size=128)
 
 ## Character Images
-* URL Pattern: `/Character/{characterID}_{width}.jpg`
-* Available Sizes: 32, 64, 128, 256, 512, 1024
+* URL Pattern: `/characters/{characterID}/portrait?tenant={tenant}&size={size}`
+* Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Note: the 1024 size images may not be available for all characters
 * Samples:
-    * [Large Collidable Object](https://imageserver.eveonline.com/Character/91072482_1024.jpg)
-    * [Ice Driller](https://imageserver.eveonline.com/Character/1611454010_512.jpg)
+    * [Large Collidable Object](https://images.evetech.net/characters/91072482/portrait?tenant=tranquility&size=1024)
+    * [Ice Driller](https://images.evetech.net/characters/1611454010/portrait?tenant=tranquility&size=1024)
 
 
 ## Faction Images
-* URL Pattern: `/Alliance/{factionID}_{width}.png`
-* Available Sizes: 32, 64, 128
+* URL Pattern: `/alliances/{alianceID}/logo?tenant={tenant}&size={size}`
+* Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Samples:
-    * [Gallente Federation](https://imageserver.eveonline.com/Alliance/500004_128.png)
-    * [Amarr Empire](https://imageserver.eveonline.com/Alliance/500003_64.png)
+    * [Gallente Federation](https://images.evetech.net/alliances/500004/logo?tenant=tranquility&size=128)
+    * [Amarr Empire](https://images.evetech.net/alliances/5000063/logo?tenant=tranquility&size=128)
 
 ## Inventory Types
-* URL Pattern: `/Type/{typeID}_{width}.png`
-* Available Sizes: 32, 64
+* URL Pattern: `/types/{typeID}/icon?tenant={tenant}&size={size}`
+* Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Samples:
-    * [Domination Stasis Webifier](https://imageserver.eveonline.com/Type/14264_32.png)
-    * [Exotic Dancers](https://imageserver.eveonline.com/Type/17765_64.png)
+    * [Domination Stasis Webifier](https://images.evetech.net/types/14264/icon?tenant=tranquility&size=64)
+    * [Exotic Dancers](https://images.evetech.net/types/17765/icon?tenant=tranquility&size=64)
 
 ## Ship and Drone Renders
-* URL Pattern: `/Render/{typeID}_{width}.png`
-* Available Sizes: 32, 64, 128, 256, 512
+* URL Pattern: `/types/{typeID}/render?tenant={tenant}&size={size}`
+* Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Samples:
-    * [Machariel](https://imageserver.eveonline.com/Render/17738_512.png)
-    * [Firbolg](https://imageserver.eveonline.com/Render/23059_128.png)
+    * [Machariel](https://images.evetech.net/types/17738/render?tenant=tranquility&size=512)
+    * [Firbolg](https://images.evetech.net/types/23059/render?tenant=tranquility&size=128)
 
 
 # Legacy Portraits
