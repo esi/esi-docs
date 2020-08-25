@@ -22,7 +22,7 @@ The base URL for the image server is https://images.evetech.net/
 * Available Sizes: 32, 64, 128, 256
 * Samples:
     * [EVE University](https://images.evetech.net/corporations/917701062/logo?tenant=tranquility&size=128)
-    * [Love Squad](https://images.evetech.net/corporations/917701062/logo?tenant=tranquility&size=128)
+    * [Love Squad](https://images.evetech.net/corporations/98076155/logo?tenant=tranquility&size=128)
 
 ## Character Images
 * URL Pattern: `/characters/{characterID}/portrait?tenant={tenant}&size={size}`
