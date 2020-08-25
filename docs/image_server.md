@@ -34,11 +34,11 @@ The base URL for the image server is https://images.evetech.net/
 
 
 ## Faction Images
-* URL Pattern: `/alliances/{alianceID}/logo?tenant={tenant}&size={size}`
+* URL Pattern: `/corporations/{factionID}/logo?tenant={tenant}&size={size}`
 * Available Sizes: 32, 64, 128, 256, 512 and 1024
 * Samples:
-    * [Gallente Federation](https://images.evetech.net/alliances/500004/logo?tenant=tranquility&size=128)
-    * [Amarr Empire](https://images.evetech.net/alliances/5000063/logo?tenant=tranquility&size=128)
+    * [Gallente Federation](https://images.evetech.net/corporations/500004/logo?tenant=tranquility&size=128)
+    * [Amarr Empire](https://images.evetech.net/corporations/500003/logo?tenant=tranquility&size=128)
 
 ## Inventory Types
 * URL Pattern: `/types/{typeID}/icon?tenant={tenant}&size={size}`
