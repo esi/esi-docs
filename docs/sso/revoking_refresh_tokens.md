@@ -33,17 +33,21 @@ If you know your refresh token has been compromised, it is important to revoke i
 
     From here you want to get the value of the key `revocation_endpoint`, which at this time of writing is `https://login.eveonline.com/v2/oauth/revoke`.
 
-2. Make a POST request to the revocation endpoint retrieved from step 1 using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), where your application's client ID is the user and your application's secret key is the password, with the body:
+2. Make a POST request to the revocation endpoint retrieved from step 1 using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), where your application's client ID is the user and your application's secret key is the password, with the form encoded body:
 
-    ```JSON
-    {
-        "token": <your refresh token to revoke>,
-        "token_type_hint": "refresh_token"
-    }
+    ```
+    token_type_hint=refresh_token&token=<your refresh token to revoke>
     ```
 
     Replace all text wrapped with `<>` with a value provided by you.
 
+    Make sure to set the correct Content-Type header:
+
+    ```
+    Content-Type: application/x-www-form-urlencoded
+    ```
+
 3. The server responds with a 200 OK response code. If you submitted a valid token, the server has now invalidated it. Note that the server also returns a 200 OK if the token was invalid, because in both cases the end result is the same - you are not able to use the token to successfully request a new access token.
+
 
 If you'd like to look at an example of revoking a refresh token written in Python you can find one [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/revoke_refresh_token.py).

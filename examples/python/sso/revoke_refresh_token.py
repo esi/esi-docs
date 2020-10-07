@@ -46,19 +46,19 @@ def revoke_refresh_token(refresh_token, client_id, secret_key):
               "{}".format(sso_meta))
         sys.exit(1)
 
-    body = {
+    form_values = {
         "token": refresh_token,
         "token_type_hint": "refresh_token"
     }
 
     res = requests.post(
         revocation_endpoint,
-        json=body,
+        data=form_values,
         auth=(client_id, secret_key)
     )
 
     print("Made a request to {} with body: {} using basic "
-          "authentication".format(revocation_endpoint, body))
+          "authentication".format(revocation_endpoint, res.request.body))
 
     if res.status_code != 200:
         print("Something went wrong with the request to revoke your token. "
