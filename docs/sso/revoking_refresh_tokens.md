@@ -33,16 +33,19 @@ If you know your refresh token has been compromised, it is important to revoke i
 
     From here you want to get the value of the key `revocation_endpoint`, which at this time of writing is `https://login.eveonline.com/v2/oauth/revoke`.
 
-2. Make a POST request to the revocation endpoint retrieved from step 1 using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), where your application's client ID is the user and your application's secret key is the password, with the body:
+2. Make a POST request to the revocation endpoint retrieved from step 1 using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), where your application's client ID is the user and your application's secret key is the password, with the form encoded body:
 
-    ```JSON
-    {
-        "token": <your refresh token to revoke>,
-        "token_type_hint": "refresh_token"
-    }
+    ```
+    token_type_hint=refresh_token&token=<your refresh token to revoke>
     ```
 
     Replace all text wrapped with `<>` with a value provided by you.
+
+    Make sure to set the correct Content-Type header:
+
+    ```
+    Content-Type: application/x-www-form-urlencoded
+    ```
 
 3. If the revocation was successful you will get an HTTP response code of 200 back from the EVE SSO.
 
