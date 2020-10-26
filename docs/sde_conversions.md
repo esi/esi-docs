@@ -16,21 +16,6 @@ Main links for the application:
 * [SQL Schema used](https://github.com/EVEIPH/EVE-SDE-Database-Builder/blob/master/Latest%20Files/EVESDEDB_Schema.sql)
 * [Github for the code](https://github.com/EVEIPH/EVE-SDE-Database-Builder)
 
-## [Desmont McCallock](https://forums.eveonline.com/profile/Desmont%20McCallock)
-
-[Conversion Tool](https://forums.eveonline.com/default.aspx?g=posts&m=6168357)
-
-Desmont provides a tool to run on Windows, to merge the other data back into the SQL Server SDE, and to convert into a variety of formats, either at full database, or individual tables.
-
-* SQL Server
-* MySQL
-* Postgres
-* MS Access
-* SQLite
-* CSV
-
-This tool converts to a format close to the SDE as it was before CCP changed how it was produced -splitting it sqlserver, yaml and sqlite files- with blueprint information going into ramTypeRequirements. As such it should be more compatible with some older tools.
-
 ## [Steve Ronuken - Fuzzwork Enterprises](https://www.fuzzwork.co.uk/dump/)
 
 Steve provides conversions of the SDE for download, in the following formats:
