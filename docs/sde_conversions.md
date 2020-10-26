@@ -22,6 +22,13 @@ Historical copies are kept available. When data is migrated into alternate forma
 
 Conversion is performed with [https://github.com/fuzzysteve/yamlloader](https://github.com/fuzzysteve/yamlloader) which can target any database which SQLAlchemy can work with.
 
+## [Squizz Caphinator - zKillboard](http://sde.zzeve.com/)
+
+Tables from Steve's conversion converted into JSON files, with CORS headers.
+
+* [List of tables](http://sde.zzeve.com/tables.json)
+* [Source code](https://github.com/cvweiss/sde2json/)
+
 ## [EVE SDE Database Builder - by Zifrian](https://forums.eveonline.com/default.aspx?g=posts&t=500859)
 EVE SDE Database Builder is a Windows application that lets users import the SDE yaml files into MS Access, MS SQL Server, Comma Separated Values, Semi-colon Separated Values, MySQL, PostgreSQL, and SQLite. Additionally, users can customize the import by language type and selecting specific SDE yaml files to import or ignore.
 
