@@ -51,8 +51,9 @@ If you're adding a new document, please be sure to include a link here somewhere
 
 ### Other Resources
 
-- [SDE Introduction](docs/sde_introduction.md)
-- [SDE Conversions](docs/sde_conversions.md)
+- [Static Data Export](docs/sde_introduction.md)
+  - [SDE Conversions](docs/sde_conversions.md)
+  - [SDE Complements](docs/sde_complements.md)
 - [Image Server](docs/image_server.md)
 
 ### Community FAQs

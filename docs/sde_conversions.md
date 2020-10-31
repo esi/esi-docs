@@ -1,5 +1,4 @@
-# Conversions
-## Intoduction
+# SDE Conversions
 
 Originally, the SDE was provided solely as an MS SQL server backup file. As the SDE is commonly used in environments where MS SQL is not available or would be overkill, a number of people maintain conversion routines and copies, to make it available in a more useful format.
 
