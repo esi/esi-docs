@@ -11,7 +11,7 @@ You will need to pass the following parameters:
 
 - `grant_type=refresh_token`
 
-- `refresh_token=<refresh token from previous request to token endpoint>`: Replace everything after `=` with your own value.
+- `refresh_token=<refresh token from previous request to token endpoint>`: Replace everything after `=` with your own value. Note that the refresh token must be URI component encoded.
 
 - `scope=<subset of scopes from the original OAuth 2.0 flow>` **[OPTIONAL]**: Replace everything after `=` with your own value. A subset of the original scopes assigned to the authorization and refresh token. If omitted, all original scopes will be assigned to the new access token.
 
@@ -37,7 +37,7 @@ As a native application you will need to make a URL-encoded POST request to `htt
 
 - `grant_type=refresh_token`
 
-- `refresh_token=<refresh token from previous request to token endpoint>`: Replace everything after `=` with your own value.
+- `refresh_token=<refresh token from previous request to token endpoint>`: Replace everything after `=` with your own value. Note that the refresh token must be URI component encoded.
 
 - `client_id=<your application's client ID>`: Replace everything after `=` with the client ID assigned to your application.
 
