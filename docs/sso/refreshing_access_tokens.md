@@ -32,6 +32,9 @@ Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
 
 grant_type=refresh_token&refresh_token=gEy...fM0
 ```
+
+Remember that the refresh token *must* be URL-encoded, per the content type of the request. Failing to do this may cause the request to be malformed and a 400 response to be returned.
+
 ## Native Applications
 As a native application you will need to make a URL-encoded POST request to `https://login.eveonline.com/v2/oauth/token` containing the following parameters:
 
