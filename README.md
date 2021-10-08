@@ -45,6 +45,7 @@ If you're adding a new document, please be sure to include a link here somewhere
 - [Refreshing access tokens](docs/sso/refreshing_access_tokens.md)
 - [Validating EVE SSO JWT tokens](docs/sso/validating_eve_jwt.md)
 - [Sending authenticated requests to ESI](docs/sso/sending_esi_auth_request.md)
+- [Migrating from SSO v1 to v2](docs/sso/migrate_v1_v2.md)
 - [Old documentation](https://github.com/ccpgames/eveonline-third-party-documentation/blob/master/docs/sso/index.md)
 
 ### Other Resources
