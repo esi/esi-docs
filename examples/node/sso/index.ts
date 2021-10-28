@@ -18,6 +18,11 @@ const environment = {
   callbackUrl: "http://localhost:3000/api/auth/callback/eveonline",
 };
 
+// create base64'd credentials for auth header
+const credentials = Buffer.from(
+  `${environment.CLIENT_ID}:${environment.CLIENT_SECRET}`
+).toString("base64");
+
 app.get("/", (_req: Request, res: Response) =>
   res.send("<h1>Hello world!</h1>")
 );
@@ -37,11 +42,6 @@ app.get("/auth", (_req: Request, res: Response) => {
 
 app.get("/api/auth/callback/eveonline", async (req: Request, res: Response) => {
   try {
-    // create base64'd credentials for auth header
-    const credentials = Buffer.from(
-      `${environment.CLIENT_ID}:${environment.CLIENT_SECRET}`
-    ).toString("base64");
-
     // get token from CCP. got is just a request library
     const response = await got("https://login.eveonline.com/v2/oauth/token", {
       headers: {
@@ -75,17 +75,85 @@ app.get("/api/auth/callback/eveonline", async (req: Request, res: Response) => {
     const character = {
       name: jwtResult.payload.name,
       owner: jwtResult.payload.owner,
-      characterId: jwtResult.payload.sub?.split(':')[2]
-    }
+      characterId: jwtResult.payload.sub?.split(":")[2],
+    };
 
     res.json({
       token: { access: body.access_token, refresh: body.refresh_token },
       jwtResult,
-      character
+      character,
+      refreshUrl: `http://localhost:3000/api/auth/refresh?refresh_token=${encodeURIComponent(
+        body.refresh_token
+      )}`,
+      revokeurl: `http://localhost:3000/api/auth/revoke?refresh_token=${encodeURIComponent(
+        body.refresh_token
+      )}`,
     });
   } catch (error) {
-    console.log(error);
-    res.send("ERROR");
+    console.log((error as any).response.body);
+    res.send("ERROR. See dev console.");
+  }
+});
+
+app.get("/api/auth/refresh", async (req: Request, res: Response) => {
+  try {
+    console.log({
+      headers: {
+        Authorization: `Basic ${credentials}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+        Host: "login.eveonline.com",
+      },
+      method: "POST",
+      form: {
+        grant_type: "refresh_token",
+        refresh_token: req.query.refresh_token,
+        scope: "publicData",
+      },
+    });
+    const response = await got("https://login.eveonline.com/v2/oauth/token", {
+      headers: {
+        Authorization: `Basic ${credentials}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+        Host: "login.eveonline.com",
+      },
+      method: "POST",
+      form: {
+        grant_type: "refresh_token",
+        refresh_token: req.query.refresh_token,
+        scope: "publicData",
+      },
+    });
+    const body = JSON.parse(response.body);
+
+    res.json(body);
+  } catch (error) {
+    console.log((error as any).response.body);
+    res.send((error as any).response.body);
+  }
+});
+
+app.get("/api/auth/revoke", async (req: Request, res: Response) => {
+  try {
+    const response = await got("https://login.eveonline.com/v2/oauth/revoke", {
+      headers: {
+        Authorization: `Basic ${credentials}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+        Host: "login.eveonline.com",
+      },
+      method: "POST",
+      form: {
+        token_type_hint: "refresh_token",
+        token: req.query.refresh_token,
+      },
+    });
+    if (response.statusCode === 200) {
+      res.send("Token revoked successfully");
+    } else {
+      res.send(`Status code: ${response.statusCode} received from ESI.`);
+    }
+  } catch (error) {
+    console.log((error as any).response.body);
+    res.send("ERROR. See dev console.");
   }
 });
 
