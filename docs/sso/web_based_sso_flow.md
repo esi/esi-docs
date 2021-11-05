@@ -13,7 +13,7 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 
 2. Store the `Client ID` and `Secret Key` assigned to your application somewhere that is accessible by your application. **The `Secret Key` in particular needs to be stored securely and should never be shared**.
 
-<details><summary>⚠️Serenity notes</summary>
+<details><summary>⚠️Serenity note</summary>
 - Before user's SSO flow, you must request a device id using https://mpay-web.g.mkey.163.com/device/init with following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
 
    * `game_id=aecfu6bgiuaaaal2-g-ma79` - Hardcoded value
@@ -46,7 +46,7 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
  
 3. Prepare the authorize URL https://login.eveonline.com/v2/oauth/authorize/ (or https://login.evepc.163.com/v2/oauth/authorize/ if you are working for Serenity) with the following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
 
-    * `device_id=<device id>` - For Serenity ONLY, device id requested from notes before, if `device_id` is the first parameter, change it to `&device_id`.
+    * `device_id=<device id>` - For Serenity ONLY, device id requested from notes before, if `device_id` is the first parameter, change it to `&device_id`. (See [issue](https://github.com/ccpgames/sso-issues/issues/64))
 
     * `response_type=code` - This tells the EVE SSO what kind of response you are expecting from it, in this case you are letting it know you are starting the handshake for an authorization code.
 
@@ -62,11 +62,11 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 
 4. If you are working for Tranquility, redirect your user to the URL prepared in step 3.
 
-<details><summary>⚠️Serenity notes</summary>
+<details><summary>⚠️Serenity note</summary>
 
 - If you are working for Serenity, redirect your user to https://login.evepc.163.com/account/logoff with following parameters in the [query string](https://en.wikipedia.org/wiki/Query_string). Make sure all strings placed in the URL are [URL Encoded](https://en.wikipedia.org/wiki/Percent-encoding).
 
-   * `returnUrl=<URL encoded authorize URL>` - URL prepared in step 3.
+   * `returnUrl=<URL encoded authorize URL>` - URL prepared in step 3. (workaround for [issue](https://github.com/ccpgames/sso-issues/issues/49))
 </details>
 
 5. The EVE SSO will send a GET request to your application's defined callback URL containing the query parameters `code` and `state` that looks like this (anything between `<>` will look different for you): `https://<your-callback-url>/?code=<super-secret-code>&state=<unique-state-string-from-you>`.
