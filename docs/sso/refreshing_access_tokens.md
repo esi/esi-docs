@@ -5,7 +5,7 @@ If any valid scope was requested in the initial redirect to the SSO using the au
 The method for refreshing access tokens is dependent on whether your application is a [web based](web_based_sso_flow.md) or [native](native_sso_flow.md) (e.g mobile/desktop) application. Jump to the section below that applies to your application.
 
 ## Web Based Applications
-As a web based application you will need to make a URL-encoded POST request to `https://login.eveonline.com/v2/oauth/token` using [basic authentication]((https://en.wikipedia.org/wiki/Basic_access_authentication)) where your application's client ID is the user and your secret key is the password.
+As a web based application you will need to make a URL-encoded POST request to `https://login.eveonline.com/v2/oauth/token` using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) where your application's client ID is the user and your secret key is the password.
 
 You will need to pass the following parameters:
 
