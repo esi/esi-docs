@@ -50,7 +50,7 @@ def validate_eve_jwt(jwt_token):
             jwt_token,
             jwk_set,
             algorithms=jwk_set["alg"],
-            issuer="login.eveonline.com"
+            issuer=["login.eveonline.com", "https://login.eveonline.com"]
         )
     except ExpiredSignatureError:
         print("The JWT token has expired: {}")
@@ -59,17 +59,9 @@ def validate_eve_jwt(jwt_token):
         print("The JWT signature was invalid: {}").format(str(e))
         sys.exit(1)
     except JWTClaimsError as e:
-        try:
-            return jwt.decode(
-                        jwt_token,
-                        jwk_set,
-                        algorithms=jwk_set["alg"],
-                        issuer="https://login.eveonline.com"
-                    )
-        except JWTClaimsError as e:
-            print("The issuer claim was not from login.eveonline.com or "
+        print("The issuer claim was not from login.eveonline.com or "
                   "https://login.eveonline.com: {}".format(str(e)))
-            sys.exit(1)
+        sys.exit(1)
 
 
 def main():
