@@ -37,10 +37,10 @@ Here is the OAuth 2.0 flow your web based application should be implementing:
 
         grant_type=authorization_code&code=<authorization code from callback URL>
 
-* Create a URL safe Base64 encoded string where the contents before encoding are your application's client ID, followed by a `:`, followed by your application's secret key (e.g. `URL safe Base64(<client_id>:<secret_key>)`).
+* Create a Base64 encoded string, including padding, where the contents before encoding are your application's client ID, followed by a `:`, followed by your application's secret key (e.g. `Base64(<client_id>:<secret_key>)`). For example, given the input `CLIENT_ID:CLIENT_SECRET`, the resulting string should be `Q0xJRU5UX0lEOkNMSUVOVF9TRUNSRVQ=`.
 
     * You will need to send the following HTTP headers (replace anything between `<>`, including `<>`):
-        * `Authorization: Basic <URL safe Base64 encoded credentials>`
+        * `Authorization: Basic <Base64 encoded credentials>`
         * `Content-Type: application/x-www-form-urlencoded`
         * `Host: login.eveonline.com`
 
