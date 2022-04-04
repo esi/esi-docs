@@ -1,4 +1,4 @@
-"""Validates a given JWT token originating from the EVE SSO.
+"""Validates a given JWT access token originating from the EVE SSO.
 
 Prerequisites:
     * Have a Python 3 environment available to you (possibly by using a
@@ -9,76 +9,81 @@ This can be run by doing
 
 >>> python validate_jwt.py
 
-and passing in a JWT token that you have retrieved from the EVE SSO.
+and passing in a JWT access token that you have retrieved from the EVE SSO.
 """
 import sys
 
 import requests
 from jose import jwt
-from jose.exceptions import ExpiredSignatureError, JWTError, JWTClaimsError
+from jose.exceptions import ExpiredSignatureError, JWTError
+
+SSO_META_DATA_URL = "https://login.eveonline.com/.well-known/oauth-authorization-server"
+JWK_ALGORITHM = "RS256"
+JWK_ISSUERS = ("login.eveonline.com", "https://login.eveonline.com")
+JWK_AUDIENCE = "EVE Online"
 
 
-def validate_eve_jwt(jwt_token):
-    """Validate a JWT token retrieved from the EVE SSO.
+def validate_eve_jwt(token: str) -> dict:
+    """Validate a JWT access token retrieved from the EVE SSO.
 
     Args:
-        jwt_token: A JWT token originating from the EVE SSO
-    Returns
-        dict: The contents of the validated JWT token if there are no
-              validation errors
+        token: A JWT access token originating from the EVE SSO
+    Returns:
+        The contents of the validated JWT access token if there are no errors
     """
-
-    jwk_set_url = "https://login.eveonline.com/oauth/jwks"
-
-    res = requests.get(jwk_set_url)
+    # fetch JWKs URL from meta data endpoint
+    res = requests.get(SSO_META_DATA_URL)
     res.raise_for_status()
-
     data = res.json()
+    try:
+        jwks_uri = data["jwks_uri"]
+    except KeyError:
+        raise RuntimeError(
+            f"Invalid data received from the SSO meta data endpoint: {data}"
+        ) from None
 
+    # fetch JWKs from endpoint
+    res = requests.get(jwks_uri)
+    res.raise_for_status()
+    data = res.json()
     try:
         jwk_sets = data["keys"]
-    except KeyError as e:
-        print("Something went wrong when retrieving the JWK set. The returned "
-              "payload did not have the expected key {}. \nPayload returned "
-              "from the SSO looks like: {}".format(e, data))
-        sys.exit(1)
+    except KeyError:
+        raise RuntimeError(
+            f"Invalid data received from the the jwks endpoint: {data}"
+        ) from None
 
-    jwk_set = next((item for item in jwk_sets if item["alg"] == "RS256"))
+    # pick the JWK with the requested alogorithm
+    jwk_set = [item for item in jwk_sets if item["alg"] == JWK_ALGORITHM].pop()
 
-    try:
-        return jwt.decode(
-            jwt_token,
-            jwk_set,
-            algorithms=jwk_set["alg"],
-            issuer="login.eveonline.com"
-        )
-    except ExpiredSignatureError:
-        print("The JWT token has expired: {}")
-        sys.exit(1)
-    except JWTError as e:
-        print("The JWT signature was invalid: {}").format(str(e))
-        sys.exit(1)
-    except JWTClaimsError as e:
-        try:
-            return jwt.decode(
-                        jwt_token,
-                        jwk_set,
-                        algorithms=jwk_set["alg"],
-                        issuer="https://login.eveonline.com"
-                    )
-        except JWTClaimsError as e:
-            print("The issuer claim was not from login.eveonline.com or "
-                  "https://login.eveonline.com: {}".format(str(e)))
-            sys.exit(1)
+    # try to decode the token and validate it against expected values
+    # will raise JWT exceptions if decoding fails or expected values do not match
+    contents = jwt.decode(
+        token=token,
+        key=jwk_set,
+        algorithms=jwk_set["alg"],
+        issuer=JWK_ISSUERS,
+        audience=JWK_AUDIENCE,
+    )
+    return contents
 
 
 def main():
-    """Manually input a JWT token to be validated."""
-
     token = input("Enter an access token to validate: ")
-    validated_jwt = validate_eve_jwt(token)
 
-    print("\nThe contents of the access token are: {}".format(validated_jwt))
+    try:
+        token_contents = validate_eve_jwt(token)
+    except ExpiredSignatureError:
+        print("The JWT token has expired")
+        sys.exit(1)
+    except JWTError as e:
+        print(f"The JWT token was invalid: {e}")
+        sys.exit(1)
+    except RuntimeError as e:
+        print(str(e))
+        sys.exit(1)
+    else:
+        print(f"\nThe contents of the access token are:\n{token_contents}")
 
 
 if __name__ == "__main__":
