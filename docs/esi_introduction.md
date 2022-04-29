@@ -49,13 +49,32 @@ Browsing the API's capabilities should be done via /dev/, /latest/ or /legacy/. 
 
 As an aside, all ESI routes end with a /. The only exceptions are the /\<version\>/swagger.json routes and routes used by the swagger-ui, which are passed through ESI.
 
-### Rate limiting
+## Rules
 
-There are no rate limits in place, ESI relies on caching more than rate limiting.
+#### Error headers
 
-ESI returns standard caching headers if the data is cached. Applications should notice and make use of these headers (expires and last-modified) on routes where they are provided.
+ESI does not have a rate limit (see exception bellow), instead it have a error limit. It limit how many errors you're allowed to get within a set time frame. The details are explain in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)
 
-Some endpoints, specifically for sending mail and reading contracts, have internal rate limits enforced by the EVE monolith. If these rate limits are exceeded, ESI will return HTTP status code 520. 
+Quick Reference:\
+`X-ESI-Error-Limit-Remain` errors left in this time frame\
+`X-ESI-Error-Limit-Reset` seconds left until next time frame and errors reset to zero.
+  
+#### Cache headers
+The `expires` header represent when new data will be available. You should not update before that.\
+If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request.\
+In the worst case scenario CCP made an error and you get new data. People have been banned for this in the past.
 
+Quick Reference:\
+`expires` when new data is available\
+`last-modified` when the data was last updated
+
+#### Search endpoint
+The search endpoint is not for structure discovery: [The ESI API is a shared resource, do not abuse it](https://developers.eveonline.com/blog/article/the-esi-api-is-a-shared-resource-do-not-abuse-it)
+
+#### Rate limit
+Some endpoints, specifically for sending mail and reading contracts, have internal rate limits enforced by the EVE monolith. If these rate limits are exceeded, ESI will return HTTP status code 520. More info in the ESI issue: [Error 520](https://github.com/esi/esi-issues/issues/636)
+
+#### Soft Rules
+  
 ESI is a shared resource and projects should be optimized to have minimum consumption of unnecessary resources. In the case of long running
 services, consistent amounts of slow traffic are preferred to spiky, high throughput traffic.
