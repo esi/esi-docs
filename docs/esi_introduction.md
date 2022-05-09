@@ -53,7 +53,7 @@ As an aside, all ESI routes end with a /. The only exceptions are the /\<version
 
 #### Error headers
 
-ESI does not have a rate limit (see exception bellow), instead it have a error limit. It limit how many errors you're allowed to get within a set time frame. The details are explain in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)
+ESI does not have a rate limit (see exception below), instead it has an error limit. It limits how many errors you're allowed to get within a set time frame. The details are explained in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)
 
 Quick Reference:\
 `X-ESI-Error-Limit-Remain` errors left in this time frame\
@@ -78,3 +78,9 @@ Some endpoints, specifically for sending mail and reading contracts, have intern
   
 ESI is a shared resource and projects should be optimized to have minimum consumption of unnecessary resources. In the case of long running
 services, consistent amounts of slow traffic are preferred to spiky, high throughput traffic.
+
+#### User agent header
+When making requests, it's recommended you set a `User-Agent` header in your client which includes the source of the request and contact information. This way, CCP can identify and help you with issues if you're banned.
+
+#### IP ban avoidance
+If you're banned from the ESI, this ban will be a permanent ban based on your IP. It's recommended that you reach out to CCP to resolve the ban and do not try to avoid the ban by changing your IP.
