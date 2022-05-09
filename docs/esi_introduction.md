@@ -51,36 +51,41 @@ As an aside, all ESI routes end with a /. The only exceptions are the /\<version
 
 ## Rules
 
-#### Error headers
+#### Error Limit
 
-ESI does not have a rate limit (see exception below), instead it has an error limit. It limits how many errors you're allowed to get within a set time frame. The details are explained in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)
-
-Quick Reference:\
-`X-ESI-Error-Limit-Remain` errors left in this time frame\
+ESI does not have a rate limit (see exception below), instead it has an error limit. It limits how many errors you're allowed to get within a set time frame. The details are explained in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)  
+Failing to respet the error limit can get you banned from ESI.
+  
+Error limit headers:  
+`X-ESI-Error-Limit-Remain` errors left in this time frame.  
 `X-ESI-Error-Limit-Reset` seconds left until next time frame and errors reset to zero.
   
-#### Cache headers
-The `expires` header represent when new data will be available. You should not update before that.\
-If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request.\
-In the worst case scenario CCP made an error and you get new data. People have been banned for this in the past.
+#### Caching
+The `expires` header represent when new data will be available. You should not update before that.  
+If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request.  
+In the worst case scenario you will get new data and it will count as circumventing the caching.  
+Circumventing the caching can get you banned from ESI.
 
-Quick Reference:\
-`expires` when new data is available\
+Cache headers:  
+`expires` when new data is available.  
 `last-modified` when the data was last updated
 
-#### Search endpoint
-The search endpoint is not for structure discovery: [The ESI API is a shared resource, do not abuse it](https://developers.eveonline.com/blog/article/the-esi-api-is-a-shared-resource-do-not-abuse-it)
+#### Search Endpoint
+The search endpoint is not for structure discovery: [The ESI API is a shared resource, do not abuse it](https://developers.eveonline.com/blog/article/the-esi-api-is-a-shared-resource-do-not-abuse-it)  
+Abusing the search endpoint can get you banned from ESI.
 
-#### Rate limit
-Some endpoints, specifically for sending mail and reading contracts, have internal rate limits enforced by the EVE monolith. If these rate limits are exceeded, ESI will return HTTP status code 520. More info in the ESI issue: [Error 520](https://github.com/esi/esi-issues/issues/636)
+#### Rate Limit
+Some endpoints, specifically for sending mail and reading contracts, have internal rate limits enforced by the EVE monolith. If these rate limits are exceeded, ESI will return HTTP status code 520. More info in the ESI issue: [Error 520](https://github.com/esi/esi-issues/issues/636)  
+The 520 error is counted in the error limit.
 
-#### Soft Rules
+#### Spread Load
   
 ESI is a shared resource and projects should be optimized to have minimum consumption of unnecessary resources. In the case of long running
 services, consistent amounts of slow traffic are preferred to spiky, high throughput traffic.
 
-#### User agent header
+
+#### User Agent
 When making requests, it's recommended you set a `User-Agent` header in your client which includes the source of the request and contact information. This way, CCP can identify and help you with issues if you're banned.
 
-#### IP ban avoidance
+#### IP Ban Avoidance
 If you're banned from the ESI, this ban will be a permanent ban based on your IP. It's recommended that you reach out to CCP to resolve the ban and do not try to avoid the ban by changing your IP.
