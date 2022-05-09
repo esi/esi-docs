@@ -22,6 +22,7 @@ If you're adding a new document, please be sure to include a link here somewhere
 - [Transitioning from CREST](docs/CREST_to_ESI.md)
 - [What defines a breaking change](docs/breaking_changes.md)
 - [Warning headers explained](docs/warning_header.md)
+- [ESI scrapes](docs/esi_scrapes.md)
 
 ### Using ESI Data
 
