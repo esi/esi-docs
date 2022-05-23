@@ -65,16 +65,18 @@ Error limit headers:
 #### Caching
 The `expires` header represent when new data will be available. You should not update before that.  
 If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request.  
-In the worst case scenario you will get new data and it will count as circumventing the caching.  
-Circumventing the caching can get you banned from ESI.
+In the worst case scenario you will get new data and it may count as circumventing the ESI caching.  
+Circumventing the ESI caching can get you banned from ESI.
 
 Cache headers:  
 `expires` when new data is available.  
 `last-modified` when the data was last updated
 
-#### Search Endpoint
-The search endpoint is not for structure discovery: [The ESI API is a shared resource, do not abuse it](https://developers.eveonline.com/blog/article/the-esi-api-is-a-shared-resource-do-not-abuse-it)  
-Abusing the search endpoint can get you banned from ESI.
+#### Discovery
+You're not allowed to use ESI to discover structures/characters/etc.  
+That includes the search endpoints, but, is not limited to that endpoint.  
+Abusing any endpoint for discovery can get you banned from ESI.  
+See: [The ESI API is a shared resource, do not abuse it](https://developers.eveonline.com/blog/article/the-esi-api-is-a-shared-resource-do-not-abuse-it)  
 
 #### Rate Limit
 Some endpoints, specifically for sending mail and reading contracts, have internal rate limits enforced by the EVE monolith. If these rate limits are exceeded, ESI will return HTTP status code 520. More info in the ESI issue: [Error 520](https://github.com/esi/esi-issues/issues/636)  
