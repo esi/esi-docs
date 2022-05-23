@@ -74,7 +74,7 @@ Cache headers:
 
 #### Discovery
 You're not allowed to use ESI to discover structures/characters/etc.  
-That includes the search endpoints, but, is not limited to those endpoint.  
+That includes the search endpoints, but, is not limited to those endpoints.  
 Abusing any endpoint for discovery can get you banned from ESI.  
 See: [The ESI API is a shared resource, do not abuse it](https://developers.eveonline.com/blog/article/the-esi-api-is-a-shared-resource-do-not-abuse-it)  
 
