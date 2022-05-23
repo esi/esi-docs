@@ -53,8 +53,10 @@ As an aside, all ESI routes end with a /. The only exceptions are the /\<version
 
 #### Error Limit
 
-ESI does not have a rate limit (see exception below), instead it has an error limit. It limits how many errors you're allowed to get within a set time frame. The details are explained in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)  
-Failing to respet the error limit can get you banned from ESI.
+ESI limits how many errors you're allowed to get within a set time frame. The details are explained in the ESI dev blog: [Error Rate Limiting](https://developers.eveonline.com/blog/article/error-limiting-imminent)  
+Once you reach the error limit, all your request are automatically discarded until the end of the time frame.  
+Failing to respect the error limit can get you banned from ESI.  
+This system allows ESI to not use a fixed request rate limit.
   
 Error limit headers:  
 `X-ESI-Error-Limit-Remain` errors left in this time frame.  
