@@ -87,7 +87,7 @@ ESI is a shared resource and projects should be optimized to have minimum consum
 services, consistent amounts of slow traffic are preferred to spiky, high throughput traffic.
 
 #### Historic Data
-You can get banned for high load on endpoints with historic data (killmails/wars/others?). There are no specifications about what constitute high load, that is entirely up to CCP to decide as needed. Killmails are usually safe with less than 50 rps (requests per second). Wars are usually safe with less than 20 rps. But, there are no guarantees - this isn't a official CCP policy! It's simple advice from another 3rd party developer.
+You can get banned for high load on endpoints with historic data (killmails/wars/others?). There are no specifications about what constitute high load, that is entirely up to CCP to decide as needed. Killmails are usually safe with less than 50 rps (requests per second). Wars are usually safe with less than 20 rps. But, there are no guarantees - this isn't a official CCP policy! It's simply advice from another 3rd party developer.
 
 #### User Agent
 When making requests, it's recommended you set a `User-Agent` header in your client which includes the source of the request and contact information. This way, CCP can identify and help you with issues if you're banned.
