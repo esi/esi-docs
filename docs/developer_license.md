@@ -11,7 +11,7 @@ A) No.
 A) Yes.
 
 3) Can I generate revenue via ads in my application?
-A) Yes, however you must follow CCP’s guidelines for [monetization of videos](https://community.eveonline.com/support/policies/monetization-of-videos-and-streaming-policy/)
+A) Yes, however you must follow CCP’s guidelines for [content creation terms of use](https://community.eveonline.com/support/policies/eve-online-content-creation-terms-of-use-en/)
 
 4) Am I allowed to collect donations from users of my application?
 A) Yes, as long as they are purely voluntary. “Donations” may not be mandatory, and you cannot require a donation to unlock premium access or special items.
