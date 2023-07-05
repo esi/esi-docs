@@ -46,7 +46,7 @@ You are welcome to point your clients and applications directly at the image ser
 - Avatar Bleuprint (type): [https://images.evetech.net/types/11568](https://images.evetech.net/types/11568)
   - [https://images.evetech.net/types/11568/bp](https://images.evetech.net/types/11568/bp)
   - [https://images.evetech.net/types/11568/bpc](https://images.evetech.net/types/11568/bpc)
-- Intact Hull Section (type): [https://images.evetech.net/types/30752](https://images.evetech.net/types/30752/relic)
+- Intact Hull Section (type): [https://images.evetech.net/types/30752](https://images.evetech.net/types/30752)
   - [https://images.evetech.net/types/30752/relic](https://images.evetech.net/types/30752/relic)
 
 # Legacy Portraits
