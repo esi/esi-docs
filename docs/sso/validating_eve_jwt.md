@@ -19,7 +19,7 @@ Listed below are the most important things to validate when using the JWT tokens
   "tenant": "tranquility",
   "tier": "live",
   "region": "world",
-  "aud": "EVE Online",
+  "aud": ["my3rdpartyclientid", "EVE Online"],
   "name": "Some Bloke",
   "owner": "8PmzCeTKb4VFUDrHLc/AeZXDSWM=",
   "exp": 1648563218,
@@ -46,6 +46,6 @@ You will need to ensure four things when validating a JWT token from the EVE SSO
 
 1. ### Validate the audience claim
 
-    The `aud` claim contains the audience and must match the string value: `"EVE Online"`
+    The `aud` claim contains the audience and must included both the `client_id` and the string value: `"EVE Online"`
 
 You can look [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/validate_jwt.py) for a code example in Python showing you how to validate a JWT token.
