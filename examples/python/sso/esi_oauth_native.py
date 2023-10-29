@@ -15,7 +15,7 @@ Prerequisites:
 To run this example, make sure you have completed the prerequisites and then
 run the following command from this directory as the root:
 
->>> python esi_oauth_native.py
+> python esi_oauth_native.py
 
 then follow the prompts.
 """

@@ -7,7 +7,7 @@ Prerequisites:
 
 This can be run by doing
 
->>> python validate_jwt.py
+> python validate_jwt.py
 
 and passing in a JWT access token that you have retrieved from the EVE SSO.
 """

@@ -7,7 +7,7 @@ Prerequisites:
 
 This can be run by doing
 
->>> python revoke_refresh_token.py
+> python revoke_refresh_token.py
 
 and entering the data prompted for.
 """
