@@ -50,4 +50,4 @@ If you know your refresh token has been compromised, it is important to revoke i
 3. The server responds with a 200 OK response code. If you submitted a valid token, the server has now invalidated it. Note that the server also returns a 200 OK if the token was invalid, because in both cases the end result is the same - you are not able to use the token to successfully request a new access token.
 
 
-If you'd like to look at an example of revoking a refresh token written in Python you can find one [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/revoke_refresh_token.py).
+If you'd like to look at an example of revoking a refresh token written in Python you can find one [here](https://github.com/esi/esi-docs/blob/master/src/main/python/sso/revoke_refresh_token.py).
