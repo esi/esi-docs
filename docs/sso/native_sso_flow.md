@@ -25,7 +25,7 @@ Here is the OAuth 2.0 flow your native application should be implementing:
 
     * `code_challenge=<base64url(SHA-256(code verifier))>` - In the PCKE protocol, a code challenge is used instead of basic authentication to allow your application to ship without its secret key. The reason for this being to protect malicious actors from being able to decompile your programs and retrieve the secret key. A more detailed explanation of the kind of attacks this protects against can be found in [RFC 7636](https://tools.ietf.org/html/rfc7636#section-1)
 
-        To create a code challenge your application will first need to create a one time use code verifier. A simple way to do this is to generate 32 random bytes and base64url encode them. Store this code verifier as you'll need it in a later step. To create a corresponding code challenge, SHA-256 hash the code verifier, and then base64url encode the raw hash output. The base64url encoding is defined in [RFC 4648](https://tools.ietf.org/html/rfc4648#section-5) and should not contain padding. If you'd like to see an example of creating a code challenge in Python you can find that [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/esi_oauth_native.py). *Feel free to contribute examples in other languages to this repository to help others.*
+        To create a code challenge your application will first need to create a one time use code verifier. A simple way to do this is to generate 32 random bytes and base64url encode them. Store this code verifier as you'll need it in a later step. To create a corresponding code challenge, SHA-256 hash the code verifier, and then base64url encode the raw hash output. The base64url encoding is defined in [RFC 4648](https://tools.ietf.org/html/rfc4648#section-5) and should not contain padding. If you'd like to see an example of creating a code challenge in Python you can find that [here](https://github.com/esi/esi-docs/blob/master/src/main/python/sso/esi_oauth_native.py). *Feel free to contribute examples in other languages to this repository to help others.*
 
     * `code_challenge_method=S256` - This is telling the EVE SSO that the code challenge was hashed using the [SHA-256 hashing algorithm](https://en.wikipedia.org/wiki/SHA-2) and is the only method currently accepted at this time.
 
@@ -37,7 +37,7 @@ If you wanted access to a character's blueprints and your callback URL was `http
 
     Your application needs to lift the value of the `code` query parameter from the URL so that it can be used in the next step. This authorization code is a one time use only token that has a lifetime of 5 minutes. If you do not respond within 5 minutes you will have to start over at step 1 again.
 
-5. Now that your application has the authorization code, it needs to send a POST request to `https://login.eveonline.com/v2/oauth/token` with a payload containing the returned authorization code, the client ID of your application, and the original URL safe Base 64 encoded 32 byte string that was randomly created for the code challenge in step 3. *Note: you can look at a Python example of this returning a code verifier [here](https://github.com/esi/esi-docs/blob/master/examples/python/sso/esi_oauth_native.py)*.
+5. Now that your application has the authorization code, it needs to send a POST request to `https://login.eveonline.com/v2/oauth/token` with a payload containing the returned authorization code, the client ID of your application, and the original URL safe Base 64 encoded 32 byte string that was randomly created for the code challenge in step 3. *Note: you can look at a Python example of this returning a code verifier [here](https://github.com/esi/esi-docs/blob/master/src/main/python/sso/esi_oauth_native.py)*.
 
 Here is a little more detail on how to craft this request:
 
@@ -71,7 +71,7 @@ The following diagram is a visual representation of the steps above. Any number 
 
 ![Native OAuth 2.0 Flow Diagram](img/native_oauth_flow.svg)
 
-If any of this is confusing, there is a [code example](https://github.com/esi/esi-docs/blob/master/examples/python/sso/esi_oauth_native.py) available in Python that you can run locally to see this flow in action.
+If any of this is confusing, there is a [code example](https://github.com/esi/esi-docs/blob/master/src/main/python/sso/esi_oauth_native.py) available in Python that you can run locally to see this flow in action.
 
 ## Further reading
 You can continue by reading about [how to send an authorized request to ESI](sending_esi_auth_request.md) or you can read about [how to get a new access token using your refresh token](refreshing_access_tokens.md).
