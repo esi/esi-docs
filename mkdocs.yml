@@ -1,0 +1,82 @@
+site_name: Documentation
+site_url: !ENV [SITE_URL, 'https://developers.eveonline.com/docs/']
+
+repo_url: !ENV [GITHUB_REPO_URL, 'https://github.com/esi/esi-docs']
+repo_name: !ENV [GITHUB_REPOSITORY, 'esi/esi-docs']
+edit_uri: edit/main/docs/
+
+nav:
+  - "Home": 
+    - Welcome: index.md
+    - Resources: resources/index.md
+  - Services:
+    - "ESI": services/esi/index.md
+    - "Image Server": services/image-server/index.md
+    - "Static Data Export": services/sde/index.md
+    - "Single-Sign-On": services/sso/index.md
+  - "Guides and Examples": guides/index.md
+  - Community:
+    - "Support / Social": community/social-and-support.md
+    - "Community Services": community/community-services.md
+not_in_nav: |
+  community/*/index.md
+
+theme:
+  name: material
+  logo: assets/images/eve-logo.svg
+  favicon: assets/images/favicon.ico
+  palette:
+    scheme: eveonline
+  font:
+    code: Noto Sans
+  features:
+    - content.tooltips
+    - content.tabs.link
+    - navigation.expand
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.tabs
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - toc.integrate
+
+extra_css:
+  - assets/stylesheet/theme.css
+
+extra_javascript:
+  - assets/javascript/theme.js
+
+extra:
+  homepage: !ENV [SITE_HOME, 'https://developers.eveonline.com/']
+
+plugins:
+  - search
+  - social
+  - tags
+  - privacy
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables

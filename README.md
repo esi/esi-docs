@@ -1,64 +1,124 @@
-# ESI Documentation
-ESI is the name of EVE Online's publicly available API, allowing you to query the game itself to get info about your character, corporation and more. This documentation can be used as a jumping off point to learn how to begin developing against ESI or as a place to learn some of the ESI concepts that are harder to grasp.
+# Local environment
 
-We appreciate help from the EVE Online community and encourage pull requests if you feel any documentation is missing. Our wonderful [ESI community](https://github.com/esi/esi-issues/blob/master/contributors.md#esi-community-members) helps to moderate this documentation.
+This project works best when you have a local environment set up, preferably via WSL2.
+This will allow you to run the project locally and see the change you make in real-time.
 
-## Important Online Resources
-The following is a list of important online resources for ESI development.
+### Fork the repository
 
-* Watch the [third party developer blog](https://developers.eveonline.com/blog) for updates about ESI.
-* Make bug or feature requests at our [esi-issues](https://github.com/esi/esi-issues) Github page.
-* For real time discussion about ESI join us on our #esi channel in Slack by following [these instructions](https://www.fuzzwork.co.uk/tweetfleet-slack-invites/).
-* Watch the [ESI changelog](https://github.com/esi/esi-issues/blob/master/changelog.md) for upcoming endpoint changes. Updates are broadcast in the #esi channel, or you can [subscribe to email notifications](https://app.github-file-watcher.com/?repository=esi/esi-issues&glob=changelog.md).
+Submitting a pull request with your changes is the preferred way to contribute to this project.
+To do this, you will need to fork the repository so you can make changes to your own copy of the project.
 
-## Table of Contents
-If you're adding a new document, please be sure to include a link here somewhere.
+This assumes you have a GitHub account already, so if you don't, you'll need to create one.
 
-### General
+Head to [this page](https://github.com/esi/esi-docs/fork) and follow the instructions there to fork the repository.
 
-- [ESI Introduction](docs/esi_introduction.md)
-- [Frequently Asked Questions](docs/FAQ.md)
-- [Transitioning from XML](docs/XML_to_ESI.md)
-- [Transitioning from CREST](docs/CREST_to_ESI.md)
-- [What defines a breaking change](docs/breaking_changes.md)
-- [Warning headers explained](docs/warning_header.md)
-- [ESI scrapes](docs/esi_scrapes.md)
+### Clone the repository
 
-### Using ESI Data
+Now that you have your own clone, you will need to clone it on your local machine.
+If you are using Visual Studio Code, you can do this by clicking the `Clone Repository` button on the start page.
 
-- [Dogma](docs/dogma.md)
-- [ID Ranges](docs/id_ranges.md)
-- [Useful Formulae](docs/useful_formulae.md)
-- [Asset location_id](docs/asset_location_id.md)
-- [Notifications](docs/notifications.md)
+If you are using the command line, you can do this by running the following command:
 
-### Common Scenarios
-- [Resolve Structure IDs](docs/scenarios/resolve_structure_ids.md)
-- [Retrieve Structure Markets](docs/scenarios/structure_markets.md)
+```bash
+git clone <path-to-your-fork>
+cd esi-docs
+```
 
-### SSO
+### Creating a virtual environment
 
-- [Introduction](docs/sso/README.md)
-- [High level overview of SSO authorization flow](docs/sso/sso_authorization_flow.md)
-- [Creating an EVE Online SSO application](docs/sso/creating_sso_application.md)
-- [OAuth 2.0 for web based applications](docs/sso/web_based_sso_flow.md)
-- [OAuth 2.0 for desktop/mobile applications](docs/sso/native_sso_flow.md)
-- [Refreshing access tokens](docs/sso/refreshing_access_tokens.md)
-- [Validating EVE SSO JWT tokens](docs/sso/validating_eve_jwt.md)
-- [Sending authenticated requests to ESI](docs/sso/sending_esi_auth_request.md)
-- [Migrating from SSO v1 to v2](docs/sso/migrate_v1_v2.md)
-- [Old documentation](https://github.com/ccpgames/eveonline-third-party-documentation/blob/master/docs/sso/index.md)
+This project uses python, so it is recommended to create a virtual environment to manage the dependencies.
+This ensures that you don't clutter your system python installation with dependencies that are only needed
+for this project.
 
-### Other Resources
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-- [Static Data Export](docs/sde_introduction.md)
-  - [SDE Conversions](docs/sde_conversions.md)
-  - [SDE Complements](docs/sde_complements.md)
-- [Image Server](docs/image_server.md)
+When you are starting a new terminal session, you will need to activate the virtual environment again.
+You can do this by navigating to the project directory and running the `source .venv/bin/activate` command.
 
-### Community FAQs
+Using make:
+```bash
+make init
+```
 
-- [Guidelines](docs/guidelines.md)
-- [Best Practices](docs/best_practices.md)
-- [Quick URL Reference](docs/quick_reference.md)
-- [Developer License](docs/developer_license.md)
+### Installing dependencies
+
+Now that you have a virtual environment set up, you can install the dependencies for this project.
+This can be done by running the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the project
+
+Now that you have the dependencies installed, you can run the project locally.
+This can be done by running the following command:
+
+```bash
+mkdocs serve
+```
+
+This will start a local webserver that you can access by navigating to `http://127.0.0.1:8000/docs/` in your browser.
+
+You can close the server by pressing `Ctrl+C` in the terminal.
+
+Using make:
+```bash
+make serve
+```
+
+### Making changes
+
+While the server is running, you can make changes to the project and see them reflected in real-time.
+Edit the files under /docs/ and save them.
+The server will automatically rebuild the relevant pages and refresh the page for you.
+
+# Best practices
+
+When creating a pull request, there are a few best practices that you should follow to help create a smooth review process.
+To help with this, we have created a checklist that you can use to ensure that your pull request meets the standards we wish to maintain.
+
+### Write small PRs
+
+A pull request should fulfil a single purpose, and should not contain unrelated changes.
+This makes it easier to review the changes and understand the purpose of the pull request.
+
+### Review your own changes
+
+Before submitting, double-check your changes to ensure that you haven't missed anything.
+This includes checking for typos, broken links, and other issues that might have been introduced.
+
+### Write good commit messages
+
+Commit messages should be concise and descriptive.
+They don't need to be long, but they should provide enough context to understand the purpose of the commit.
+
+If you are working locally, you can always squash your commits before submitting the pull request to avoid cluttering the commit history with unnecessary commits.
+
+### Follow existing conventions
+
+When making changes, try to follow the existing conventions in the project.
+This includes things like naming conventions, file structure, and formatting.
+This helps maintain consistency, and makes it easier for others to understand your changes.
+If you feel like a convention should be changed, feel free to discuss it in the pull request, or create a separate discussion for that.
+
+# Notes about the review process.
+
+Pull request reviews are an important part of the contribution process.
+They help ensure that changes are of high quality, and that they meet the standards of the project.
+This often involves providing feedback, asking questions, and requesting changes.
+
+It is important to remember that that feedback is about the code, not the person.
+It is not a personal attack, but rather a way to improve the quality of the project.
+It is also important to remember that everyone makes mistakes, and that feedback is an opportunity to learn and grow.
+If you do not understand a comment, or if you disagree with it, feel free to ask for clarification or to discuss it further, but do so in a respectful and constructive manner.
+
+When reviewing a pull request, it is important to be respectful and constructive.
+This means providing feedback in a clear and concise manner, and avoiding personal attacks or negative language.
+It also means being open to feedback yourself, and being willing to learn from others.
+
+It should be noted that this also means that sometimes pull requests will be rejected.
+A rejection does not mean that your contribution is not valued, but rather that it is not a good fit for the project at this point in time.

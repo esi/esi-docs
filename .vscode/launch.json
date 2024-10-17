@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Local development",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceRoot}/.venv/bin/mkdocs",
+      "args": ["serve"],
+      "serverReadyAction": {
+        "pattern": "Serving on (https?://.+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    }
+  ]
+}

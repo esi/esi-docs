@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "GitHub.copilot",
+    "bierner.markdown-mermaid",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml"
+  ]
+}
