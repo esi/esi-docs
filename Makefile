@@ -7,3 +7,9 @@ init:
 
 serve:
 	source .venv/bin/activate && mkdocs serve
+
+build:
+	source .venv/bin/activate && mkdocs build --clean
+
+test:
+	source .venv/bin/activate && mkdocs build --strict --clean

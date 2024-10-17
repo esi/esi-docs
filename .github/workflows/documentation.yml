@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup python
+      - name: Setup python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
@@ -29,12 +29,14 @@ jobs:
             requirements.txt
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: make init
 
       - name: Build documentation
-        run: mkdocs build --clean
+        run: make build
 
-      - name: Configure AWS Credentials
+      - name: Configure AWS Credentials if S3 deploying is enabled
+        # Giving this step a name so we can check later if we need to deploy to GitHub Pages instead.
+        id: using-s3
         if: ${{ env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY && env.AWS_S3_BUCKET && env.AWS_REGION }}
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -47,28 +49,20 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
-      - name: Push to S3
-        if: ${{ env.AWS_S3_BUCKET && env.AWS_REGION }}
+      - name: Push to S3 if enabled
+        if: ${{ steps.using-s3.conclusion == 'success' }}
         run: aws s3 sync ./site/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
-      - name: Upload to GitHub Pages
-        if: ${{ !(env.AWS_S3_BUCKET && env.AWS_REGION) }}
+      - name: Prepare GitHub Pages artifact if not deploying to S3
+        if: ${{ steps.using-s3.conclusion == 'skipped' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
       - name: Deploy to GitHub Pages
-        if: ${{ !(env.AWS_S3_BUCKET && env.AWS_REGION) }}
-        # If the deployment fails, this is most likely because GitHub pages are not enabled for the repository.
-        # At that point we do have the documentation available as an artifact.
+        if: ${{ steps.using-s3.conclusion == 'skipped' }}
         continue-on-error: true
         uses: actions/deploy-pages@v4
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}

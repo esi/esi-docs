@@ -24,7 +24,7 @@ jobs:
             requirements.txt
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: make init
 
-      - name: Build documentation
-        run: mkdocs build --strict --quiet
+      - name: Build documentation with strict mode
+        run: make test
