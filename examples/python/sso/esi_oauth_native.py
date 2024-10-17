@@ -1,7 +1,7 @@
 """ Python 3 native (desktop/mobile) OAuth 2.0 example.
 
 This example can be run from the command line and will show you how the
-OAuth 2.0 flow should be handled if you are a web based application.
+OAuth 2.0 flow should be handled if you are a desktop or mobile application.
 
 Prerequisites:
     * Create an SSO application at developers.eveonline.com with the scope
