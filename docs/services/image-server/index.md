@@ -30,7 +30,7 @@ The `tenant` parameter defines the server for which to request images. This defa
 
 - NPC faction logos are available in the `corporations` category using their faction ID.
 - The ID 1 can be used with alliances, corporations and characters to retrieve the default logo/portrait.
-- Images are returned as PNGs, with the exception of character portraiuts, which are returned as JPEGs.
+- Images are returned as PNGs, with the exception of character portraits, which are returned as JPEGs.
 - You are welcome to point your clients and applications directly at the image service and use it as a CDN. You do not need to cache images locally.
 
 ## Examples
