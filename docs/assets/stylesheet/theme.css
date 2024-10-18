@@ -1,0 +1,214 @@
+/* Only display on screen, not on print*/
+@media screen {
+  [data-scrolled] [data-md-color-scheme="eveonline"] {
+    --logo-width: 110px;
+    --test: 1;
+    --header-padding: 0.5rem 0;
+    --header-background: var(--md-primary-fg-color);
+    --header-shadow: 0 0 .2rem #0000001a,0 .2rem .4rem #0003;
+  }
+
+  [data-md-color-scheme="eveonline"] {
+
+    --logo-width: 110px;
+    --header-padding: 0.5rem 0;
+    --nav-width: 61rem;
+    --source-width: 7rem;
+    --header-background: transparent;
+    --header-shadow: inherit;
+
+    @media (min-width: 75rem) {
+      --header-padding: 1.7rem 0 1.1rem;
+      --logo-width: 130px;
+      --nav-width: 1632px;
+    }
+
+    .md-header {
+      will-change: background-color, box-shadow, padding, backdrop-filter;
+
+      transition: all .3s ease-in-out;
+
+      padding: var(--header-padding);
+      background: var(--header-background);
+      box-shadow: var(--header-shadow);
+      display: flex;
+      justify-items: center;
+    }
+    .md-header > .md-grid {
+      width: 100%;
+      max-width: var(--nav-width);
+      margin: inherit;
+      margin-inline: auto;
+      padding: 0 16px;
+    }
+    .md-header > .md-grid > .md-header__source {
+      width: var(--source-width);
+      margin-left: 0.5rem;
+    }
+
+    .md-header > .md-grid > .md-logo {
+      margin: 0 1.5rem 0 0;
+      margin-right: 40px;
+      padding: 0;
+    }
+
+    .md-header > .md-grid > .md-header__title {
+      margin-left: 0;
+    }
+    .md-header > .md-grid > .md-header__title .md-header__topic {
+      font-weight: 400;
+      padding: 4px 8px;
+    }
+    .md-header > .md-grid > .md-header__title .md-header__topic:first-child {
+      font-weight: 400;
+    }
+
+    .md-header > .md-grid > .md-logo img,
+    .md-header > .md-grid > .md-logo svg {
+      transition: width .3s ease-in-out;
+      width: var(--logo-width);
+      height: auto;
+      margin-top: 10px;
+    }
+
+    .md-footer {
+      background: transparent;
+      border-top: 1px solid #202020;
+    }
+    .md-footer > .md-footer-meta {
+      background: transparent;
+    }
+    
+
+    /* Indicate that the site is rendered with a dark color scheme*/
+    color-scheme: dark;
+
+    --md-primary-fg-color:        hsla(0,0%,8%,.9);
+
+    /* Default color shades */
+    --md-default-fg-color:             hsla(var(--md-hue), 15%, 90%, 0.82);
+    --md-default-fg-color--light:      hsla(var(--md-hue), 15%, 90%, 0.56);
+    --md-default-fg-color--lighter:    hsla(var(--md-hue), 15%, 90%, 0.32);
+    --md-default-fg-color--lightest:   hsla(var(--md-hue), 15%, 90%, 0.12);
+    --md-default-bg-color:             hsla(var(--md-hue),  0%,  6%, 1.0);
+    --md-default-bg-color--light:      hsla(var(--md-hue), 15%, 14%, 0.54);
+    --md-default-bg-color--lighter:    hsla(var(--md-hue), 15%, 14%, 0.26);
+    --md-default-bg-color--lightest:   hsla(var(--md-hue), 15%, 14%, 0.07);
+
+    /* Code color shades */
+    --md-code-fg-color:                hsla(var(--md-hue), 18%, 86%, 0.82);
+    --md-code-bg-color:                hsla(var(--md-hue), 15%, 18%, 1);
+
+    /* Code highlighting syntax color shades */
+    --md-code-hl-number-color:         hsla(6, 74%, 63%, 1);
+    --md-code-hl-special-color:        hsla(340, 83%, 66%, 1);
+    --md-code-hl-function-color:       hsla(291, 57%, 65%, 1);
+    --md-code-hl-constant-color:       hsla(250, 62%, 70%, 1);
+    --md-code-hl-keyword-color:        hsla(219, 66%, 64%, 1);
+    --md-code-hl-string-color:         hsla(150, 58%, 44%, 1);
+    --md-code-hl-name-color:           var(--md-code-fg-color);
+    --md-code-hl-operator-color:       var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color:    var(--md-default-fg-color--light);
+    --md-code-hl-comment-color:        var(--md-default-fg-color--light);
+    --md-code-hl-generic-color:        var(--md-default-fg-color--light);
+    --md-code-hl-variable-color:       var(--md-default-fg-color--light);
+
+    /* Typeset color shades */
+    --md-typeset-color:                var(--md-default-fg-color);
+
+    /* Typeset `a` color shades */
+    --md-typeset-a-color:              var(--md-primary-fg-color);
+
+    /* Typeset `kbd` color shades */
+    --md-typeset-kbd-color:            hsla(var(--md-hue), 15%, 90%, 0.12);
+    --md-typeset-kbd-accent-color:     hsla(var(--md-hue), 15%, 90%, 0.2);
+    --md-typeset-kbd-border-color:     hsla(var(--md-hue), 15%, 14%, 1);
+
+    /* Typeset `mark` color shades */
+    --md-typeset-mark-color:           hsla(#{hex2hsl($clr-blue-a200)}, 0.3);
+
+    /* Typeset `table` color shades */
+    --md-typeset-table-color:          hsla(var(--md-hue), 15%, 95%, 0.12);
+    --md-typeset-table-color--light:   hsla(var(--md-hue), 15%, 95%, 0.035);
+
+    /* Admonition color shades */
+    --md-admonition-fg-color:          var(--md-default-fg-color);
+    --md-admonition-bg-color:          var(--md-default-bg-color);
+
+    /* Footer color shades */
+    --md-footer-bg-color:              hsla(var(--md-hue), 15%, 10%, 0.87);
+    --md-footer-bg-color--dark:        hsla(var(--md-hue), 15%, 8%, 1);
+
+    /* Shadow depth 1 */
+    --md-shadow-z1:
+      0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
+      0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.1);
+
+    /* Shadow depth 2 */
+    --md-shadow-z2:
+      0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.25),
+      0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.25);
+
+    /* Shadow depth 3 */
+    --md-shadow-z3:
+      0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.4),
+      0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.35);
+
+    /* Hide images for light mode */
+    img[src$="#only-light"],
+    img[src$="#gh-light-mode-only"] {
+      display: none;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+
+  [data-md-color-scheme="eveonline"][data-md-color-primary="pink"] {
+      --md-typeset-a-color: hsl(340, 81%, 63%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="purple"] {
+      --md-typeset-a-color: hsl(291, 53%, 63%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="deep-purple"] {
+      --md-typeset-a-color: hsl(262, 73%, 70%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="indigo"] {
+      --md-typeset-a-color: hsl(219, 76%, 62%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="teal"] {
+      --md-typeset-a-color: hsl(174, 100%, 40%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="green"] {
+      --md-typeset-a-color: hsl(122, 39%, 60%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="deep-orange"] {
+      --md-typeset-a-color: hsl(14, 100%, 65%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="brown"] {
+      --md-typeset-a-color: hsl(16, 45%, 56%);
+  }
+
+  /* Set neutral colors to indigo */
+  [data-md-color-scheme="eveonline"][data-md-color-primary="grey"] {
+      --md-typeset-a-color: hsl(219, 66%, 62%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="blue-grey"] {
+      --md-typeset-a-color: hsl(219, 66%, 62%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="white"] {
+      --md-typeset-a-color: hsl(219, 66%, 62%);
+  }
+  [data-md-color-scheme="eveonline"][data-md-color-primary="black"] {
+      --md-typeset-a-color: hsl(219, 66%, 62%);
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* Switching in progress - disable all transitions temporarily */
+  [data-md-color-switching] *,
+  [data-md-color-switching] *::before,
+  [data-md-color-switching] *::after {
+    transition-duration: 0ms !important; /* stylelint-disable-line */
+  }
+}
