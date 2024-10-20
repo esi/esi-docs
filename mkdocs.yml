@@ -9,6 +9,7 @@ nav:
   - "Home": 
     - Welcome: index.md
     - Resources: resources/index.md
+    - "ID Ranges": resources/id-ranges.md
   - Services:
     - "ESI": services/esi/index.md
     - "Image Server": services/image-server/index.md
@@ -30,6 +31,8 @@ theme:
   font:
     code: Noto Sans
   features:
+    - content.action.edit
+    - content.action.view
     - content.tooltips
     - content.tabs.link
     - navigation.expand
