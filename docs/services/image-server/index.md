@@ -36,13 +36,13 @@ The `tenant` parameter defines the server for which to request images. This defa
 ## Examples
 
 |                 Category  | Variation | Example                                                                                |
-| ------------------------: | --------- | -------------------------------------------------------------------------------------- |
-|                  Alliance | Logo      | ![Alliance Logo](https://images.evetech.net/alliances/99011477/logo?size=64)           |
-|               Corporation | Logo      | ![Corporation Logo](https://images.evetech.net/corporations/1686954550/logo?size=64)   |
-| Corporation (NPC Faction) | Logo      | ![Corporation Logo](https://images.evetech.net/corporations/500001/logo?size=64)       |
-|                 Character | Portrait  | ![Character Portrait](https://images.evetech.net/characters/91072482/portrait?size=64) |
-|                      Type | Render    | ![Type Render](https://images.evetech.net/types/587/render?size=64)                    |
-|                      Type | Icon      | ![Type Render](https://images.evetech.net/types/587/icon?size=64)                      |
-|                      Type | BPO       | ![Type Render](https://images.evetech.net/types/11568/bp?size=64)                      |
-|                      Type | BPC       | ![Type Render](https://images.evetech.net/types/11568/bpc?size=64)                     |
-|                      Type | Relic     | ![Type Render](https://images.evetech.net/types/30752/relic?size=64)                   |
+| ------------------------: | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                  Alliance | Logo      | [![Alliance Logo](https://images.evetech.net/alliances/99011477/logo?size=64)](https://images.evetech.net/alliances/99011477/logo?size=64)                |
+|               Corporation | Logo      | [![Corporation Logo](https://images.evetech.net/corporations/1686954550/logo?size=64)](https://images.evetech.net/corporations/1686954550/logo?size=64)   |
+| Corporation (NPC Faction) | Logo      | [![Corporation Logo](https://images.evetech.net/corporations/500001/logo?size=64)](https://images.evetech.net/corporations/500001/logo?size=64)           |
+|                 Character | Portrait  | [![Character Portrait](https://images.evetech.net/characters/91072482/portrait?size=64)](https://images.evetech.net/characters/91072482/portrait?size=64) |
+|                      Type | Render    | [![Type Render](https://images.evetech.net/types/587/render?size=64)](https://images.evetech.net/types/587/render?size=64)                                |
+|                      Type | Icon      | [![Type Render](https://images.evetech.net/types/587/icon?size=64)](https://images.evetech.net/types/587/icon?size=64)                                    |
+|                      Type | BPO       | [![Type Render](https://images.evetech.net/types/11568/bp?size=64)](https://images.evetech.net/types/11568/bp?size=64)                                    |
+|                      Type | BPC       | [![Type Render](https://images.evetech.net/types/11568/bpc?size=64)](https://images.evetech.net/types/11568/bpc?size=64)                                  |
+|                      Type | Relic     | [![Type Render](https://images.evetech.net/types/30752/relic?size=64)](https://images.evetech.net/types/30752/relic?size=64)                              |
