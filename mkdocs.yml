@@ -25,11 +25,11 @@ not_in_nav: |
 theme:
   name: material
   logo: assets/images/eve-logo.svg
+  custom_dir: overrides
   favicon: assets/images/favicon.ico
   palette:
     scheme: eveonline
-  font:
-    code: Noto Sans
+  font: false
   features:
     - content.action.edit
     - content.action.view
@@ -46,7 +46,11 @@ theme:
     - toc.follow
     - toc.integrate
 
+watch:
+  - overrides
+
 extra_css:
+  - assets/stylesheet/font.css
   - assets/stylesheet/theme.css
 
 extra_javascript:
