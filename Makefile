@@ -1,4 +1,4 @@
-.PHONY: init serve
+.PHONY: init serve build test
 SHELL := /bin/bash
 
 init:
