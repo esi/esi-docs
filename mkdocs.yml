@@ -63,6 +63,9 @@ extra_javascript:
 
 extra:
   homepage: !ENV [SITE_HOME, 'https://developers.eveonline.com/']
+  analytics:
+    provider: custom
+    property: !ENV [GTM_ID, 'GTM-XXXXXXX']
 
 plugins:
   - search
