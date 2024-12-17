@@ -33,6 +33,8 @@ jobs:
 
       - name: Build documentation
         run: make build
+        env:
+          GTM_ID: ${{ secrets.GTM_ID }}
 
       - name: Configure AWS Credentials if S3 deploying is enabled
         # Giving this step a name so we can check later if we need to deploy to GitHub Pages instead.
