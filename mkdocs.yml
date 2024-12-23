@@ -12,16 +12,15 @@ nav:
   - "Home": 
     - Welcome: index.md
     - Resources: resources/index.md
-    - "ID Ranges": resources/id-ranges.md
+    - Support: support.md
+    - ID Ranges: resources/id-ranges.md
   - Services:
     - "ESI": services/esi/index.md
     - "Image Server": services/image-server/index.md
     - "Static Data Export": services/sde/index.md
     - "Single-Sign-On": services/sso/index.md
   - "Guides and Examples": guides/index.md
-  - Community:
-    - "Support / Social": community/social-and-support.md
-    - "Community Services": community/community-services.md
+  - Community: community/community-services.md
 not_in_nav: |
   community/*/index.md
 
@@ -66,6 +65,78 @@ extra:
   analytics:
     provider: custom
     property: !ENV [GTM_ID, 'GTM-XXXXXXX']
+  footer:
+    title: Follow EVE Online
+    socials:
+      - icon: facebook-f
+        url: https://www.facebook.com/eveonline
+      - icon: twitter
+        url: https://twitter.com/eveonline
+      - icon: youtube
+        url: https://www.youtube.com/channel/UCwF3VyalTHzL0L-GDlwtbRw/
+      - icon: twitch
+        url: https://www.twitch.tv/ccp
+      - icon: discord 
+        url: https://eveonline.com/discord
+      - icon: instagram
+        url: https://www.instagram.com/eveonline/
+      - icon: vk
+        url: https://vk.com/eveonline
+    columns:
+      - title: Play EVE Online
+        links:
+          - title: Play for Free
+            url: https://www.eveonline.com/signup
+          - title: Download the Game
+            url: https://www.eveonline.com/download
+          - title: Upgrade to Omega
+            url: https://store.eveonline.com/#omega
+          - title: System Requirements
+            url: https://support.eveonline.com/hc/en-us/articles/5885219196828-System-Requirements
+          - title: Starter Guide for Beginners
+            url: https://www.eveonline.com/eve-academy
+          - title: Return to EVE
+            url: https://www.eveonline.com/return
+          - title: Recover Account
+            url: https://secure.eveonline.com/RecoverAccount
+      - title: Current Players
+        links:
+          - title: Account Management
+            url: https://secure.eveonline.com/account
+          - title: Support
+            url: https://support.eveonline.com/
+          - title: Forums
+            url: https://forums.eveonline.com/
+          - title: Developers
+            url: https://developers.eveonline.com/
+          - title: Recruit a Friend
+            url: https://www.eveonline.com/recruit
+          - title: Redeem a Code
+            url: https://secure.eveonline.com/code-activation
+          - title: Character Transfer
+            url: https://secure.eveonline.com/transfer-character
+          - title: 3rd Party Retailers
+            url: https://secure.eveonline.com/third-party-retailers
+      - title: Worlds of EVE
+        links:
+          - title: EVE Universe
+            url: https://universe.eveonline.com
+          - title: EVE Fanfest
+            url: https://fanfest.eveonline.com
+          - title: Merch
+            url: https://merch.eve.com/
+          - title: Project Discovery
+            url: https://www.eveonline.com/discovery/
+      - title: Site Info
+        links:
+          - title: About CCP
+            url: https://www.ccpgames.com/company/about/
+          - title: Terms of Service
+            url: https://community.eveonline.com/support/policies/terms-of-service-en/
+          - title: Privacy Policy
+            url: https://community.eveonline.com/support/policies/privacy-policy-en/
+          - title: RSS Feed
+            url: https://developers.eveonline.com/feed.xml
 
 plugins:
   - search
