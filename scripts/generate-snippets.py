@@ -41,6 +41,18 @@ def path_to_snippet(fname):
     return f"snippets/{fname[len(snipets_path) + 1:]}"
 
 
+def write_if_changed(fname, content):
+    try:
+        with open(fname, "r") as f:
+            old_content = f.read()
+    except FileNotFoundError:
+        old_content = None
+
+    if old_content != content:
+        with open(fname, "w") as f:
+            f.write(content)
+
+
 # Process a folder and generate combined markdown files based on the snippets found.
 def process_folder(path, files):
     found = {}
@@ -65,8 +77,7 @@ def process_folder(path, files):
                     ]
                 )
         content.append("")
-        with open(fname, "w") as f:
-            f.writelines("\n".join(content))
+        write_if_changed(fname, "\n".join(content))
 
 
 def generate():
