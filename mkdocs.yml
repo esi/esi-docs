@@ -33,7 +33,6 @@ theme:
     scheme: eveonline
   font: false
   features:
-    - content.action.edit
     - content.action.view
     - content.tooltips
     - content.tabs.link
@@ -52,6 +51,7 @@ theme:
 watch:
   - overrides
   - snippets
+  - main.py
 
 extra_css:
   - assets/stylesheet/font.css
@@ -143,6 +143,8 @@ plugins:
   - social
   - tags
   - privacy
+  - macros:
+      on_undefined: keep
 
 markdown_extensions:
   - abbr
