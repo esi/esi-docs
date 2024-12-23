@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% import "partials/language.html" as lang with context %}
+
+{% block scripts %} {{ super() }}
+<!-- Google Tag Manager (noscript) -->
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id={{ config.extra.analytics.property }}"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  ></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{% endblock %}
+
+
+{% block site_nav %}
+<!-- Navigation -->
+{% if nav %}
+  {% if page.meta and page.meta.hide %}
+    {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+  {% endif %}
+  <div
+    class="esi-sidebar md-sidebar md-sidebar--primary"
+    data-md-type="navigation"
+    {{ hidden }}
+  >
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        {% include "partials/nav.html" %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<!-- Table of contents -->
+{% if "toc.integrate" not in features %}
+  {% if page.meta and page.meta.hide %}
+    {% set hidden = "hidden" if "toc" in page.meta.hide %}
+  {% endif %}
+  <div
+    class="md-sidebar md-sidebar--secondary"
+    data-md-type="toc"
+    {{ hidden }}
+  >
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        {% include "partials/toc.html" %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
