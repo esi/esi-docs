@@ -43,7 +43,7 @@ sequenceDiagram
     sso-->>app: Responds with an access token and refresh token
 ```
 
-## Terms and important notes
+<h2>Terms and important notes</h2>
 
 - **Client ID and Secret**: The client ID and secret are used to authenticate the application with the SSO service.
    The Client ID is public and can be shared, but the secret must be kept private.
@@ -172,3 +172,35 @@ To create a code challenge, hash the code verifier using the SHA-256 algorithm, 
 <h4>Example</h4>
 
 --8<-- "snippets/sso/authorization-code-pkce.md"
+
+## Validating JWT Tokens
+
+Once you have obtained an access token from the EVE SSO, you can use it to authenticate requests to ESI. The access token is a JWT (JSON Web Token) that contains information about the user and the scopes that have been granted. If you want to ensure that the token is valid and issued by the EVE SSO, you need to verify the signature, check the expiration time, and ensure that the token is intended for your application.
+
+<h3>Signature Verification</h3>
+
+The access token is a JWT that is signed by the EVE SSO using an RSA key. To verify the signature, you need to fetch the public key from the SSO's JWKS (JSON Web Key Set) endpoint and use it to validate the token.
+
+The SSO serivce has a [metadata endpoint](https://login.eveonline.com/.well-known/oauth-authorization-server) that provides the URL to the JWKS endpoint. If you want to verify the signature of the access token, be sure to fetch the metadata information first, and then fetch the public key from the JWKS endpoint. While the JWKS endpoint is unlikely to change, it is not guaranteed to be static, so it is recommended to fetch it from the metadata endpoint each time you need it.
+
+<h3>Issuer Verification</h3>
+
+The `iss` claim in the JWT token should match the issuer URL of the SSO service. This is the URL that the token was issued by, and should be `https://login.eveonline.com/`. In some cases, `login.eveonline.com` may be used as the issuer, so it is recommended to check for both, and reject tokens that do not match.
+
+<h3>Audience</h3>
+
+The `aud` claim in the JWT token is the audience of the token. This should be an array, with one value being the `client_id` of your application, and the other a static `"EVE Online"` value. You should check that the `aud` claim contains both of these values, and reject tokens that do not match.
+
+<h3>Expiration Time</h3>
+
+The `exp` claim in the JWT token is the expiration time of the token, represented as a Unix timestamp. You should check this claim to ensure that the token has not expired. If the token has expired, you should request a new token using the refresh token. Most `jose`-compatible libraries will automatically check the expiration time for you, and have an optional setting to allow for a grace period.
+
+<h4>Example</h4>
+
+--8<-- "snippets/sso/validate-jwt-token.md"
+
+## JWT Token Claims
+
+Now that you have verified the JWT Token, you can use the claims belonging to the token to get more information about the access the token has, and for whom it was issued.
+
+The `sub` claim in the JWT token is in the format of `EVE:CHARACTER:<character-id>` and can be used to get the current character's ID. The `name` claim contains the character's name, and the `scp` claim is an array of scopes that have been granted to this token.

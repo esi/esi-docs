@@ -324,6 +324,10 @@ body::before {
   box-shadow: inherit;
 }
 
+.md-typeset :target {
+  --md-scroll-margin: 4.2rem;
+}
+
 .esi-nav-container {
   display: flex;
   flex-direction: row;
