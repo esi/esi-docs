@@ -13,6 +13,8 @@ set class = class ~ " md-header--shadow md-header--lifted" %} {% elif
       ".icons/" ~ icon ~ ".svg" %}
     </label>
 
+
+
     <!-- Link to home -->
     <a
       href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
@@ -61,10 +63,8 @@ set class = class ~ " md-header--shadow md-header--lifted" %} {% elif
 
     <!-- Repository information -->
     {% if config.repo_url %}
-    <div class="md-header__source">{% include "partials/source.html" %}</div>
+    <div class="md-header__source esi-source">{% include "partials/source.html" %}</div>
     {% endif %}
-
-    <div class="esi-min-placeholder"></div>
   </nav>
 
   <!-- Navigation tabs (sticky) -->

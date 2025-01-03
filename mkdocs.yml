@@ -146,6 +146,7 @@ plugins:
   - search
   - social
   - tags
+  - open-in-new-tab
   - privacy:
       assets: false
   - macros:
