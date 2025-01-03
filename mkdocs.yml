@@ -61,6 +61,7 @@ extra_css:
 extra_javascript:
   - assets/javascript/theme.js
   - assets/javascript/mathjax.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
 
 extra:
