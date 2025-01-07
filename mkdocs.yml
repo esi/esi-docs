@@ -65,7 +65,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
 
 extra:
-  homepage: !ENV [SITE_HOME, 'https://developers.eveonline.com/']
+  homepage: /
   analytics:
     provider: custom
     property: !ENV [GTM_ID, 'GTM-XXXXXXX']
