@@ -15,6 +15,10 @@
 <!-- End Google Tag Manager (noscript) -->
 {% endblock %}
 
+{% block extrahead %}
+{{ super() }}
+{% include "partials/social.html" %}
+{% endblock %}
 
 {% block site_nav %}
 <!-- Navigation -->
