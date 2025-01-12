@@ -1,0 +1,33 @@
+{% if page and page.meta %}
+<meta property="og:title" content="{{ page.meta.get('title', page.title) }} - EVE: Developers">
+<meta property="twitter:title" content="{{ page.meta.get('title', page.title) }} - EVE: Developers">
+{% elif page and page.title %}
+<meta property="og:title" content="{{ page.title }} - EVE: Developers">
+<meta property="twitter:title" content="{{ page.title }} - EVE: Developers">
+{% else %}
+<meta property="og:title" content="EVE: Developers">
+<meta property="twitter:title" content="EVE: Developers">
+{% endif %}
+{% if page and page.meta and page.meta.description %}
+<meta property="og:description" content="{{ page.meta.description }}">
+<meta property="twitter:description" content="{{ page.meta.description }}">
+{% elif config.site_description %}
+<meta property="og:description" content="{{ config.site_description }}">
+<meta property="twitter:description" content="{{ config.site_description }}">
+{% else %}
+<meta property="og:description" content="EVE Developers Documentation">
+<meta property="twitter:description" content="EVE Developers Documentation">
+{% endif %}
+<meta property="og:url" content="{{ page.canonical_url }}">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="{{ config.site_url +  'assets/images/metaimage.jpg' }}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="EVE: Developers">
+<meta property="og:type" content="website">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="{{ config.site_url +  'assets/images/metaimage.jpg' }}">
+<meta property="twitter:image:type" content="image/jpeg">
+<meta property="twitter:image:width" content="1200">
+<meta property="twitter:image:height" content="630">
