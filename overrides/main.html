@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{%- extends "base.html" -%}
 
-{% import "partials/language.html" as lang with context %}
+{%- import "partials/language.html" as lang with context -%}
 
-{% block scripts %} {{ super() }}
+{%- block scripts -%} {{ super() }}
 <!-- Google Tag Manager (noscript) -->
 <noscript
   ><iframe
@@ -13,16 +13,25 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
-{% endblock %}
+{%- endblock -%}
 
-{% block extrahead %}
+{%- block extrahead -%}
 {{ super() }}
 {% include "partials/social.html" %}
-{% endblock %}
+{%- endblock -%}
 
-{% block site_nav %}
+{%- block tabs -%}{%- endblock -%}
+
+{%- block hero -%}
+{{ super() }}
+<div class="esi-hero">
+  {% include "partials/hero.html" %}
+</div>
+{%- endblock -%}
+
+{%- block site_nav -%}
 <!-- Navigation -->
-{% if nav %}
+{%- if nav -%}
   {% if page.meta and page.meta.hide %}
     {% set hidden = "hidden" if "navigation" in page.meta.hide %}
   {% endif %}
@@ -31,29 +40,7 @@
     data-md-type="navigation"
     {{ hidden }}
   >
-    <div class="md-sidebar__scrollwrap">
-      <div class="md-sidebar__inner">
-        {% include "partials/nav.html" %}
-      </div>
-    </div>
+  {% include "partials/sidebar-nav.html" %}
   </div>
-{% endif %}
-
-<!-- Table of contents -->
-{% if "toc.integrate" not in features %}
-  {% if page.meta and page.meta.hide %}
-    {% set hidden = "hidden" if "toc" in page.meta.hide %}
-  {% endif %}
-  <div
-    class="md-sidebar md-sidebar--secondary"
-    data-md-type="toc"
-    {{ hidden }}
-  >
-    <div class="md-sidebar__scrollwrap">
-      <div class="md-sidebar__inner">
-        {% include "partials/toc.html" %}
-      </div>
-    </div>
-  </div>
-{% endif %}
-{% endblock %}
+{%- endif -%}
+{%- endblock -%}

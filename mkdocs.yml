@@ -69,6 +69,9 @@ extra:
   analytics:
     provider: custom
     property: !ENV [GTM_ID, 'GTM-XXXXXXX']
+  hero:
+    title: "Developer Documentation"
+    subtitle: "Crowd-sourced documentation for third-party developers"
   footer:
     title: Follow EVE Online
     socials:

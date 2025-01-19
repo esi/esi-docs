@@ -1,0 +1,101 @@
+{%- macro title(item) -%}
+  {{ item.title }}
+{%- endmacro -%}
+
+{%- macro render_toc_item(item, level = 1) -%}
+  <li>
+    <a class="md-nav__link" href="{{ item.url }}">{{ title(item) }}</a>
+    {%- if item.children -%}
+      <ul class="esi-sidebar-nav esi-sidebar-nav-toc esi-sidebar-toc-sublevel esi-sidebar-toc-sublevel-{{ level }}">
+        {%- for subitem in item.children -%}
+          {{ render_toc_item(subitem, level + 1) }}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </li>
+{%- endmacro -%}
+
+{%- macro render_toc(item) -%}
+  {%- if item.active and not item.children and item == page -%}
+    {% set toc = page.toc %}
+    {% set first = toc | first %}
+    {% if first and first.level == 1 %}
+      {% set toc = first.children %}
+    {% endif %}
+    <ul class="esi-sidebar-nav esi-sidebar-nav-toc" data-md-component="toc">
+      {%- for item in toc -%}
+        {{ render_toc_item(item) }}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro render_item(item, ref = item) -%}
+  {%- if item.children -%}
+    {%- set first = item.children | first -%}
+    {%- if first -%}
+      {{ render_item(first, ref) }}
+    {% else %}
+      <a href="{{ item.url | url }}">{{ title(ref) }}</a>
+    {% endif %}
+  {%- else -%}
+    <a href="{{ item.url | url }}">{{ title(ref) }}</a>
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro render_sublevel(item) -%}
+  {%- if item.active -%}
+    {%- if item.children -%}
+      <ul class="esi-sidebar-nav esi-sidebar-nav-sublevel">
+      {%- for subitem in item.children -%}
+        <li class="esi-sidebar-nav-item {% if subitem.active %}esi-sidebar-nav-item-active{% endif %}">
+          {{ render_item(subitem) }}
+          {{ render_sublevel(subitem) }}
+        </li>
+      {%- endfor -%}
+      </ul>
+    {% else %}
+      {{ render_toc(item) }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro render_toplevel(item) -%}
+  {%- if item.pages -%}
+    {%- if page in item.pages -%}
+      {% set item = page %}
+    {% endif %}
+  {% endif %}
+  <li class="esi-sidebar-nav-item {% if item.active %}esi-sidebar-nav-item-active{% endif %}">
+    {{ render_item(item) }}
+    {{ render_sublevel(item) }}
+  </li>
+{%- endmacro -%}
+
+<div class="esi-sidebar-close">
+  <label class="esi-sidebar-close-button" data-md-component="sidebar-close" for="__drawer">
+    {% include ".icons/material/close.svg" %}
+  </label>
+</div>
+<ul class="esi-sidebar-nav esi-sidebar-nav-toplevel">
+  {%- for nav_item in nav -%}
+    {{ render_toplevel(nav_item) }}
+  {%- endfor -%}
+</ul>
+<div class="esi-sidebar-nav esi-sidebar-extra-nav">
+  <h3 class="esi-sidebar-nav-title">Other</h3>
+  <ul class="esi-sidebar-nav-extra">
+    <li class="esi-sidebar-nav-item">
+      <a href="/blog">Blog</a>
+    </li>
+    <li class="esi-sidebar-nav-item esi-sidebar-nav-item-active">
+      <a href="/docs/">Documentation</a>
+    </li>
+    <li class="esi-sidebar-nav-item">
+      <a href="/applications">Applications</a>
+    </li>
+    <li class="esi-sidebar-nav-item">
+      <a href="/authorized-apps">Authorized Apps</a>
+    </li>
+  </ul>
+</div>

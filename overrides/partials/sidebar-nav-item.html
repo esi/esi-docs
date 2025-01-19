@@ -1,0 +1,52 @@
+{% macro rendertoc(ref) %}
+  {% if ref.active %}
+    {% set toc = page.toc %}
+    {% set first = toc | first %}
+    {% if first and first.level == 1 %}
+      {% set toc = first.children %}
+    {% endif %}
+    <ul class="esi-nav-item-children">
+      {% for toc_item in toc %}
+        {{ render(toc_item, toc_item) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro render_children(item) %}
+  {% if item.children %}
+  AAAAAAAAAA
+    <ul class="esi-nav-item-children">
+      {% for child in item.children %}
+        {{ render(child, item) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro render(nav_item, ref = nav_item) %}
+  {% set class = "esi-nav-item" %}
+  {% if ref.active %}
+    {% set class = class ~ " esi-nav-item-active" %}
+  {% endif %}
+  {% if nav_item.children %}
+    {% set first = nav_item.children | first %}
+    {% if first.children %}
+      {{ render(first, ref) }}
+    {% else %}
+      <li class="{{ class }}">
+        <a href="{{ first.url | url }}" class="esi-nav-item-link">
+          {{ ref.title }}
+        </a>
+        {{ render_children(first) }}
+      </li>
+    {% endif %}
+  {% else %}
+    <li class="{{ class }}">
+      <a href="{{ nav_item.url | url }}" class="esi-nav-item-link">
+        {{ ref.title }}
+      </a>
+      {{ render_children(ref) }}
+    </li>
+  {% endif %}
+{% endmacro %}

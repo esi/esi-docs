@@ -4,29 +4,23 @@
       <div class="title">
         <div class="follow">{{ config.extra.footer.title }}</div>
         <div class="socials">
-          {% for social in config.extra.footer.socials %}
+          {%- for social in config.extra.footer.socials %}
           <div class="social-{{ social.icon }}">
-            <a href="{{ social.url }}" target="_blank" rel="noopener">
-              {% include ".icons/fontawesome/brands/" + social.icon + ".svg" %}
-            </a>
+            <a href="{{ social.url }}" target="_blank" rel="noopener">{% include ".icons/fontawesome/brands/" + social.icon + ".svg" %}</a>
           </div>
-          {% endfor %}
+          {%- endfor %}
         </div>
       </div>
-      {% for col in config.extra.footer.columns %}
+      {%- for col in config.extra.footer.columns -%}
       <div class="column">
         <ul>
           <li>{{ col.title }}</li>
-          {% for link in col.links %}
-          <li>
-            <a href="{{ link.url }}" target="_blank" rel="noopener"
-              >{{ link.title }}</a
-            >
-          </li>
-          {% endfor %}
+          {%- for link in col.links %}
+          <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a></li>
+          {%- endfor %}
         </ul>
       </div>
-      {% endfor %}
+      {%- endfor -%}
     </div>
   </div>
 </footer>
