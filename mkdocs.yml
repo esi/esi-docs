@@ -21,6 +21,7 @@ nav:
     - "Single-Sign-On": services/sso/index.md
   - Guides and Examples:
     - Useful Formulae: guides/useful-formulae.md
+    - PI: guides/pi.md
   - Community: community/community-services.md
 not_in_nav: |
   community/*/index.md
