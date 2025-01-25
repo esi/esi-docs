@@ -11,12 +11,14 @@ from os import walk
 # The name will be used in the generated markdown file.
 EXTENSION_MAPPING = {
     ".py": "Python",
+    ".cs": "C#",
 }
 
 # The mapping of file extensions to syntax highlighting names. The key is the file
 # extension (including the dot), and the value is the syntax highlighting name.
 SYNTAX_MAPPING = {
     ".py": "python",
+    ".cs": "csharp",
 }
 
 # The file extension for the combined markdown file.
