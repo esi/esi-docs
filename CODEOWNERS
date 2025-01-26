@@ -1,0 +1,20 @@
+# This is a comment.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# @esi/esi-maintainers will be requested for
+# review when someone opens a pull request.
+*                   @esi/esi-maintainers @esi/esi-admins
+
+# Order is important; the last matching pattern takes the most precedence.
+# By default, the ECM team can approve changes to the documentation
+/docs/              @esi/ecm @esi/esi-maintainers @esi/esi-admins
+/snippets/          @esi/ecm @esi/esi-maintainers @esi/esi-admins
+# While this configures most of the site, it will require changes every now and then
+# to add new pages to the menu structure, so the ECM team should be able to approve.
+/mkdocs.yml         @esi/ecm @esi/esi-maintainers @esi/esi-admins
+/CONTRIBUTORS       @esi/ecm @esi/esi-maintainers @esi/esi-admins
+
+# Folder overrides for specific areas of the site
+/docs/assets/       @esi/esi-maintainers @esi/esi-admins
