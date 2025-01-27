@@ -1,3 +1,10 @@
+<div style="width: 100%; height: 100%; display: flex; justify-content: center;">
+  <div style="width: 75%; border: 2px solid #BB3333; background-color: #EE9999; padding: 8px 12px; color: black">
+    <h1 style="border-bottom: 0; text-align: center;">Note</h1><p><a href="https://github.com/esi/esi-docs" style="color: #000000">ESI-Docs</a> has moved to <a href="https://developers.eveonline.com/docs/" style="font-weight: 700; color: #000000;">a new home</a>. This content will remain available for now, but will no longer be updated. Please update your bookmarks.
+    </p>
+  </div>
+</div>
+
 ## Resolving Upwell Structure IDs
 
 A common scenario is to resolve a structure ID into a name. Use the authenticated `/universe/structures/{structure_id}/` endpoint for that. It requires a token that grants the `esi-universe.read_structures.v1` scope on a character that has docking access to the structure. 
