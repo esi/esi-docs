@@ -12,6 +12,7 @@ from os import walk
 EXTENSION_MAPPING = {
     ".py": "Python",
     ".cs": "C#",
+    ".kt": "Kotlin",
 }
 
 # The mapping of file extensions to syntax highlighting names. The key is the file
@@ -19,6 +20,7 @@ EXTENSION_MAPPING = {
 SYNTAX_MAPPING = {
     ".py": "python",
     ".cs": "csharp",
+    ".kt": "kotlin",
 }
 
 # The file extension for the combined markdown file.
