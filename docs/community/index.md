@@ -9,9 +9,10 @@ collapse: nav
 
 # Services
 
-| Service Name                                        | Creator                                                                                             |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [Sample Service](./sample-service/index.md)         | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here)       |
+| Service Name                                                | Creator                                                                                      |
+|-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
+| [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
 
 
 # Other tools and resources
