@@ -1,13 +1,4 @@
-/* Only display on screen, not on print*/
 @media screen {
-  [data-scrolled] [data-md-color-scheme="eveonline"] {
-    --logo-width: 110px;
-    --test: 1;
-    --header-padding: 8px 0;
-    --header-background: var(--md-primary-fg-color);
-    --header-shadow: 0 0 0.2rem #0000001a, 0 0.2rem 0.4rem #0003;
-  }
-
   [data-md-color-scheme="eveonline"] {
     --logo-width: 110px;
     --header-padding: 8px 0;
@@ -24,15 +15,14 @@
 
     .md-header {
       will-change: background-color, box-shadow, padding, backdrop-filter;
-
       transition: all 0.3s ease-in-out;
-
       padding: var(--header-padding);
       background: var(--header-background);
       box-shadow: var(--header-shadow);
       display: flex;
       justify-items: center;
     }
+
     .md-header > .md-grid {
       width: 100%;
       max-width: var(--nav-width);
@@ -51,16 +41,18 @@
     .md-header > .md-grid > .md-logo {
       margin: 0 1.5rem 0 0;
       margin-right: 40px;
-      padding: 0 0 8.6px 0;
+      padding: 0 0 8.6px;
     }
 
     .md-header > .md-grid > .md-header__title {
       margin-left: 0;
     }
+
     .md-header > .md-grid > .md-header__title .md-header__topic {
       font-weight: 400;
       padding: 4px 8px;
     }
+
     .md-header > .md-grid > .md-header__title .md-header__topic:first-child {
       font-weight: 400;
     }
@@ -73,12 +65,12 @@
       margin-top: 10px;
     }
 
-
-    /* Indicate that the site is rendered with a dark color scheme*/
+    /*
+    Indicate that the site is rendered with a dark color scheme
+    */
     color-scheme: dark;
 
     --md-text-font: "Shentox";
-
     --md-primary-fg-color: hsla(0, 0%, 8%, 0.9);
 
     /* Default color shades */
@@ -136,30 +128,28 @@
     --md-footer-bg-color--dark: hsla(var(--md-hue), 15%, 8%, 1);
 
     /* Shadow depth 1 */
-    --md-shadow-z1: 0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
-      0 0 #{px2rem(1px)} hsla(0, 0%, 0%, 0.1);
-
+    --md-shadow-z1: 0 4px 10px hsla(0, 0%, 0%, 0.05),
+      0 0 1px hsla(0, 0%, 0%, 0.1);
     /* Shadow depth 2 */
-    --md-shadow-z2: 0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.25),
-      0 0 #{px2rem(1px)} hsla(0, 0%, 0%, 0.25);
-
+    --md-shadow-z2: 0 4px 10px hsla(0, 0%, 0%, 0.25),
+      0 0 1px hsla(0, 0%, 0%, 0.25);
     /* Shadow depth 3 */
-    --md-shadow-z3: 0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.4),
-      0 0 #{px2rem(1px)} hsla(0, 0%, 0%, 0.35);
+    --md-shadow-z3: 0 4px 10px hsla(0, 0%, 0%, 0.4),
+      0 0 1px hsla(0, 0%, 0%, 0.35);
 
-    --esi-input: #23252E;
+    --esi-input: #23252e;
     --esi-smokey-black: #101010;
-    --esi-paper: #2C2E3A;
+    --esi-paper: #2c2e3a;
     --esi-panel: #141619;
-    --esi-accent: #5CCBCB;
-    --esi-dark-chalice: #B0B0B0;
-    --esi-gray: #C0C0C0;
-    --esi-omega: #FAB400;
-    --esi-success: #8DC169;
-    --esi-danger: #D81F27;
-    --esi-warning: #FAB400;
-    --esi-red: #D81F27;
-    --esi-action: #5CCBCB;
+    --esi-accent: #5ccbcb;
+    --esi-dark-chalice: #b0b0b0;
+    --esi-gray: #c0c0c0;
+    --esi-omega: #fab400;
+    --esi-success: #8dc169;
+    --esi-danger: #d81f27;
+    --esi-warning: #fab400;
+    --esi-red: #d81f27;
+    --esi-action: #5ccbcb;
 
     --social-facebook: #34579b;
     --social-twitter: #2faae1;
@@ -177,45 +167,11 @@
     }
   }
 
-  /* -------------------------------------------------------------------------- */
-
-  [data-md-color-scheme="eveonline"][data-md-color-primary="pink"] {
-    --md-typeset-a-color: hsl(340, 81%, 63%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="purple"] {
-    --md-typeset-a-color: hsl(291, 53%, 63%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="deep-purple"] {
-    --md-typeset-a-color: hsl(262, 73%, 70%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="indigo"] {
-    --md-typeset-a-color: hsl(219, 76%, 62%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="teal"] {
-    --md-typeset-a-color: hsl(174, 100%, 40%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="green"] {
-    --md-typeset-a-color: hsl(122, 39%, 60%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="deep-orange"] {
-    --md-typeset-a-color: hsl(14, 100%, 65%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="brown"] {
-    --md-typeset-a-color: hsl(16, 45%, 56%);
-  }
-
-  /* Set neutral colors to indigo */
-  [data-md-color-scheme="eveonline"][data-md-color-primary="grey"] {
-    --md-typeset-a-color: hsl(219, 66%, 62%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="blue-grey"] {
-    --md-typeset-a-color: hsl(219, 66%, 62%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="white"] {
-    --md-typeset-a-color: hsl(219, 66%, 62%);
-  }
-  [data-md-color-scheme="eveonline"][data-md-color-primary="black"] {
-    --md-typeset-a-color: hsl(219, 66%, 62%);
+  [data-scrolled] [data-md-color-scheme="eveonline"] {
+    --logo-width: 110px;
+    --header-padding: 8px 0;
+    --header-background: var(--md-primary-fg-color);
+    --header-shadow: 0 0 0.2rem #0000001a, 0 0.2rem 0.4rem #0003;
   }
 
   /* -------------------------------------------------------------------------- */
@@ -229,11 +185,12 @@
 }
 
 body {
-  background-color: #000000;
-  background-image: url('../images/bg_main.jpg');
+  background-color: #000;
+  background-image: url("../images/bg_main.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -275,12 +232,21 @@ body::before {
   top: 3rem;
 }
 
-[dir=ltr] .esi-sidebar .md-nav__list,
-[dir=rtl] .esi-sidebar .md-nav__list {
+[dir="ltr"] .esi-sidebar .md-nav__list,
+[dir="rtl"] .esi-sidebar .md-nav__list {
   padding: 0;
 }
-[dir=ltr] .md-nav--lifted>.md-nav__list>.md-nav__item>.md-nav:not(.md-nav--secondary),
-[dir=rtl] .md-nav--lifted>.md-nav__list>.md-nav__item>.md-nav:not(.md-nav--secondary) {
+
+[dir="ltr"]
+  .md-nav--lifted
+  > .md-nav__list
+  > .md-nav__item
+  > .md-nav:not(.md-nav--secondary),
+[dir="rtl"]
+  .md-nav--lifted
+  > .md-nav__list
+  > .md-nav__item
+  > .md-nav:not(.md-nav--secondary) {
   margin: 0;
 }
 
@@ -318,9 +284,11 @@ body::before {
 .md-typeset table:not([class]) {
   background-color: color-mix(in srgb, var(--esi-panel), transparent 70%);
 }
+
 .md-typeset table:not([class]) thead {
   background-color: color-mix(in srgb, var(--esi-panel), transparent 70%);
 }
+
 .md-typeset table:not([class]) tbody tr:hover {
   background-color: inherit;
   box-shadow: inherit;
@@ -349,6 +317,7 @@ body::before {
   padding: 0;
   margin-left: -4px;
 }
+
 .esi-nav-container > .esi-burger-button > svg {
   width: 36px;
   height: 36px;
@@ -374,7 +343,7 @@ body::before {
 .esi-hero > * {
   padding: 0;
   margin: 0;
-  color: #FFF;
+  color: #fff;
 }
 
 .esi-hero h1 {
@@ -384,6 +353,7 @@ body::before {
   line-height: 48px;
   text-transform: uppercase;
 }
+
 .esi-hero h3 {
   grid-area: subtitle;
   font-weight: 500;
@@ -391,6 +361,7 @@ body::before {
   line-height: 26px;
   text-transform: uppercase;
 }
+
 .esi-hero > div {
   grid-area: cta;
 }
@@ -403,17 +374,18 @@ body::before {
   margin-top: 40px;
   padding: 32px;
   max-width: 1600px;
-  background-color: color-mix(in srgb, var(--esi-paper), transparent 10%)
+  background-color: color-mix(in srgb, var(--esi-paper), transparent 10%);
 }
 
 .md-content {
   border-left: 1px solid var(--esi-panel);
   color: #ffffff;
 }
+
 @media screen and (max-width: 76.2344em) {
   .md-content {
     border-left: 0px;
-  } 
+  }
 }
 
 .md-content h1,
@@ -429,10 +401,12 @@ body::before {
   font-size: 26px;
   font-weight: 600;
 }
+
 .md-content h2 {
   font-size: 24px;
   font-weight: 600;
 }
+
 .md-content h3 {
   font-size: 22px;
   font-weight: 600;
@@ -456,11 +430,13 @@ body::before {
   width: 100%;
   max-width: 1600px;
 }
+
 .esi-footer .wrapper {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
+
 .esi-footer .wrapper .title {
   flex-shrink: 0;
   width: 100%;
@@ -470,6 +446,7 @@ body::before {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .esi-footer .wrapper .title .follow {
   text-transform: uppercase;
   font-size: 28px;
@@ -491,27 +468,31 @@ body::before {
   width: 100%;
   padding: 0;
 }
+
 .esi-footer .column ul li {
   list-style: none;
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   padding: 8px 0;
 }
+
 .esi-footer .column ul li:first-of-type {
   color: var(--esi-dark-chalice);
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
 }
+
 .esi-footer .column ul li a {
   color: #ffffff;
   text-decoration: none;
   font-size: 15px;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
+
 .esi-footer .column ul li a:hover {
-  opacity: .5;
+  opacity: 0.5;
   text-decoration: underline;
 }
 
@@ -541,6 +522,7 @@ body::before {
 .esi-footer .socials a:hover svg {
   color: #fff;
 }
+
 .esi-footer .socials a:hover svg path {
   fill: currentColor;
 }
@@ -548,27 +530,35 @@ body::before {
 .social-facebook-f a:hover {
   background-color: var(--social-facebook);
 }
+
 .social-twitter a:hover {
   background-color: var(--social-twitter);
 }
+
 .social-youtube a:hover {
   background-color: var(--social-youtube);
 }
+
 .social-twitch a:hover {
   background-color: var(--social-twitch);
 }
+
 .social-discord a:hover {
   background-color: var(--social-discord);
 }
+
 .social-instagram a:hover {
   background-color: var(--social-instagram);
 }
+
 .social-vk a:hover {
   background-color: var(--social-vk);
 }
+
 .social-reddit a:hover {
   background-color: var(--social-reddit);
 }
+
 @media (min-width: 576px) {
   .esi-footer .wrapper .column {
     flex-basis: 50%;
@@ -637,6 +627,7 @@ body::before {
   border: 1px solid var(--esi-input);
   border-radius: 2px;
 }
+
 .esi-nav-container .md-search .md-search-result__meta {
   display: none;
 }
@@ -670,13 +661,15 @@ body::before {
   width: calc(100% - 16px);
 }
 
-
 @media screen and (min-width: 60em) {
   .esi-sidebar .md-nav {
     margin-bottom: 0;
   }
 
-  [data-md-toggle=search]:checked~.md-header .md-search__input+.md-search__icon {
+  [data-md-toggle="search"]:checked
+    ~ .md-header
+    .md-search__input
+    + .md-search__icon {
     color: var(--esi-accent);
   }
 }
@@ -688,11 +681,18 @@ body::before {
   .esi-sidebar .md-nav {
     margin-bottom: 0;
   }
-  [dir=ltr] .md-nav--integrated>.md-nav__list>.md-nav__item--active .md-nav--secondary {
+  [dir="ltr"]
+    .md-nav--integrated
+    > .md-nav__list
+    > .md-nav__item--active
+    .md-nav--secondary {
     border-left: 0px;
     padding-left: 16px;
   }
-  [data-md-toggle=search]:checked~.md-header .md-search__input+.md-search__icon {
+  [data-md-toggle="search"]:checked
+    ~ .md-header
+    .md-search__input
+    + .md-search__icon {
     color: var(--esi-accent);
   }
 }
@@ -710,30 +710,37 @@ body::before {
 .esi-sidebar {
   padding: 0;
 }
+
 .esi-sidebar-nav {
   padding: 0;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
-  color: #FFF;
+  color: #fff;
 }
+
 .esi-sidebar .esi-sidebar-close,
 .esi-sidebar .esi-sidebar-extra-nav {
   display: none;
 }
+
 .esi-sidebar-nav .esi-sidebar-nav-item {
   padding: 10px 0 0 0;
 }
+
 .esi-sidebar-nav .esi-sidebar-nav-item-active,
 .esi-sidebar-nav .esi-sidebar-nav-item:hover {
   color: var(--esi-accent);
 }
+
 .esi-sidebar-nav li {
   list-style: none;
 }
+
 .esi-sidebar-nav ul {
   padding-left: 16px;
 }
+
 .esi-sidebar-close-button {
   display: flex;
   cursor: pointer;
@@ -743,14 +750,17 @@ body::before {
   align-items: center;
   border-radius: 4px;
 }
+
 .esi-sidebar-close-button:hover {
   background-color: #2e2e2e;
 }
+
 .esi-sidebar-close-button > svg {
   width: 20px;
   height: 20px;
   color: #b8b8b8;
 }
+
 .esi-sidebar-close-button > svg path {
   fill: currentColor;
 }
@@ -758,12 +768,15 @@ body::before {
 .esi-sidebar-extra-nav {
   border-top: 1px solid #2e2e2e;
 }
+
 .esi-sidebar-extra-nav .esi-sidebar-nav-extra {
   padding: 0;
 }
+
 .esi-sidebar-extra-nav ul {
   margin: 0;
 }
+
 .esi-sidebar-extra-nav h3 {
   margin-top: 16px;
   margin-bottom: 8px;
@@ -771,8 +784,22 @@ body::before {
   font-weight: 500;
 }
 
+.grid.cards ul > li > .esi-card-link {
+  margin: -0.8rem !important;
+  padding: 0.8rem;
+  width: calc(100% + 1.6rem);
+  display: block;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.grid.cards ul > li > .esi-card-link:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1200px) {
-  [data-md-toggle=drawer]:checked~.md-container .md-main .esi-sidebar {
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-main .esi-sidebar {
     left: 0;
     transform: unset;
   }
@@ -780,6 +807,7 @@ body::before {
     font-size: 20px;
     font-weight: 400;
   }
+
   .esi-sidebar .esi-sidebar-close {
     position: absolute;
     right: 16px;
@@ -787,12 +815,15 @@ body::before {
     width: 28px;
     height: 28px;
   }
+
   .esi-sidebar-nav .esi-sidebar-nav-item {
     padding: 16px 0 0 0;
   }
+
   .esi-sidebar .esi-sidebar-extra-nav {
     display: block;
   }
+
   .md-main .esi-sidebar {
     position: fixed;
     display: flex;
