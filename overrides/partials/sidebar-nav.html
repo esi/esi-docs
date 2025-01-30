@@ -2,6 +2,29 @@
   {{ item.title }}
 {%- endmacro -%}
 
+{%- macro classes(item) -%}
+  {%- if item.children -%}
+    {%- set first = item.children | first -%}
+    {%- if first -%}
+    {%- if
+      (first.meta and first.meta.hide and "navigation" in first.meta.hide and not first.active)
+      or
+      (first.file and first.file.inclusion == first.file.inclusion.NOT_IN_NAV)
+    -%}
+    esi-nav-item-hidden
+    {%- endif -%}
+    {% endif %}
+  {%- else -%}
+    {%- if 
+    (item.meta and item.meta.hide and "navigation" in item.meta.hide and not item.active)
+    or
+    (item.file and item.file.inclusion == item.file.inclusion.NOT_IN_NAV)
+    -%}
+    esi-nav-item-hidden
+    {%- endif -%}
+  {%- endif -%}
+{%- endmacro -%}
+
 {%- macro render_toc_item(item, level = 1) -%}
   <li>
     <a class="md-nav__link" href="{{ item.url }}">{{ title(item) }}</a>
@@ -16,7 +39,7 @@
 {%- endmacro -%}
 
 {%- macro render_toc(item) -%}
-  {%- if item.active and not item.children and item == page -%}
+  {%- if item.active and item == page -%}
     {% set toc = page.toc %}
     {% set first = toc | first %}
     {% if first and first.level == 1 %}
@@ -46,12 +69,17 @@
 {%- macro render_sublevel(item) -%}
   {%- if item.active -%}
     {%- if item.children -%}
+      {%- set first = item.children | first -%}
       <ul class="esi-sidebar-nav esi-sidebar-nav-sublevel">
       {%- for subitem in item.children -%}
-        <li class="esi-sidebar-nav-item {% if subitem.active %}esi-sidebar-nav-item-active{% endif %}">
+      {%- if subitem.file and subitem.file.inclusion and subitem.file.inclusion == subitem.file.inclusion.NOT_IN_NAV -%}
+      {%- elif subitem.meta and subitem.meta.collapse and "nav" in subitem.meta.collapse and first == subitem -%}
+      {%- else -%}
+        <li class="esi-sidebar-nav-item {{ classes(subitem) }}{% if subitem.active %} esi-sidebar-nav-item-active{% endif %}">
           {{ render_item(subitem) }}
           {{ render_sublevel(subitem) }}
         </li>
+      {%- endif -%}
       {%- endfor -%}
       </ul>
     {% else %}
@@ -66,7 +94,7 @@
       {% set item = page %}
     {% endif %}
   {% endif %}
-  <li class="esi-sidebar-nav-item {% if item.active %}esi-sidebar-nav-item-active{% endif %}">
+  <li class="esi-sidebar-nav-item {{ classes(item) }}{% if item.active %} esi-sidebar-nav-item-active{% endif %}">
     {{ render_item(item) }}
     {{ render_sublevel(item) }}
   </li>

@@ -1,3 +1,6 @@
+---
+title: Image Server
+---
 # EVE Image Server (EIS)
 
 The EVE Image Server provides a way to retrieve/use images from EVE Online in your applications.

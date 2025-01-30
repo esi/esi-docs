@@ -1,6 +1,8 @@
 ---
 search:
   exclude: true
+
+title: Sample Service
 ---
 
 # EVE Online Sample Service
