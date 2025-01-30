@@ -1,3 +1,6 @@
+---
+collapse: nav
+---
 # EVE Third Party Developer Documentation
 
 This documentation is intended for software developers who are interested in creating third-party tools and applications for EVE Online. Whether you're building simple utilities, complex integrations, or just experimenting, this documentation will help you get started.

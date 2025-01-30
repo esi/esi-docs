@@ -1,3 +1,6 @@
+---
+title: Single-Sign-On
+---
 # Single-Sign-On (SSO)
 
 The EVE single Sign-On (SSO) Service helps facilitate third-party application access for players.

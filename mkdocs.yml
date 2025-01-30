@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: EVE Developer Documentation
 site_url: !ENV [SITE_URL, 'https://developers.eveonline.com/docs/']
 
 repo_url: !ENV [GITHUB_REPO_URL, 'https://github.com/esi/esi-docs']
@@ -8,23 +8,8 @@ edit_uri: edit/main/docs/
 hooks:
   - scripts/generate-snippets.py
 
-nav:
-  - Home: 
-    - Welcome: index.md
-    - Resources: resources/index.md
-    - Support: support.md
-    - ID Ranges: resources/id-ranges.md
-  - Services:
-    - "ESI": services/esi/index.md
-    - "Image Server": services/image-server/index.md
-    - "Static Data Export": services/sde/index.md
-    - "Single-Sign-On": services/sso/index.md
-  - Guides and Examples:
-    - Useful Formulae: guides/useful-formulae.md
-    - PI: guides/pi.md
-  - Community: community/community-services.md
 not_in_nav: |
-  community/*/index.md
+  community/sample-service/index.md
 
 theme:
   name: material
@@ -150,6 +135,8 @@ plugins:
   - search
   - tags
   - open-in-new-tab
+  - literate-nav:
+      nav_file: menu.md
   - privacy:
       assets: false
   - macros:

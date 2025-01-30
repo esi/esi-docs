@@ -32,13 +32,9 @@
 {%- block site_nav -%}
 <!-- Navigation -->
 {%- if nav -%}
-  {% if page.meta and page.meta.hide %}
-    {% set hidden = "hidden" if "navigation" in page.meta.hide %}
-  {% endif %}
   <div
     class="esi-sidebar md-sidebar md-sidebar--primary"
     data-md-type="navigation"
-    {{ hidden }}
   >
   {% include "partials/sidebar-nav.html" %}
   </div>
