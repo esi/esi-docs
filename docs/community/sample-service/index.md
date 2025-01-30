@@ -7,18 +7,16 @@ title: Sample Service
 
 # EVE Online Sample Service
 
-## Description
-
 This is a description, there are many like it, but this one is for this service.
+
+<div class="grid cards" markdown>
+
+- [:octicons-browser-16: __Website__](https://developers.eveonline.com/docs){ .esi-card-link }
+- [:octicons-mark-github-16: __GitHub__](https://github.com/esi/esi-docs){ .esi-card-link }
+- [:simple-discord: __Discord__](https://eveonline.com/discord){ .esi-card-link }
+
+</div>
 
 ## Features
 
 This has many features, such wow, much good.
-
-## Links
-
-- [:octicons-browser-16: Website](https://www.eveonline.com)
-- [:octicons-mark-github-16: GitHub](https://github.com/esi/esi-docs)
-- [:simple-discord: Discord](https://discord.gg/eveonline)
-- [:simple-x: Twitter](https://twitter.com/eveonline)
-- [:simple-reddit: Reddit](https://reddit.com/r/eve)
