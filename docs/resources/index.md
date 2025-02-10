@@ -20,9 +20,9 @@ The `Full SDE` package contains the same files as the `FSD`, `BSD`, and `Univers
 
 Some community members have created tools to help manage the SDE, or to provide them in different formats
 
-# Image Export Collection (IEC)
+# (Deprecated) Image Export Collection (IEC)
 
-Export for `Uprising (V21.03)`
+Export for `Uprising (V21.03 - March 14th 2023)`
 
 - [Icons](https://web.ccpgamescdn.com/aws/developers/Uprising_V21.03_Icons.zip)
 - [Renders](https://web.ccpgamescdn.com/aws/developers/Uprising_V21.03_Renders.zip)
