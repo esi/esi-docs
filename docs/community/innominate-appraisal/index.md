@@ -29,7 +29,7 @@ Simple appraisal feature with advanced user input parsing, supports many input f
 Shopping List like, the user adds his items, and it calculates which market is cheaper, then sorts the items into 2 groups for each market.
 
 
-![alt text](firefox_yUt6Pl46UT.png)
+![alt text](compare.png)
 
 
 ## Ore Processing
