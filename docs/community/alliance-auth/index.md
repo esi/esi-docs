@@ -18,6 +18,14 @@ title: Alliance Auth
 
 ![Alliance Auth](auth-logo.svg)
 
+<div class="grid cards" markdown>
+
+- [:simple-discord: __Discord__](https://discord.gg/fjnHAmk){ .esi-card-link }
+- [:simple-gitlab: __GitLab__](https://gitlab.com/allianceauth/allianceauth){ .esi-card-link }
+- [:octicons-browser-16: __Documentation__](https://allianceauth.readthedocs.io/){ .esi-card-link }
+
+</div>
+
 ## Description
 
 Alliance Auth (AA) is a web site that helps Eve Online organizations efficiently manage access to applications and services.
@@ -37,12 +45,6 @@ Alliance Auth (AA) is a web site that helps Eve Online organizations efficiently
 - English :flag_gb:, Chinese :flag_cn:, German :flag_de:, Spanish :flag_es:, Korean :flag_kr:, Russian :flag_ru:, Italian :flag_it:, French :flag_fr:, Japanese :flag_jp: and Ukrainian :flag_ua: Localization
 
 For further details about AA - including an installation guide and a full list of included services and plugin apps - please see the [official documentation](https://allianceauth.rtfd.io).
-
-## Links
-
-- [Gitlab](https://gitlab.com/allianceauth/allianceauth)
-- [Discord](https://discord.gg/fjnHAmk)
-- [Documentation](https://allianceauth.readthedocs.io/)
 
 # Alliance Auth Community Creations
 

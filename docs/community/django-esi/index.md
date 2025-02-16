@@ -2,7 +2,7 @@
 search:
   exclude: true
 
-title: Alliance Auth
+title: Django-ESI
 ---
 
 # Django-ESI
@@ -18,6 +18,14 @@ Django app for easy access to the EVE Swagger Interface (ESI)
 [![Documentation Status](https://readthedocs.org/projects/django-esi/badge/?version=latest)](https://django-esi.readthedocs.io/en/latest/?badge=latest)
 [![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
+<div class="grid cards" markdown>
+
+- [:simple-discord: __Discord__](https://discord.gg/fjnHAmk){ .esi-card-link }
+- [:simple-gitlab: __GitLab__](https://gitlab.com/allianceauth/django-esi){ .esi-card-link }
+- [:octicons-browser-16: __Documentation__](https://django-esi.readthedocs.io/en/latest/){ .esi-card-link }
+
+</div>
+
 ## Description
 
 Django-esi is a Django app that provides an interface for easy access to the EVE Swagger Interface (ESI), the official API for the game [EVE Online](https://www.eveonline.com/).
@@ -29,9 +37,3 @@ Django-esi adds the following main functionalities to a Django site:
 - Dynamically generated client for interacting with public and private ESI endpoints
 - Support for adding EVE SSO to authenticate characters and retrieve tokens
 - Control over which ESI endpoint versions are used
-
-## Links
-
-- [Gitlab](https://gitlab.com/allianceauth/django-esi)
-- [Discord](https://discord.gg/fjnHAmk)
-- [Documentation](https://django-esi.readthedocs.io/en/latest/)
