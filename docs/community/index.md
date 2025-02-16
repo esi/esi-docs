@@ -12,7 +12,7 @@ collapse: nav
 | Service Name                                        | Creator                                                                                             |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [Sample Service](./sample-service/index.md)         | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here)       |
-
+| [Alliance Auth](./alliance-auth/index.md)           | [Alliance Auth Team](https://gitlab.com/allianceauth/)       |
 
 # Other tools and resources
 
