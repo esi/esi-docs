@@ -9,9 +9,10 @@ collapse: nav
 
 # Services
 
-| Service Name                                        | Creator                                                                                             |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [Sample Service](./sample-service/index.md)         | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here)       |
+| Service Name                                                | Creator                                                                                      |
+|-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
+| [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
 | [Alliance Auth](./alliance-auth/index.md)           | [Alliance Auth Team](https://gitlab.com/allianceauth/)       |
 
 # Other tools and resources
@@ -19,7 +20,7 @@ collapse: nav
 | Name                                            | Description                    | Creator                                                                                       |
 | ------------------------------------------------| ------------------------------ | --------------------------------------------------------------------------------------------- |
 | [Sample Tool](https://github.com/esi/esi-docs)  | Crowd-sourced documentation    | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
-
+| [Django-ESI](./django-esi/index.md)           | [Alliance Auth Team](https://gitlab.com/allianceauth/)       |
 
 # Submitting a Service
 
