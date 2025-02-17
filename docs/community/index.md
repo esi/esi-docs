@@ -11,16 +11,16 @@ collapse: nav
 
 | Service Name                                                | Creator                                                                                      |
 |-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                       |
 | [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
 | [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
-
 
 # Other tools and resources
 
 | Name                                            | Description                    | Creator                                                                                       |
 | ------------------------------------------------| ------------------------------ | --------------------------------------------------------------------------------------------- |
+| [Django-ESI](./django-esi/index.md)             | Django app for easy access to the EVE Swagger Interface (ESI) | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)         |
 | [Sample Tool](https://github.com/esi/esi-docs)  | Crowd-sourced documentation    | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
-
 
 # Submitting a Service
 
