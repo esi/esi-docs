@@ -26,4 +26,4 @@ If your application consists of multiple _products_ such as an upstream library,
 
 You may, if you choose, include some additional information to identify your app such as a Git URL in the bracketed comment
 
-`plugin-name/v0.0.0 (https://github.com/) app-name/v0.0.0 library-name/v0.0.0 email@address.com`
+`plugin-name/v0.0.0 (+https://github.com/) app-name/v0.0.0 library-name/v0.0.0 email@address.com`
