@@ -9,10 +9,11 @@ All ESI Requests should be accompanied by an appropriate User-Agent request head
 
 This could be one or more of the following
 
-- An EVE Character
-- An Email Address
+- An Email Address (Strongly Preferred)
+- An App Name (Strongly Preferred)
+- A URL to Source Code
 - A Discord UID
-- An App Name
+- An EVE Character
 
 ### Best Practice
 
@@ -22,7 +23,11 @@ While User Agents are not a defined web standard, the MDN provides a thoroughly 
 AppName/0.0.0 (email@address.com)
 ```
 
-You should, if you choose, include some additional information to identify your app such as a Git URL in the bracketed comment, remembering to prefix `+` on a URL
+You may, if you choose, include any additional information to identify your app. Following the MDN standard.
+
+- A URL to your documentation or source code, remembering to prefix `+` on a URL `(+https://github.com/)`
+- A Discord Username `(discord:username)`
+- An EVE Character `(eve:charactername)`
 
 ```text
 AppName/0.0.0 (email@address.com; +https://github.com/)
@@ -39,4 +44,6 @@ PluginName/0.0.0 (email@address.com; +https://github.com/) AppName/0.0.0 Library
 A Non-Exhaustive list of examples is provided below, Developers feel free to add your UAs for CCP and our own reference
 
 ```text
+AllianceAuth/0.0.0 (email@address.com; +https://gitlab.com/allianceauth/allianceauth)
+RIFT/1.2.3 (developer@riftforeve.online)
 ```
