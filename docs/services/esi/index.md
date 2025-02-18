@@ -47,5 +47,5 @@ A Non-Exhaustive list of examples is provided below, Developers feel free to add
 AllianceAuth/1.2.3 (foo@example.com; +https://gitlab.com/allianceauth/allianceauth) DjangoESI/1.2.3
 AASRP/1.2.3 (foo@example.comm; +https://github.com/ppfeufer/aa-srp) DjangoESI/1.2.3
 eveseat:eveapi/5.0.22 (admin contact: foo@example) (https://github.com/eveseat/seat) eveseat:seat/5.0.x-dev eveseat:web/5.0.23 eveseat:eveapi/5.0.22
-RIFT/1.2.3 (developer@riftforeve.online)
+RIFT/1.2.3 (foo@example.com)
 ```
