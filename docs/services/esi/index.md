@@ -20,7 +20,7 @@ While User Agents are not a defined web standard, the MDN provides a thoroughly 
 
 `AppName/0.0.0 email@address.com`
 
-If your application consists of multiple _products_ such as an upstream library, or if you are a plugin/extension of a larger app, we recommend listing these in _narrow to broad_ order, with your useragent being more to less precise. You should _always_ include the source of the code, whilst the app/library or other upstream code are optional but recommended.
+If your application consists of multiple _products_ such as an upstream library, or if you are a plugin/extension of a larger app, you may like to list these in _narrow to broad_ order, with your useragent being more to less precise. You should _always_ include the source of the code generating the request.
 
 `PluginName/0.0.0 AppName/0.0.0 LibraryName/0.0.0 email@address.com`
 
