@@ -22,13 +22,13 @@ While User Agents are not a defined web standard, the MDN provides a thoroughly 
 AppName/0.0.0 email@address.com
 ```
 
-If your application consists of multiple _products_ such as an upstream library, or if you are a plugin/extension of a larger app, you may like to list these in _narrow to broad_ order, with your useragent being more to less precise. You should _always_ include the source of the code generating the request.
+You should, if you choose, include some additional information to identify your app such as a Git URL in the bracketed comment, remembering to prefix `+` on a URL
 
 ```text
-PluginName/0.0.0 AppName/0.0.0 LibraryName/0.0.0 email@address.com
+AppName/0.0.0 (+https://github.com/) email@address.com
 ```
 
-You may, if you choose, include some additional information to identify your app such as a Git URL in the bracketed comment
+If your application consists of multiple _products_ such as an upstream library, or if you are a plugin/extension of a larger app, you may like to list these in _narrow to broad_ order, with your useragent being more to less precise. You should _always_ include the source of the code generating the request.
 
 ```text
 PluginName/0.0.0 (+https://github.com/) AppName/0.0.0 LibraryName/0.0.0 email@address.com
