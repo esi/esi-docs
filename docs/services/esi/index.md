@@ -27,3 +27,10 @@ If your application consists of multiple _products_ such as an upstream library,
 You may, if you choose, include some additional information to identify your app such as a Git URL in the bracketed comment
 
 `PluginName/0.0.0 (+https://github.com/) AppName/0.0.0 LibraryName/0.0.0 email@address.com`
+
+#### Examples
+
+A Non-Exhaustive list of examples is provided below, Developers feel free to add your UAs for CCP and our own reference
+
+```text
+```
