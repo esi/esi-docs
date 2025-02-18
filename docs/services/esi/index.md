@@ -44,6 +44,6 @@ PluginName/1.2.3 (email@address.com; +https://github.com/) AppName/1.2.3 Library
 A Non-Exhaustive list of examples is provided below, Developers feel free to add your UAs for CCP and our own reference
 
 ```text
-AllianceAuth/1.2.3 (email@address.com; +https://gitlab.com/allianceauth/allianceauth)
+AllianceAuth/1.2.3 (email@address.com; +https://gitlab.com/allianceauth/allianceauth) DjangoESI/1.2.3
 RIFT/1.2.3 (developer@riftforeve.online)
 ```
