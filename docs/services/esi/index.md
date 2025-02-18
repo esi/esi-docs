@@ -30,7 +30,7 @@ You may, if you choose, include any additional information to identify your app.
 - An EVE Character `(eve:charactername)`
 
 ```text
-AppName/1.2.3 (foo@example.com +https://github.com/)
+AppName/1.2.3 (foo@example.com; +https://github.com/)
 ```
 
 If your application consists of multiple _products_ such as an upstream library, or if you are a plugin/extension of a larger app, you may like to list these in _narrow to broad_ order, with your useragent being more to less precise. You should _always_ include the source of the code generating the request.
