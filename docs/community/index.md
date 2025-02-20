@@ -11,7 +11,9 @@ collapse: nav
 
 | Service Name                                                | Creator                                                                                      |
 |-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| [Abyss Tracker](./abyss-tracker/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
 | [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                       |
+| [EVE Workbench](./eve-workbench/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
 | [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
 | [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
 
