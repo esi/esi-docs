@@ -9,11 +9,12 @@ collapse: nav
 
 # Services
 
-| Service Name                                                | Creator                                                                                       |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                        |
+| Service Name                                                | Creator                                                                                      |
+|-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                       |
+| [Innominate Appraisal](./innominate-appraisal/index.md)     | [:octicons-mark-github-16: Mezoology](https://github.com/mezoology)                           |
 | [JitaSpace](./jitaspace)                                    | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                         |
-| [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                   |
+| [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
 | [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) |
 
 # Other tools and resources
