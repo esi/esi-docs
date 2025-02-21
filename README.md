@@ -1,3 +1,5 @@
+Repository for the [EVE Developer Documentation](https://developers.eveonline.com/docs/) website.
+
 # Local environment
 
 This project works best when you have a local environment set up, preferably via WSL2.
