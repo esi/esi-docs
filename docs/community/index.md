@@ -13,7 +13,7 @@ collapse: nav
 | [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                       |
 | [EVE Workbench](./eve-workbench/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
 | [Innominate Appraisal](./innominate-appraisal/index.md)     | [:octicons-mark-github-16: Mezoology](https://github.com/mezoology)                          |
-| [JitaSpace](./jitaspace)                                    | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                        |
+| [JitaSpace](./jitaspace/index.md)                                    | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                        |
 | [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
 <!-- | [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) | -->
 
@@ -24,7 +24,7 @@ These projects are intended for use as building blocks by other developers
 | Name                                           | Description                                                   | Creator                                                                                       |
 |------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Django-ESI](./django-esi/index.md)            | Django app for easy access to the EVE Swagger Interface (ESI) | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                        |
-| [SDE REST API](./sde-rest-api)                 | REST API for the EVE Static Data Export (SDE)                 | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                         |
+| [SDE REST API](./sde-rest-api/index.md)                 | REST API for the EVE Static Data Export (SDE)                 | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                         |
 <!-- | [Sample Tool](https://github.com/esi/esi-docs)  | Crowd-sourced documentation    | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) | -->
 
 # Submitting a Service
