@@ -7,15 +7,15 @@ collapse: nav
 
     Please note that the table below contains a list of community projects and services that are not officially supported by CCP Games. We acknowledge the hard work and dedication of the developers who have created these services and give them a soapbox to promote their services. However, we do not endorse or guarantee the services listed below. If you have any questions or concerns about a service listed below, please contact the service creator directly.
 
-| Service Name                                                | Creator                                                                                      |
-|-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| [Abyss Tracker](./abyss-tracker/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
-| [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                       |
-| [EVE Workbench](./eve-workbench/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
-| [Innominate Appraisal](./innominate-appraisal/index.md)     | [:octicons-mark-github-16: Mezoology](https://github.com/mezoology)                          |
-| [JitaSpace](./jitaspace/index.md)                                    | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                        |
-| [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
-<!-- | [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) | -->
+| Name                                                                                                                                                   | Description                                                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| [<b>Abyss Tracker</b>](./abyss-tracker/index.md)<br/>[:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)                  | A loot tracker specifically for the Abyss Runners in EVE Online. Share your runs and analyze them. Its connected to EVE Workbench for the fits.                                 |
+| [<b>Alliance Auth</b>](./alliance-auth/index.md)<br/>[:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                            | An auth system for EVE Online to help in-game organizations manage online service access.                                                                                       |
+| [<b>EVE Workbench</b>](./eve-workbench/index.md)<br/>[:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)                  | A web based tool for the EVE community, allowing players to browse the market, create haul routes and browse & share fittings.                                                  |
+| [<b>Innominate Appraisal</b>](./innominate-appraisal/index.md)<br/>[:octicons-mark-github-16: Mezoology](https://github.com/mezoology)                 |                                                                                                                                                                                 |
+| [<b>JitaSpace</b>](./jitaspace/index.md)<br/>[:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                                     | All-in-one web application with an ever-expanding feature set of tools for EVE Online, from reading all your characters' EveMail in one place, to browsing the LP store offers. |
+| [<b>RIFT Intel Fusion Tool</b>](./rift-intel-fusion-tool/index.md)<br/>[:octicons-mark-github-16: Nohus](https://github.com/nohus)                     | Desktop app for Windows, Linux and macOS. Intel channels monitoring, flexible alerts, advanced map, PI, assets and more.                                                        |
+<!-- | [<b>Sample Service</b>](./sample-service/index.md)<br/>[:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here)   | Short description                                                                                                                               | -->
 
 # Libraries and resources
 
@@ -24,7 +24,7 @@ These projects are intended for use as building blocks by other developers
 | Name                                           | Description                                                   | Creator                                                                                       |
 |------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Django-ESI](./django-esi/index.md)            | Django app for easy access to the EVE Swagger Interface (ESI) | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                        |
-| [SDE REST API](./sde-rest-api/index.md)                 | REST API for the EVE Static Data Export (SDE)                 | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                         |
+| [SDE REST API](./sde-rest-api/index.md)        | REST API for the EVE Static Data Export (SDE)                 | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                         |
 <!-- | [Sample Tool](https://github.com/esi/esi-docs)  | Crowd-sourced documentation    | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) | -->
 
 # Submitting a Service
@@ -44,7 +44,7 @@ As always, we reserve the right to remove any service from this list at any time
 !!! note "A note about search"
 
     You might have noticed the search exclusion marker in the template file.
-    
+
     This part is required.
 
     While we want to keep a list of community services, the primary function of this documentation site is to provide access to information about the EVE Online third-party development ecosystem.
@@ -56,10 +56,10 @@ As always, we reserve the right to remove any service from this list at any time
 
 If you want to add images to your service page, be sure to add them to the same directory as your service page. Please keep the images small and optimized for the web, no larger than 250KB or 1024x768 pixels. Also try to limit the amount of images you use on a single page, preferably no more than 10 unless necessary.
 
-# Submitting a tool or resource
+# Submitting a library or resource
 
-If you would like to list your tool or resource here, please submit a pull request to this repository, adding your tool or resource to the table above. Please keep the description of your tool or resource brief and to the point. If your tool or resource is big enough that you feel it needs its own page, this can be arranged, but please have a discussion about this on [discord](../support.md).
+If you would like to list your library or resource here, please submit a pull request to this repository, adding your library or resource to the table above. Please keep the description of your library or resource brief and to the point. If your library or resource is big enough that you feel it needs its own page, this can be arranged, but please have a discussion about this on [discord](../support.md).
 
-## Tools vs. Services
+## Tools vs. Libraries
 
-The general rule of thumb is that if your project is something that a developer would use to build something else, it's a tool or a resource. If it's something that an end user would use directly, i.e. by installing it themselves, or through something already hosted, it's a service.
+The general rule of thumb is that if your project is something that a developer would use to build something else, it's a library or a resource. If it's something that an end user would use directly, i.e. by installing it themselves, or through something already hosted, it's a tool or a service.
