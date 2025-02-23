@@ -1,14 +1,14 @@
 ---
-title: Single-Sign-On
+title: Single Sign-On
 ---
-# Single-Sign-On (SSO)
+# Single Sign-On (SSO)
 
-The EVE single Sign-On (SSO) Service helps facilitate third-party application access for players.
+The EVE Single Sign-On (SSO) Service helps facilitate third-party application access for players.
 By leveraging the OAuth 2.0 protocol, the EVE SSO allows players to sign in to external websites, applications or tools using their EVE Online credentials.
 Furthermore, this provides a seamless and secure way for players to authorize third-party applications to access their EVE Online data through the ESI API, without exposing their account credentials.
 
 The SSO ensures that third-party applications can obtain limited access to a character's data based on the permissions granted (also known as "scopes").
-For instance, a third-party application may request access to a character's location, skill queue or wallet ballance, but only if the player explicitly grants the application permission to do so.
+For instance, a third-party application may request access to a character's location, skill queue or wallet balance, but only if the player explicitly grants the application permission to do so.
 At the same time, scopes not granted by the player will not be accessible to the third-party application.
 
 This secure, token-based access control mechanism ensures that players have full control over the data they share with third-party applications, and can revoke access at any time.
@@ -66,7 +66,7 @@ sequenceDiagram
    The application generates a random string and includes it in the authorization request.
    The SSO service returns the same string in the redirect, and the application must verify that the state parameter matches the one it sent.
 - **Endpoints**: The SSO service has several endpoints that applications interact with. These include the authorization endpoint, token endpoint, and the JWKS endpoint.
-   The URLs for these endpoints can be retrieved from the SSO service's well-known endpoint: `https://login.eveonline.com/.well-known/oauth-authorization-server`. 
+   The URLs for these endpoints can be retrieved from the SSO service's well-known endpoint: `https://login.eveonline.com/.well-known/oauth-authorization-server`.
    These URLs may change in the future, so it is recommended to always fetch them from the endpoint, however, it is safe (and recommended) to cache them for a reasonable amount of time.
 
 ## Authorization Flows
@@ -184,7 +184,7 @@ Once you have obtained an access token from the EVE SSO, you can use it to authe
 
 The access token is a JWT that is signed by the EVE SSO using an RSA key. To verify the signature, you need to fetch the public key from the SSO's JWKS (JSON Web Key Set) endpoint and use it to validate the token.
 
-The SSO serivce has a [metadata endpoint](https://login.eveonline.com/.well-known/oauth-authorization-server) that provides the URL to the JWKS endpoint. If you want to verify the signature of the access token, be sure to fetch the metadata information first, and then fetch the public key from the JWKS endpoint. While the JWKS endpoint is unlikely to change, it is not guaranteed to be static, so it is recommended to fetch it from the metadata endpoint each time you need it.
+The SSO service has a [metadata endpoint](https://login.eveonline.com/.well-known/oauth-authorization-server) that provides the URL to the JWKS endpoint. If you want to verify the signature of the access token, be sure to fetch the metadata information first, and then fetch the public key from the JWKS endpoint. While the JWKS endpoint is unlikely to change, it is not guaranteed to be static, so it is recommended to fetch it from the metadata endpoint each time you need it.
 
 <h3>Issuer Verification</h3>
 
@@ -207,3 +207,15 @@ The `exp` claim in the JWT token is the expiration time of the token, represente
 Now that you have verified the JWT Token, you can use the claims belonging to the token to get more information about the access the token has, and for whom it was issued.
 
 The `sub` claim in the JWT token is in the format of `EVE:CHARACTER:<character-id>` and can be used to get the current character's ID. The `name` claim contains the character's name, and the `scp` claim is an array of scopes that have been granted to this token.
+
+## Log in with EVE Online buttons
+
+When creating a button to direct users to log in to your site or application with the EVE SSO please use one of the following images for the button. This helps create consistency for EVE players amongst all third-party applications when viewing your site or application.
+
+![](https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-white-large.png)
+
+![](https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-black-large.png)
+
+![](https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-white-small.png)
+
+![](https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-black-small.png)
