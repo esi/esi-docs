@@ -7,29 +7,17 @@ collapse: nav
 
     Please note that the table below contains a list of community projects and services that are not officially supported by CCP Games. We acknowledge the hard work and dedication of the developers who have created these services and give them a soapbox to promote their services. However, we do not endorse or guarantee the services listed below. If you have any questions or concerns about a service listed below, please contact the service creator directly.
 
-| Service Name                                                | Creator                                                                                      |
-|-------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| [Abyss Tracker](./abyss-tracker/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
-| [Alliance Auth](./alliance-auth/index.md)                   | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                       |
-| [EVE Workbench](./eve-workbench/index.md)                   | [:octicons-mark-github-16: EVE Workbench Team](https://github.com/EVE-Workbench)             |
-| [Innominate Appraisal](./innominate-appraisal/index.md)     | [:octicons-mark-github-16: Mezoology](https://github.com/mezoology)                          |
-| [JitaSpace](./jitaspace/index.md)                                    | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                        |
-| [RIFT Intel Fusion Tool](./rift-intel-fusion-tool/index.md) | [:octicons-mark-github-16: Nohus](https://github.com/nohus)                                  |
-<!-- | [Sample Service](./sample-service/index.md)                 | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) | -->
+{{ community_pages("service") }}
 
 # Libraries and resources
 
 These projects are intended for use as building blocks by other developers
 
-| Name                                           | Description                                                   | Creator                                                                                       |
-|------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Django-ESI](./django-esi/index.md)            | Django app for easy access to the EVE Swagger Interface (ESI) | [:simple-gitlab: Alliance Auth Team](https://gitlab.com/allianceauth/)                        |
-| [SDE REST API](./sde-rest-api/index.md)                 | REST API for the EVE Static Data Export (SDE)                 | [:octicons-mark-github-16: joaomlneto](https://github.com/joaomlneto)                         |
-<!-- | [Sample Tool](https://github.com/esi/esi-docs)  | Crowd-sourced documentation    | [:octicons-mark-github-16: Developer McDeveloperface](https://github.com/@your-username-here) | -->
+{{ community_pages("resource") }}
 
 # Submitting a Service
 
-If you would like to list your service here, please submit a pull request to this repository, adding your service to the table above, and creating a sub-page in this directory with more information about your service. Use the file in `src/docs/community/sample-service/` as a template.
+If you would like to list your service here, please submit a pull request to this repository, creating a sub-page in this directory with more information about your service. Use the file in `src/docs/community/sample-service/` as a template. The tables above will automatically update with the information you provide, assuming you follow the template.
 
 ## Requirements
 

@@ -3,6 +3,11 @@ search:
   exclude: true
 
 title: SDE REST API
+type: resource
+description: REST API for the EVE Static Data Export (SDE)
+maintainer:
+  name: joaomlneto
+  github: joaomlneto
 ---
 
 # JitaSpace SDE REST API

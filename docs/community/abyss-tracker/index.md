@@ -3,6 +3,11 @@ search:
   exclude: true
 
 title: Abyss Tracker
+type: service
+description: A loot tracker specifically for the Abyss Runners in EVE Online. Share your runs and analyze them. Its connected to EVE Workbench for the fits.
+maintainer:
+  name: EVE Workbench Team
+  github: EVE-Workbench
 ---
 
 # Abyss Tracker

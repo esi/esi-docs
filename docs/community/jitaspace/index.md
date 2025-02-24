@@ -1,6 +1,13 @@
 ---
 search:
   exclude: true
+
+title: JitaSpace
+type: service
+description: All-in-one web application with an ever-expanding feature set of tools for EVE Online, from reading all your characters' EveMail in one place, to browsing the LP store offers.
+maintainer:
+  name: joaomlneto
+  github: joaomlneto
 ---
 
 # JitaSpace

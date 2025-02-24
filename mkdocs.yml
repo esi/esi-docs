@@ -7,6 +7,7 @@ edit_uri: edit/main/docs/
 
 hooks:
   - scripts/generate-snippets.py
+  - scripts/community-tools.py
 
 not_in_nav: |
   community/sample-service/index.md
@@ -38,6 +39,7 @@ theme:
 watch:
   - overrides
   - snippets
+  - scripts
   - main.py
 
 extra_css:
