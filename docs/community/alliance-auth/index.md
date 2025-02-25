@@ -3,6 +3,11 @@ search:
   exclude: true
 
 title: Alliance Auth
+type: service
+description: An auth system for EVE Online to help in-game organizations manage online service access.
+maintainer:
+  name: Alliance Auth Team
+  gitlab: allianceauth
 ---
 
 # Alliance Auth 

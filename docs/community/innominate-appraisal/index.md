@@ -1,6 +1,13 @@
 ---
 search:
   exclude: true
+
+title: Innominate Appraisal
+type: service
+description: Web App for everyday Market PvP, Works on any devise with a browser. contains several features and appraisal methods for multiple market hubs.
+maintainer:
+  name: Mezoology
+  github: mezoology
 ---
 
 # Innominate Appraisal

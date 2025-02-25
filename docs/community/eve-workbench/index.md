@@ -3,6 +3,11 @@ search:
   exclude: true
 
 title: EVE Workbench
+type: service
+description: A web based tool for the EVE community, allowing players to browse the market, create haul routes and browse & share fittings.
+maintainer:
+  name: EVE Workbench Team
+  github: EVE-Workbench
 ---
 
 # EVE Workbench

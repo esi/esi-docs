@@ -837,3 +837,29 @@ body::before {
     overflow: auto;
   }
 }
+
+.esi-community-list td {
+  line-height: 22px;
+  font-size: 16px;
+}
+.esi-community-list td .item-title {
+  font-size: 18px;
+  font-weight: 500;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+.esi-community-list .col-30 {
+  width: 30%;
+}
+.esi-community-list .col-70 {
+  max-width: 70%;
+}
+
+.esi-community-list svg {
+  display: inline-block;
+  width: 18px;
+  vertical-align: text-bottom;
+}
+.esi-community-list svg path {
+  fill: currentColor;
+}

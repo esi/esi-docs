@@ -1,6 +1,13 @@
 ---
 search:
   exclude: true
+
+title: RIFT Intel Fusion Tool
+type: service
+description: Desktop app for Windows, Linux and macOS. Intel channels monitoring, flexible alerts, advanced map, PI, assets and more.
+maintainer:
+  name: Nohus
+  github: nohus
 ---
 
 # RIFT Intel Fusion Tool

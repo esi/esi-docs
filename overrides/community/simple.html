@@ -1,0 +1,31 @@
+<table>
+  <thead class="esi-community-list esi-community-{{ filter }}-list">
+    <tr>
+      {% block table_header -%}
+      <th class="col-30">Service</th>
+      <th class="col-70">Description</th>
+      {% endblock -%}
+    </tr>
+  </thead>
+  <tbody class="esi-community-list esi-community-{{ filter }}-list">
+    {% for title, file, data in items -%}
+    <tr>
+      <td>
+        <a href="{{file.url | url}}" class="item-title">{{title}}</a>
+        {% if data.maintainer and data.maintainer.github %}
+        <br />
+        <a href="https://github.com/{{ data.maintainer.github }}" target="_blank" >
+          {% include ".icons/fontawesome/brands/github.svg" %} {{ data.maintainer.name | default(data.maintainer.github) }}
+        </a>
+        {% elif data.maintainer and data.maintainer.gitlab %}
+        <br />
+        <a href="https://gitlab.com/{{ data.maintainer.gitlab }}" target="_blank" >
+          {% include ".icons/fontawesome/brands/gitlab.svg" %} {{ data.maintainer.name | default(data.maintainer.gitlab) }}
+        </a>
+        {% endif %}
+      </td>
+      <td>{{ data.description }}</td>
+    </tr>
+    {% endfor -%}
+  </tbody>
+</table>

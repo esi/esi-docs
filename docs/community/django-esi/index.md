@@ -3,6 +3,11 @@ search:
   exclude: true
 
 title: Django-ESI
+type: resource
+description: Django app for easy access to the EVE Swagger Interface (ESI)
+maintainer:
+  name: Alliance Auth Team
+  gitlab: allianceauth
 ---
 
 # Django-ESI

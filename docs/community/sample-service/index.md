@@ -3,6 +3,12 @@ search:
   exclude: true
 
 title: Sample Service
+type: sample  # Should be either 'service' or 'resource'
+description: A short one-line description that will appear in the table on the community page.
+maintainer:  # `name` is required, and at least one of `github` or `gitlab` is required
+  name: Your name
+  github: github_username
+  gitlab: gitlab_username
 ---
 
 # EVE Online Sample Service
