@@ -1,9 +1,9 @@
 * Home
     * [Welcome](index.md)
-    * [Resources](resources/index.md)
+    * [License](resources/license.md)
     * [Support](support.md)
     * [ID Ranges](resources/id-ranges.md)
-* Services
+* Services and Resources
     * services/*/index.md
 * Guides and Examples
     * [Useful Formulae](guides/useful-formulae.md)
