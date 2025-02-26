@@ -11,7 +11,7 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 | 0             | 9,999         | System items (including junkyards and other special purpose items)   |
 | 500,000       | 599,999       | Factions                                                             |
 | 1,000,000     | 1,999,999     | NPC corporations                                                     |
-| 3,000,000     | 3,999,999     | NPC characters (agents and NPC corporation CEO's)                    |
+| 3,000,000     | 3,999,999     | NPC characters (agents and NPC corporation CEOs)                     |
 | 9,000,000     | 9,999,999     | Universes                                                            |
 | 10,000,000    | 19,999,999    | Regions                                                              |
 | 10,000,000    | 10,999,999    | New Eden (known space) regions                                       |
