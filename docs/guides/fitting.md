@@ -76,7 +76,7 @@ MEDS -> EMPTY | MODULE ( ':' MODULE )
 LOWS -> EMPTY | MODULE ( ':' MODULE )
 RIGS -> EMPTY | MODULE ( ':' MODULE )
 CHARGES -> EMPTY | CHARGE ( ':' CHARGE )
-MODULE -> MODULE_ID ';' QUANTITY
+MODULE -> MODULE_ID ( '_' ) ';' QUANTITY
 CHARGE -> CHARGE_ID ';' QUANTITY
 SHIP_TYPE_ID -> the typeID of a ship
 SUBSYSTEM_ID -> the typeID of the fitted subsystems
@@ -84,6 +84,8 @@ MODULE_ID -> the typeID of the fitted module
 CHARGE_ID -> the typeID of a charge or a drone
 QUANTITY -> an integer quantity of the type
 ```
+
+Module IDs can be followed by an underscore to indicate they are unfitted. Charges are always considered unfitted.
 
 ### Example
 
