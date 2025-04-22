@@ -43,7 +43,7 @@ You may, if you choose, include any additional information to identify your app.
 
 
 ```text
-AppName/1.2.3 (foo@example.com; +https://github.com/ eve:the L33T guy)
+AppName/1.2.3 (foo@example.com; +https://github.com/; eve:the L33T guy)
 ```
 
 #### Multiple layers application
