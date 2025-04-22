@@ -5,7 +5,7 @@ title: ESI
 
 ## User-Agent
 
-All ESI Requests **should** be accompanied by an appropriate User-Agent information providing a method for CCP to contact the source of the request in the event of an issue.
+All ESI Requests **should** be accompanied by appropriate User-Agent information providing a method for CCP to contact the source of the request in the event of an issue.
 
 ### Data transmission
 
