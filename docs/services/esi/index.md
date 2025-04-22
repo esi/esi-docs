@@ -3,30 +3,30 @@ title: ESI
 ---
 # EVE Swagger Interface (ESI)
 
-## User-Agent
+## User Information
 
-All ESI Requests **should** be accompanied by appropriate User-Agent information providing a method for CCP to contact the source of the request in the event of an issue.
+All ESI requests **should** be accompanied by appropriate user information providing a method for CCP to contact the source of the request in the event of an issue.
 
 ### Data transmission
 
-That data should be transmitted in, by order of preference 
- 1. A `User-Agent` header in the request
+This information should be transmitted in, by order of preference 
+ 1. A `User-Agent` header in the request.
  2. A `X-User-Agent` header instead, if that previous one can't be set reliably.
- 3. A `user_agent` query parameter, if you can't set your headers reliably.
+ 3. A `user_agent` query parameter, if the previous headers can't be set reliably. Don't forget to [url-encode](https://www.rfc-editor.org/rfc/rfc3986#section-2.1) the value.
 
-### Informations to transmit
+### Information to transmit
 
-This data transmitted should contain one or more of the following :
+This information **should** contain one or more of the following :
 
-- An Email Address (Strongly Preferred)
-- An App Name (Strongly Preferred)
+- An Email Address (**Strongly Preferred**)
+- An App Name (**Strongly Preferred**)
 - A URL to Source Code
 - A Discord UID
 - An EVE Character
 
 ### Recommended format
 
-While User Agents are not a defined web standard, the MDN provides a thoroughly documented set of examples <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent>, Following these standards will ensure your useragent is well understood.
+While User Agents are not a defined web standard, the MDN provides a thoroughly documented set of examples <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent> ; following these standards will ensure your useragent is well understood.
 
 #### Basic format
 
@@ -35,7 +35,7 @@ AppName/1.2.3 (foo@example.com)
 ```
 #### Additional information
 
-You may, if you choose, include any additional information to identify your app. Following the MDN standard.
+You may, if you choose, include any additional information to identify your app. Following the MDN standard :
 
 - A URL to your documentation or source code, remembering to prefix `+` on a URL `(+https://github.com/)`
 - A Discord Username `(discord:username)`
