@@ -33,7 +33,7 @@ While User Agents are not a defined web standard, the MDN provides a thoroughly 
 ```text
 AppName/1.2.3 (foo@example.com)
 ```
-#### Additional informations
+#### Additional information
 
 You may, if you choose, include any additional information to identify your app. Following the MDN standard.
 
