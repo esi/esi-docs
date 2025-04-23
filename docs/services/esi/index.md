@@ -18,15 +18,15 @@ A simple flowchart to help you decide how to send your user agent information:
 {% raw %}
 ``` mermaid
 flowchart LR
-    Q1{{Is your app a browser application?}}
-    Q2{{Can you set HTTP headers?}}
+    Q1{{Can you set HTTP headers?}}
+    Q2{{Is your app a browser application?}}
     A1[Use 'User-Agent' Header]
     A2["Use 'X-User-Agent' Header [1]"]
     A3["Use 'user_agent' Query Parameter [2]"]
-    Q1 -->|Yes| A2
-    Q1 -->|No| Q2
-    Q2 -->|Yes| A1
-    Q2 -->|No| A3
+    Q1 -->|Yes| Q2
+    Q1 -->|No| A3
+    Q2 -->|Yes| A2
+    Q2 -->|No| A1
 ```
 {% endraw %}
 
