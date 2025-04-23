@@ -45,7 +45,7 @@ The User Agent information you send should contain one or more of the following 
 - An Email Address (**Strongly Preferred**) `(foo@example.com)`
 - App Name with version (**Strongly Preferred**) `AppName/1.2.3`
 - A URL to Source Code `(+https://github.com/your/repository)`
-- A Discord UID `(discord:username)`
+- A Discord Username `(discord:username)`
 - An EVE Character `(eve:charactername)`
 
 While User Agents are not a defined web standard, the MDN provides a thoroughly documented set of examples <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent> ; following these standards will ensure your useragent is well understood.
