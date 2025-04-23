@@ -29,7 +29,7 @@ The general rule of thumb is that if your project is something that a developer 
 2. Your service/resource adheres to the [EVE Online Developer License Agreement](/license-agreement).
 3. Your service/resource must be publicly accessible. :material-information-outline:{ title="No private services, please." }
 4. The creator of the service/resource has an account in good standing. :material-information-outline:{ title="Yes, being banned counts as 'not in good standing'." }
-5. Your service/resource is 'released', and not in an early alpha or beta state. :material-information-outline:{ title="We want to make sure that the service is stable and usable for the general EVE public. If you are working on a new project, drop by in discord, as there's bound to be other developers there that might be interested in what you're tinkering with." }
+5. Your service/resource is 'released', and not in an early alpha or beta state. :material-information-outline:{ title="We want to make sure that the service is stable and usable for the general EVE public. If you are working on a new project, drop by in Discord, as there's bound to be other developers there that might be interested in what you're tinkering with." }
 6. (Bonus) Your service/resource is open source. :material-information-outline:{ title="This is not a requirement, but a nice-to-have." }
 
 As always, we reserve the right to remove any service from this list at any time for any reason, or decline to add a service to this list.
