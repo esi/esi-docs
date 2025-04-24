@@ -7,7 +7,7 @@ The ESI API is the official RESTful API for EVE third-party development. You can
 
 ## Authentication
 
-While some ESI endpoints are public, many require authentication, which is handled by [SSO](../sso). If an ESI endpoint requires authentication, you will see a grey lock icon on the route description in the Swagger UI. The route description lists the required scopes.
+While some ESI endpoints are public, many require authentication, which is handled by [SSO](../sso/). If an ESI endpoint requires authentication, you will see a grey lock icon on the route description in the Swagger UI. The route description lists the required scopes.
 
 ## Versioning
 
@@ -101,7 +101,7 @@ Cache headers:
 
 ## Support
 
-ESI has its own issues repository at [esi-issues](https://github.com/esi/esi-issues). From there you can raise issues or ask for new features. Also see the general [support page](../../support).
+ESI has its own issues repository at [esi-issues](https://github.com/esi/esi-issues). From there you can raise issues or ask for new features. Also see the general [support page](../../support/).
 
 ### ESI Bans
 
