@@ -12,13 +12,13 @@ maintainer:
 
 # EVECompanion iOS App
 
-<img src="icon.png" width="150"/>
+![](icon.png)
 
 Monitor your characters, plan your capital jump routes and follow events in the EVE Online universe with this iOS companion app.
 
 <div class="grid cards" markdown>
 
-- [:octicons-device-mobile-16: **App Store**](https://apps.apple.com/de/app/evecompanion/id6504098870){ .esi-card-link }
+- [:octicons-device-mobile-16: **App Store**](https://apps.apple.com/app/evecompanion/id6504098870){ .esi-card-link }
 - [:octicons-mark-github-16: **GitHub**](https://github.com/EVECompanion){ .esi-card-link }
 
 </div>
@@ -42,19 +42,19 @@ Monitor your characters, plan your capital jump routes and follow events in the 
 
 ## Character Monitoring
 
-<img src="characterlist.png" width="400"/>
-<img src="charactersheet.png" width="400"/>
-<img src="skillqueue.png" width="400"/>
-<img src="walletjournal.png" width="400"/>
-<img src="contracts.png" width="400"/>
+![](characterlist.png)
+![](charactersheet.png)
+![](skillqueue.png)
+![](walletjournal.png)
+![](contracts.png)
 
 ## Plan your capital jump routes
 
-<img src="capitalnavigation_1.png" width="400"/>
-<img src="capitalnavigation_2.png" width="400"/>
-<img src="capitalnavigation_3.png" width="400"/>
+![](capitalnavigation_1.png)
+![](capitalnavigation_2.png)
+![](capitalnavigation_3.png)
 
 ## Observe incursions and sov timers
 
-<img src="incursions.png" width="400"/>
-<img src="sovtimers.png" width="400"/>
+![](incursions.png)
+![](sovtimers.png)
