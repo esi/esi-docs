@@ -7,7 +7,7 @@ type: service
 description: DSCAN ICU 是一个用于分析和分享 EVE Online D-Scan 结果的工具，支持多语言。
 maintainer:
   name: zifox666 Garveen
-  github: zifox666/eve-dscan-tool
+  github: zifox666
 ---
 
 # Dscan ICU
