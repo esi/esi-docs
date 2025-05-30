@@ -103,7 +103,7 @@ The `last-modified` header indicates when the data was last updated in the cache
 The `ETag` header is a hash of the content. Once you have received that header with a response, in a subsequent request you can add the `If-None-Match` header set to the last retrieved value. If the data did not change since the last cached value, the server will return a `304` response code instead of e.g. `200`, meaning there is no change to handle.
 
 Notes: 
- - When requesting a paginated resource, each of those headers should be the same for all the pages of a single resource. Checking this constraint allows you to validate the data retrieved, typically by avoiding the case where the data is refreshed between the calls to two different pages. This can also happen outside of esi cache refresh.
+ - When requesting a paginated resource, each of those headers should be the same for all the pages of a single resource. Checking this constraint allows you to validate the data retrieved, typically by avoiding the case where the data is refreshed between the calls to two different pages. This can also happen outside of ESI cache refresh.
  - Some resources may not provide such headers, typically POST methods can have no cache information, while still actually having internal cache.
  - Static data should have the same shared caching information. That is, planets, moons, types etc. path should return the same caching headers.
 
