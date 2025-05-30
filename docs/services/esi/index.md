@@ -93,11 +93,19 @@ The details are explained in this blog post: [Error Rate Limiting](/blog/error-r
 
 ### Caching
 
-The `expires` header represents when new data will be available. You should not update before that. If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request. In the worst case scenario you will get new data, and it may count as circumventing the ESI caching. Circumventing the ESI caching can get you banned from ESI.
+The ESI acts as both an http handler for resources available in the monolith, and a cache manager of those resources' representation. You can get a benefit from the caching in several ways, depending on the request you send.
 
-Cache headers:  
-`expires` when new data is available.  
-`last-modified` when the data was last updated
+The `expires` header represents when the resource cache in ESI should expire, that is when updated data should be available.
+You should not update before that. If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request. In the worst case scenario you will get new data, and it may count as circumventing the ESI caching. Circumventing the ESI caching can get you banned from ESI.
+
+The `last-modified` header indicates when the data was last updated in the cache.
+
+The `ETag` header is a hash of the content. Once you have received that header with a response, in a subsequent request you can add the `If-None-Match` header set to the last retrieved value. If the data did not change since the last cached value, the server will return a `304` response code instead of e.g. `200`, meaning there is no change to handle.
+
+Notes: 
+ - When requesting a paginated resource, each of those headers should be the same for all the pages of a single resource. Checking this constraint allows you to validate the data retrieved, typically by avoiding the case where the data is refreshed between the calls to two different pages. This can also happen outside of ESI cache refresh.
+ - Some resources may not provide such headers, typically POST methods have no cache information, even when they still actually have an internal cache.
+ - Static data should have the same shared caching information. That is, planets, moons, types, etc. paths should return the same caching headers.
 
 ## Support
 
