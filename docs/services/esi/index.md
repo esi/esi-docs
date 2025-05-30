@@ -100,7 +100,7 @@ You should not update before that. If you update before, the best case scenario 
 
 The `last-modified` header indicates when the data was last updated in the cache.
 
-The `ETag` header is a hash of the content. Once you received that header, you can add in your query the `If-None-Match` header set to the last retrieved value. If the data did not change since the last cached value, the server will return a response-code `304` instead of eg 200, meaning there is no change to handle.
+The `ETag` header is a hash of the content. Once you have received that header with a response, in a subsequent request you can add the `If-None-Match` header set to the last retrieved value. If the data did not change since the last cached value, the server will return a `304` response code instead of e.g. `200`, meaning there is no change to handle.
 
 Notes : 
  - When requesting a paginated resource, each of those headers should be the same for all the pages of a single resource. Checking this constraint allows you to validate the data retrieved, typically by avoiding the case where the data is refreshed between the calls to two different pages. This can also happen outside of esi cache refresh.
