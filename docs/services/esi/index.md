@@ -95,7 +95,7 @@ The details are explained in this blog post: [Error Rate Limiting](/blog/error-r
 
 The ESI acts as both an http handler for resources available in the monolith, and a cache manager of those resources' representation. You can get a benefit from the caching in several ways, depending on the request you send.
 
-The `expires` header represents when the resource cache in the esi should expire, that is when updated data should be available.
+The `expires` header represents when the resource cache in ESI should expire, that is when updated data should be available.
 You should not update before that. If you update before, the best case scenario is that you will get a cached result, wasting resources on both side of the request. In the worst case scenario you will get new data, and it may count as circumventing the ESI caching. Circumventing the ESI caching can get you banned from ESI.
 
 The `last-modified` header indicates hen the data was last updated in the cache.
