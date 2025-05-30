@@ -105,7 +105,7 @@ The `ETag` header is a hash of the content. Once you have received that header w
 Notes: 
  - When requesting a paginated resource, each of those headers should be the same for all the pages of a single resource. Checking this constraint allows you to validate the data retrieved, typically by avoiding the case where the data is refreshed between the calls to two different pages. This can also happen outside of ESI cache refresh.
  - Some resources may not provide such headers, typically POST methods have no cache information, even when they still actually have an internal cache.
- - Static data should have the same shared caching information. That is, planets, moons, types etc. path should return the same caching headers.
+ - Static data should have the same shared caching information. That is, planets, moons, types, etc. paths should return the same caching headers.
 
 ## Support
 
