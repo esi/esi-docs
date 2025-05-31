@@ -2,7 +2,7 @@
 
 ## General Information
 
-Map data is available in the [SDE](../../services/sde/index.md) or through [ESI](../../services/esi/index.md).  
+Map data is available in the [SDE](../../services/sde/index.md) or through [ESI](../../services/esi/overview/).  
 Objects like regions, constellations, solarsystems, planets, moons, and other celestial bodies have a position.
 
 There are two kinds of position, each using their own coordinate system:  
