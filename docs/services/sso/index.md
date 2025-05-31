@@ -46,7 +46,7 @@ sequenceDiagram
     sso-->>app: Responds with an access token and refresh token
 ```
 
-<h2>Terms and important notes</h2>
+## Terms and important notes
 
 - **Client ID and Secret**: The client ID and secret are used to authenticate the application with the SSO service.
    The Client ID is public and can be shared, but the secret must be kept private.
