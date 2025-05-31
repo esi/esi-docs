@@ -7,5 +7,6 @@
     * services/*/index.md
 * Guides and Examples
     * guides/*.md
+    * guides/*/index.md
 * [Community](community/index.md)
     * community/*/index.md
