@@ -11,7 +11,7 @@ There are two kinds of position, each using their own coordinate system:
   The center of the cluster lies near Zarzakh, labelled "Point of No Return" on the in-game map. (See the red dot on the cluster map below)  
 
 * Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)  
-  The center of a solarsystem is it's star. Not every solarsystem has a star object, for abyssal deadspace systems with neither star nor planet, the origin is an arbitrary point.
+  The center of a solarsystem is it's star. Not every solarsystem has a star object; for abyssal deadspace systems with neither star nor planet, the origin is an arbitrary point.
   Note: The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`.  
 
 These coordinate systems have the same scale (1.0 = 1 meter), but different directions.  
@@ -67,7 +67,7 @@ Note: This is different with the Universe's coordinate system, and is **Right**-
 
 ### Combining the coordinate systems
 
-Both coordinate systems have the same scale but different axes, to get the position of a planet within the larger 'universe' coordinate system, it's position can be added to that of the parent star with the x coordinate negated:  
+Both coordinate systems have the same scale but different axes. To get the position of a planet within the larger 'universe' coordinate system, it's position can be added to that of the parent star with the x coordinate negated:  
 x = x<sub>system</sub> - x<sub>planet</sub>  
 y = y<sub>system</sub> + y<sub>planet</sub>  
 z = z<sub>system</sub> + z<sub>planet</sub>
