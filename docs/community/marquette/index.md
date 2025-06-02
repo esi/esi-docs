@@ -8,7 +8,7 @@ description: Marquette is a market explorer and appraisal tool that gives capsul
 url: https://marquette.ch
 maintainer:
   name: Aliénore Bouttefeux
-#   repository: https://git.noxie.ch/Marquette/Marquette
+  repository: https://git.noxie.ch/ABouttefeux
 ---
 
 <img src="marquette-logo.svg" alt="drawing" width="70"/>
@@ -20,7 +20,7 @@ Marquette is a marquette explorer tool and appraisal tool. It offers powerful lo
 
 <div class="grid cards" markdown>
 - [:octicons-browser-16: __Website__](https://marquette.ch){ .esi-card-link }
-- [:octicons-mark-github-16: __Repository__](https://git.noxie.ch/Marquette/Marquette){ .esi-card-link }
+- [:octicons-git-branch-16: __Repository__](https://git.noxie.ch/Marquette/Marquette){ .esi-card-link }
 </div>
 
 ## features
