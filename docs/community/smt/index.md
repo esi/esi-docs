@@ -33,13 +33,11 @@ maintainer:
 - **Hunting Mode**: See where the activity is across New Eden... find your target, check range maps, track bridgers and Hunt
 - **Anti-Hunting Mode**: Organise to defend against hunters.. display your intel, set alarms and notifications defend against incoming hunters
 
-
-
 ## Examples
 
 ![](smt-regionview.png)
 ![](smt-regionview2.png)
-![](smt-universeview.png.png)
+![](smt-universeview.png)
 
 
 ... And Plenty more..
