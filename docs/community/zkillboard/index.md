@@ -2,9 +2,9 @@
 search:
   exclude: true
 
-title: zkillboard.com
+title: zKillboard.com
 type: service
-description: zkillboard.com is a killboard for the Massively Multiplayer Online Role Playing Game (MMORPG) EVE-Online.
+description: zKillboard.com is a killboard for the Massively Multiplayer Online Role Playing Game (MMORPG) EVE-Online.
 maintainer:
   name: Squizz Caphinator
   github: cvweiss
