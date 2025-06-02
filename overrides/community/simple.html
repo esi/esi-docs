@@ -22,6 +22,11 @@
         <a href="https://gitlab.com/{{ data.maintainer.gitlab }}" target="_blank" >
           {% include ".icons/fontawesome/brands/gitlab.svg" %} {{ data.maintainer.name | default(data.maintainer.gitlab) }}
         </a>
+        {% elif data.maintainer and data.maintainer.repository %}
+        <br />
+        <a href="{{ data.maintainer.repository }}" target="_blank" >
+          {% include ".icons/fontawesome/brands/git-alt.svg" %} {{ data.maintainer.name | default(data.maintainer.repository) }}
+        </a>
         {% endif %}
       </td>
       <td>{{ data.description }}</td>

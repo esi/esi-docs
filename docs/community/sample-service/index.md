@@ -5,10 +5,11 @@ search:
 title: Sample Service
 type: sample  # Should be either 'service' or 'resource'
 description: A short one-line description that will appear in the table on the community page.
-maintainer:  # `name` is required, and at least one of `github` or `gitlab` is required
+maintainer:  # `name` is required, and exactly one of `github`, `gitlab`, or 'repository' is required
   name: Your name
-  github: github_username
-  gitlab: gitlab_username
+  github: username # GitHub username, this will generate a link to your GitHub profile
+  gitlab: username # GitLab username, this will generate a link to your GitLab profile
+  repository: https://git.example.com/username # If your source control is somewhere else, enter the full URL of your user profile
 ---
 
 # EVE Online Sample Service
