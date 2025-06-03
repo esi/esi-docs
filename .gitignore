@@ -5,3 +5,10 @@
 /.idea/
 /snippets/**/*.md
 __pycache__/
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
