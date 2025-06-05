@@ -1,5 +1,5 @@
 ---
-title: Market history endpoint
+title: Market history
 ---
 # Market history
 
