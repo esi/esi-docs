@@ -13,7 +13,7 @@ While the returned entries are usually sorted by date ascending, nothing in the 
 
 Days with no sale are not represented in the reponse, while they are present with a 0 volume in the game, assuming prior information exists.
 
-The response does not contain today's value that is shown in-game. This value is indeed processed at the end of the next day. The response may not contain the previous day's values either, eg [Tritanium(34) in The Forge(10000002)](https://esi.evetech.net/latest/markets/10000002/history/?datasource=tranquility&type_id=34) may have values up to two days before.
+The response does not contain today's value that is shown in-game. This value is indeed processed at the end of the next day. The response may not contain the previous day's values either, eg [Tritanium (34) in The Forge(10000002)](https://esi.evetech.net/latest/markets/10000002/history/?datasource=tranquility&type_id=34) may have values up to two days before.
 
 ## Limits
 
