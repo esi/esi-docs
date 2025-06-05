@@ -7,7 +7,7 @@ title: Market history
 
 ## Response information
 
-This paths returns the data from the Eve's monolith as-is, and therefore contains the same issues. Typically, `lowest` and `highest` are not the actual lowest and highest prices, but values tinkered by CCP's daily summarizing process. Those returned values can be very far from the actual ones, the actual way those values are created is not explained by CCP.
+This path returns the data from the EVE's monolith as-is, and therefore contains the same issues. Typically, `lowest` and `highest` are not the actual lowest and highest prices, but values tinkered by CCP's daily summarizing process. Those returned values can be far from the actual ones. The way these values are created is not explained by CCP.
 
 While the returned entries are usually sorted by date ASC, nothing in the specs enforces this, so this behaviour is not an actual rule. If you want to have the last or first data, you **should** sort them.
 
