@@ -20,11 +20,11 @@ This is the format used when the "Copy to Clipboard" action is used in the in-ga
 8. Drones / fighters in drone / fighter bay with amount (i.e., Warrior II x2)
 9. Items in cargo bay with amount (i.e., Antimatter Charge M x42)
 
-Sections 2-7 are separated by an empty line, sections 7-9 are separated by two empty lines.
+Sections 2–7 are separated by an empty line, sections 7–9 are separated by two empty lines.
 
 Drones and items in cargo can have counts indicated with a ` x42` suffix for 42 units, for example.
 
-Modules can have an `/OFFLINE` suffix to indicate they are offline, however this is ignored by the game, but still considered valid when importing.
+The in-game import allows modules to have an `/offline` suffix. However, this has no effect on the import; the module is still considered online. The lowercase text matters, the game won't accept an uppercase `/OFFLINE`.
 
 Empty slots are indicated by `[Empty <name> slot]` where `<name>` is one of `low`, `med`, `high`,  `rig`, `service`, however this is not present when exporting from the game, but still considered valid when importing.
 
