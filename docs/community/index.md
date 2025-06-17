@@ -1,6 +1,7 @@
 ---
 collapse: nav
 ---
+
 # Community tools and Services
 
 !!! info "Obligatory disclaimer"
@@ -17,7 +18,7 @@ These projects are intended for use as building blocks by other developers
 
 # Submitting a Service or Resource
 
-If you would like to list your service here, please submit a pull request to this repository, creating a sub-page in this directory with more information about your service. Use the file in `src/docs/community/sample-service/` as a template. The tables above will automatically update with the information you provide, assuming you follow the template.
+If you would like to list your service here, please submit a pull request to [this repository](https://github.com/esi/esi-docs), creating a sub-page in [this directory](https://github.com/esi/esi-docs/tree/main/docs/community) with more information about your service. Use the file in [`/docs/community/sample-service/`](https://github.com/esi/esi-docs/tree/main/docs/community/sample-service) as a template. The tables above will automatically update with the information you provide, assuming you follow the template.
 
 ## Resources vs. Services
 

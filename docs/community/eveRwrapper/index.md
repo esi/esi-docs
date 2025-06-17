@@ -3,11 +3,11 @@ search:
   exclude: true
 
 title: eveRwrapper
-type: library
+type: resource
 description: A wrapper of the Eve Swagger Interface (ESI) to retrieve information from our favorite MMORPG.
 maintainer:
   name: Thessale Buelle
-  github: eveRwrapper
+  github: kandrsn99
 ---
 
 <div class="grid cards" markdown>
