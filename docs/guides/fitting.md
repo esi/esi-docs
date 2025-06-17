@@ -12,7 +12,7 @@ This is the format used when the "Copy to Clipboard" action is used in the in-ga
 
 1. First line lists the hull and fitting name, in square brackets, separated by a comma
 2. Low slot modules
-3. Mid slot modules and charge (if available)
+3. Medium slot modules and charge (if available)
 4. High slot modules and charge (if available) (i.e., 125mm Railgun I, Antimatter Charge S)
 5. Rigs
 6. Subsystems
@@ -24,19 +24,18 @@ Sections 2–7 are separated by an empty line, sections 7–9 are separated by t
 
 Drones and items in cargo can have counts indicated with a ` x42` suffix for 42 units, for example.
 
-The in-game import allows modules to have an `/offline` suffix. However, this has no effect on the import; the module is still considered online. The lowercase text matters, the game won't accept an uppercase `/OFFLINE`.
+Modules can have the suffix `/offline` to indicate they are offline. However, although in-game imports these fits, the `/offline` suffix is ignored. The module will still be imported as online.
 
-Empty slots are indicated by `[Empty <name> slot]` where `<name>` is one of `low`, `med`, `high`,  `rig`, `service`, however this is not present when exporting from the game, but still considered valid when importing.
+Empty slots are indicated by `[Empty <name> slot]` where `<name>` is one of `low`, `med`, `high`, `rig`, `service`, however this is not present when exporting from the game, but still considered valid when importing.
 
 Type names can be specified in any localized format, not only English.
 
-
-
 ### Example
+
 ```
 [Heron Navy Issue, Deepflow Rift Dredger]
 Inertial Stabilizers II
-Inertial Stabilizers II
+Inertial Stabilizers II /offline
 
 Scan Pinpointing Array II
 Scan Rangefinding Array II
@@ -57,7 +56,6 @@ Small Core Defense Field Extender I
 
 Sisters Core Scanner Probe x8
 ```
-
 
 ## DNA
 
@@ -94,12 +92,12 @@ Module IDs can be followed by an underscore to indicate they are unfitted. Charg
 As a chat link:
 `<url=fitting:72904:4250;2:4258;1:11577;1:33199;1:33201;1:33197;1:9580;1:9568;1:1405;2:31220;1:31788;1:30488;8::>Deepflow Rift Dredger</url>`
 
-
 ## XML
 
 This is the format used when exporting fits to a file in-game, or importing from a file. The format supports multiple fits in a single data structure.
 
 ### Example
+
 ```xml
 <?xml version="1.0" ?>
 <fittings>
