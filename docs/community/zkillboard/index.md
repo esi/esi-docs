@@ -22,8 +22,6 @@ maintainer:
 
 ## About
 
-<img src="https://github.com/user-attachments/assets/63bdc864-b2f0-4d8e-b6ce-15ba2525ce19" style="width: 64px;" />
-
 zkillboard.com is a killboard for the Massively Multiplayer Online Role Playing Game (MMORPG) EVE-Online.
 
 <hr/>
