@@ -20,3 +20,12 @@ maintainer:
 
 </div>
 
+## About
+
+zkillboard.com is a killboard for the Massively Multiplayer Online Role Playing Game (MMORPG) EVE-Online.
+
+<hr/>
+
+API documentation can be found [here](https://github.com/zKillboard/zKillboard/wiki).
+
+If you have questions or need assistance feel free to seek help in the #zkillboard-com channel on zkill's [Discord](https://discord.gg/sV2kkwg8UD).
