@@ -91,3 +91,15 @@ Notes:
 - When requesting a paginated resource, the `last-modified` header should be the same for all the pages of a single resource. Checking this constraint allows you to validate the data retrieved, typically by avoiding the case where the data is refreshed between the calls to two different pages. This issue can also happen outside of ESI cache refresh.
 - Some resources may not provide such headers, typically POST methods have no cache information, even when they still actually have an internal cache.
 - Static data should have the same shared caching information. That is, planets, moons, types, etc. paths should return the same caching headers.
+
+## Parallel requests
+
+When requesting the same resource for different parameters, for example when [requesting the public informations](https://esi.evetech.net/ui/#/Character/get_characters_character_id) of several characters, or [fetching the items](https://esi.evetech.net/ui/#/Contracts/get_contracts_public_items_contract_id) of several contracts [for a given region](https://esi.evetech.net/ui/#/Contracts/get_contracts_public_region_id), it's a good idea to send the request in parallel to avoid having your application/client waiting for too long.
+
+However, doing so can result in a lot of errors (timeout) if the ESI is having a hard time, potentially ending with temporary ban (420) and therefore preventing you from accessing other resource for 30s on average.  
+To avoid this issue, you can query an endpoint that has no effect on the monolith, typically [the status](https://esi.evetech.net/ui/#/Status/get_status) , to not only be sure the server is up before hammering it with requests, but also check your `X-ESI-Error-Limit-Remain` response header to adapt the query pool size.  
+For example, if ESI is in "vip" mode, or does not respond, or you have 0 remaining error, then there is no point in sending the next batch of requests. On the other hand, if it respond with 100 remaining errors and the server is not in "vip" mode, the static endpoints (solar systems, types, etc.) can be sent 1000 queries at a time.
+
+For paginated resources, the first page can act as such, assuming you only request one paginated resource at a time.
+
+However this is not failproof, for example the first page of a [regional market's orders](https://esi.evetech.net/ui/#/Market/get_markets_region_id_orders) can respond with 100 remining errors, but the next 1000 pages will all fail for some reason. But if the server as a whole is failing for some reason, there is nothing you as a consumer can do about it.
