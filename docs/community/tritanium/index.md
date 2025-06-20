@@ -55,6 +55,7 @@ Page language:
 - Planetary Interaction
 - Corporation structure and moon mining
 - KillBoard.
+- Fitting Simulation
 - more...
 
 # Character Sheet
@@ -73,3 +74,6 @@ Page language:
 
 ![kb.png](kb.png)
 
+# Fitting Simulation
+
+![fitting.png](fitting.png)
