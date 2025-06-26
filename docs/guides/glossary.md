@@ -1,38 +1,38 @@
 # Glossary
 
-This document is a list of common or unusual terms used in EVE 3rd party development and their meanings.
+This document is a list of common or unusual terms used in EVE third-party development and their meanings.
 
 ### APIs & Data sources
 
-* [*ESI*](../services/esi/overview.md) - "EVE Swagger Interface"  
-  Current 3rd party development API  
-* [*SDE*](../services/sde/index.md) - "Static Data Export"  
+* [*ESI*](../services/esi/overview.md) — "EVE Swagger Interface"  
+  The official RESTful API for EVE third-party development
+* [*SDE*](../services/sde/index.md) — "Static Data Export"  
   Export of static game data (only changing with game updates)  
-* *CREST* - "Carbon RESTful API"  
-  Previous generation 3rd party dev API (Defunct since 2018)  
+* *CREST* — "Carbon RESTful API"  
+  Previous generation third-party development API (defunct since 2018)  
 * *XML API*  
-  Previous generation 3rd party dev API (Defunct since 2018)  
-* *IGB* - "In-Game Browser"  
-  In-game browser & related APIs (Defunct since 2016)  
+  Previous generation third-party development API (defunct since 2018)  
+* *IGB* — "In-Game Browser"  
+  In-game browser and related APIs (defunct since 2016)  
 * *Static Data Dump*  
-  Prior version of *SDE*  
+  Prior version of the *SDE*  
 
 ### Data Formats
 
-* [*EFT*](./fitting.md#eft) - "EVE Fitting Tool"  
-  Human-Readable format for ship fittings from the now-defunct third party program of the same name  
+* [*EFT*](./fitting.md#eft) — "EVE Fitting Tool"  
+  Human-Readable format for ship fittings from the now-defunct third-party program of the same name, used in-game for fit copying and pasting 
 * [*Ship DNA*](./fitting.md#dna)  
-  Compact data format for ship fittings, used in now-defunct APIs & some third-party tools  
+  Compact data format for ship fittings, used in-game for fit links
 * [*XML Fitting*](./fitting.md#xml)  
-  Older XML-based fitting format  
+  XML-based fitting format, used in-game for file-based fit export/import
 
 ### Data Types
 
 * *Type*  
-  Game item. Types describe most "things" in the game; 'Inventory'/cargo items, ships, objects in space  
+  Game object. Types describe most "things" in the game; cargo items, ships, objects in space  
   Found in the SDE in `fsd/types.yaml`, through ESI under `/universe/types/`  
 * *Item*  
-  Individual instances of a type; e.g. Type 648 ("Badger") describes all Badger ships, any individual assembled ship has a unique itemID   
+  An individual instance of a type; e.g., Type 648 ("Badger") describes all Badger ships, any individual assembled ship has a unique `itemID`.  
   An "object" as opposed to a "class" in programming terms  
 * *Group*  
   Collection of related *Types*  
@@ -66,13 +66,13 @@ This document is a list of common or unusual terms used in EVE 3rd party develop
 
 ### Technical & other terms
 
-* *BSD* - "Branched Static Data"  
+* *BSD* — "Branched Static Data"  
   Old authoring format for game data, not all data has been ported over to the new *FSD* "File Static Data"  
   No meaningful difference to *FSD* for users  
-* *FSD* - "File Static Data"  
+* *FSD* — "File Static Data"  
   New authoring format for game data, not all data has been ported over  
   No meaningful difference to *BSD* for users  
 * *Dogma*  
   Collective term for *Attributes*, *Effects* and the game logic around them  
 * *Monolith*  
-  The EVE Online servers (In particular, the database)  
+  The EVE Online servers (in particular, the database) for the game itself, as opposed to other services like *ESI*  
