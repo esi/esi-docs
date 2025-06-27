@@ -3,6 +3,8 @@ title: Static Data Export
 ---
 # Static Data Export (SDE)
 
+Export of static game data (only changing with game updates)
+
 - [Full SDE (sde.zip)](https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/sde.zip)
     - [FSD Only (fsd.zip)](https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/fsd.zip)
     [(checksum)](https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/fsd.zip.checksum)
