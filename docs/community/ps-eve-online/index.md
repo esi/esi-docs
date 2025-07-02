@@ -3,7 +3,7 @@ search:
   exclude: true
 
 title: Powershell Scripting for Eve Online
-type:   Service
+type: Service
 description: Powershell Lab for eve based scripts.
 maintainer:  # `name` is required, and exactly one of `github`, `gitlab`, or 'repository' is required
   name: Dexomus Viliana
