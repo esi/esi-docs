@@ -63,7 +63,7 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 | 11,000,000 | 11,999,999 | Wormhole regions               |
 | 12,000,000 | 12,999,999 | Abyssal regions                |
 | 14,000,000 | 14,999,999 | Void regions                   |
-| 19,000,000 | 19,999,999 | Global Plex market regions  |
+| 19,000,000 | 19,999,999 | Global market regions         |
 
 ## Constellations
 
