@@ -11,11 +11,25 @@ While some ESI endpoints are public, many require authentication, which is handl
 
 ## Versioning
 
-ESI versions each route individually. You always get three complete APIs, `/dev/`, `/latest/` and `/legacy/`. But each route is also given a numbered path, starting with `/v1/`. Alternate routes are mentioned in the route description.
+Every ESI request can include an `X-Compatibility-Date` header using the ISO format - `YYYY-MM-DD`. This header tells ESI "This application was built or updated at this date - give me the API behavior as it was at that date". If applications cannot set custom headers, the `compatibility_date` query parameter will do the same.
+The date cannot be in the future, neither can it below a minimum threshold (the "oldest" versions available). If this minimum bar is raised, this will be clearly communicated via dev-blogs.
 
-`/dev/` can change at any point, changes to `/latest/` will be announced. After changes are made the previous `/latest/` will be available as `/legacy/`, until the next version bump. If you want to avoid the schema of your request suddenly changing, use the versioned alternate route. In that case, prudent developers may want to watch for `warning: 199` headers to notify them when endpoints are moved to legacy.
+The API changes date at 11:00 UTC.
+So if you want to use the date of today, use (pseudo-code): `now() - 11 * 60 * 60`, to get the current date of the API.
 
-Endpoints may become deprecated. When an endpoint is deprecated, a strikethrough line appears through it on the Swagger UI, and it begins returning the `warning: 299` header. This is slightly different from a `warning: 199` header, which you will receive if an endpoint was updated and there is now a newer version of it available. Deprecation is how intent to delete a route is broadcasted. Deprecated endpoints may include a recommended alternate source or other message in the 299 warning, and you should move away from them immediately.
+### Breaking changes
+
+Any breaking changes will be released under a new `X-Compatibility-Date`. Breaking changes include:
+
+- Removing of request parameters.
+- Removing of response fields / response headers / enum values.
+- Adding or changing request parameters that are (now) required.
+- Changing the type of request parameters / response fields / response headers.
+
+Any non-breaking changes will not introduce a new `X-Compatibility-Date`. Non-breaking changes include:
+
+- Adding of optional request parameters.
+- Adding of response fields / response headers / enum values.
 
 ## Support
 
