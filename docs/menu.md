@@ -12,5 +12,5 @@
 * Guides and Examples
     * guides/*.md
     * guides/*/index.md
-* [Community](community/index.md)
+* [Community Showcase](community/index.md)
     * community/*/index.md
