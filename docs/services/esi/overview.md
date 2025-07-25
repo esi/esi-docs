@@ -12,7 +12,7 @@ While some ESI endpoints are public, many require authentication, which is handl
 ## Versioning
 
 Every ESI request can include an `X-Compatibility-Date` header using the ISO format - `YYYY-MM-DD`.
-This header tells ESI "This application was built or updated at this date - give me the API behavior as it was at that date".
+This header tells ESI, "This application's ESI implementation was updated or reviewed at this date – give me the API behavior as it was at that date".
 If applications cannot set custom headers, the `compatibility_date` query parameter will do the same.
 If a request does not set a compatibility date, the oldest available compatibility date is used.
 
@@ -20,7 +20,7 @@ The date cannot be in the future, neither can it below a minimum threshold (the 
 If this minimum bar is raised, this will be clearly communicated via dev-blogs.
 
 The API changes date at 11:00 UTC.
-So if you want to use the date of today, use (pseudo-code): `now() - 11 * 60 * 60`, to get the current date of the API.
+So if you want to use the date of today, use (pseudocode): `now() - 11 * 60 * 60`, to get the current date of the API.
 
 ### Breaking changes
 
