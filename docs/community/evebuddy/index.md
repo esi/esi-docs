@@ -42,7 +42,7 @@ The following is an overview of of EVE Buddy's key features. All features are av
 
 ## Screenshots
 
-This sections contains screenshots from the desktop and mobile version for a selection of features.
+This section contains screenshots from the desktop and mobile version for a selection of features.
 
 ### Desktop
 
