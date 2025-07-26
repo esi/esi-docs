@@ -28,7 +28,7 @@ EVE Buddy is a multi-platform companion app for Eve Online players. It is availa
 
 ## Features
 
-The following is an overview of of EVE Buddy's key features. All features are available for both desktop and mobile:
+The following is an overview of EVE Buddy's key features. All features are available for both desktop and mobile:
 
 - __Character monitor__: Check current information about each of your characters, e.g. inspect the training queue of a character or browse it's assets.
 - __Corporation monitor__: Check current information about each of your corporations: e.g. check corporation wallets or see all current members.
