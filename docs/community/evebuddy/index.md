@@ -12,7 +12,7 @@ maintainer:
 
 # EVE Buddy
 
-EVE Buddy is multi-platform companion app for Eve Online players. It is available on Windows, macOS, Linux and Android.
+EVE Buddy is a multi-platform companion app for Eve Online players. It is available on Windows, macOS, Linux and Android.
 
 [![GitHub Release](https://img.shields.io/github/v/release/ErikKalkoken/evebuddy)](https://github.com/ErikKalkoken/evebuddy/releases)
 [![GitHub License](https://img.shields.io/github/license/ErikKalkoken/evebuddy)](https://github.com/ErikKalkoken/evebuddy?tab=MIT-1-ov-file#readme)
