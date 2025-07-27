@@ -19,7 +19,6 @@ Share structure timers and pings with your alliance, corporation, and allies.
 <div class="grid cards" markdown>
 
 - [:octicons-browser-16: __Website__](https://upwell.gg){ .esi-card-link }
-
 - [:simple-discord: __Discord__](https://discord.gg/Ng5ZsyvYzK){ .esi-card-link }
 
 </div>
