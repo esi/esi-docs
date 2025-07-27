@@ -2,7 +2,7 @@
 search:
   exclude: true
 
-title: @localisprimary/esi
+title: localisprimary/esi
 type: resource
 description: A slightly opinionated TypeScript client for the EVE Online API.
 maintainer:
@@ -24,4 +24,4 @@ A slightly opinionated TypeScript client for the EVE Online API.
 
 ## Features
 
-A fully typed npm library for interacting with ESI. [Documentation](https://localisprimary.github.io/esi/)
+A fully typed npm library for interacting with ESI. [Documentation](https://github.com/localisprimary/esi#readme)
