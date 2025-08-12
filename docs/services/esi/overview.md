@@ -3,11 +3,11 @@ title: Overview
 ---
 # EVE Swagger Interface (ESI)
 
-The ESI API is the official RESTful API for EVE third-party development. You can find all the endpoints and try them out in the [Swagger UI interface](https://esi.evetech.net/ui/). Some endpoints have additional details on [this page](../endpoints/).
+The ESI API is the official RESTful API for EVE third-party development. You can find all the endpoints and try them out in the [API Explorer](/api-explorer). Some endpoints have additional details on [this page](../endpoints/).
 
 ## Authentication
 
-While some ESI endpoints are public, many require authentication, which is handled by [SSO](../../sso/). If an ESI endpoint requires authentication, you will see a grey lock icon on the route description in the Swagger UI. The route description lists the required scopes.
+While some ESI endpoints are public, many require authentication, which is handled by [SSO](../../sso/). The route descriptions in the API Explorer indicate which endpoints require authentication, and with which scopes.
 
 ## Versioning
 
