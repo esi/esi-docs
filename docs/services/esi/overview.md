@@ -3,7 +3,7 @@ title: Overview
 ---
 # EVE Swagger Interface (ESI)
 
-The ESI API is the official RESTful API for EVE third-party development. You can find all the endpoints and try them out in the [API Explorer](https://developers.eveonline.com/api-explorer). Some endpoints have additional details on [this page](../endpoints/).
+The ESI API is the official RESTful API for EVE third-party development. You can find all the endpoints and try them out in the [API Explorer](/api-explorer). Some endpoints have additional details on [this page](../endpoints/).
 
 ## Authentication
 
