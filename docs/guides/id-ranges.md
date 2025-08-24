@@ -55,6 +55,57 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 | 1136 | Combat Site |
 | 1908 | Wormhole    |
 
+### Ship Tree Groups
+
+| ID   | Name                       |
+|------|----------------------------|
+| 4    | Corvette                   |
+| 8    | Frigate                    |
+| 9    | Navy Frigate               |
+| 10   | Interceptor                |
+| 11   | Assault Frigate            |
+| 12   | Covert Ops                 |
+| 13   | Electronic Attack Ship     |
+| 14   | Destroyer                  |
+| 15   | Interdictor                |
+| 16   | Cruiser                    |
+| 17   | Navy Cruiser               |
+| 18   | Recon Ship                 |
+| 19   | Heavy Assault Cruiser      |
+| 20   | Heavy Interdiction Cruiser |
+| 21   | Logistics Cruisers         |
+| 22   | Strategic Cruiser          |
+| 23   | Battlecruiser              |
+| 24   | Command Ships              |
+| 25   | Navy Battlecruiser         |
+| 26   | Battleship                 |
+| 27   | Black Ops                  |
+| 28   | Marauder                   |
+| 32   | Dreadnought                |
+| 33   | Carrier                    |
+| 34   | Titan                      |
+| 35   | Shuttle                    |
+| 36   | Hauler                     |
+| 37   | Freighter                  |
+| 38   | Jump Freighters            |
+| 40   | Transport Ship             |
+| 41   | Mining Frigate             |
+| 42   | Mining Barge               |
+| 43   | Exhumer                    |
+| 44   | ORE Hauler                 |
+| 45   | Industrial Command Ship    |
+| 46   | Capital Industrial Ship    |
+| 47   | Navy Battleship            |
+| 48   | Expedition Frigate         |
+| 50   | Tactical Destroyer         |
+| 93   | Command Destroyer          |
+| 94   | Logistics Frigates         |
+| 96   | Flag Cruiser               |
+| 2101 | Navy Destroyer             |
+| 2102 | Navy Dreadnought           |
+| 2104 | Lancer Dreadnought         |
+| 2107 | Capsule                    |
+
 ## Regions
 
 | From       | To         | Description                    |
