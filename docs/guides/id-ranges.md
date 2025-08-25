@@ -9,7 +9,7 @@ The ranges are inclusive, meaning that the first and last ID in the range are va
 Keep in mind it is not possible to tell if an ID is a character, as characters created before 2010-11-03 share ID ranges with other entities (corporations and alliances).
 
 | From              | To            | Description                                                          |
-|-------------------|---------------|----------------------------------------------------------------------|
+| ----------------- | ------------- | -------------------------------------------------------------------- |
 | 0                 | 499,999       | [Various](#various) (often reused between different types)           |
 | 500,000           | 599,999       | Factions                                                             |
 | 1,000,000         | 1,999,999     | NPC corporations                                                     |
@@ -35,19 +35,19 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 
 ## Various
 
-### Factional Warfare Complexes
+### Deadspace Archetypes
 
-| ID | Description    |
-|----|----------------|
-| 33 | Novice Complex |
-| 34 | Small Complex  |
-| 35 | Medium Complex |
-| 36 | Large Complex  |
+| ID  | Description                        |
+| --- | ---------------------------------- |
+| 33  | Novice Complex (Factional Warfare) |
+| 34  | Small Complex (Factional Warfare)  |
+| 35  | Medium Complex (Factional Warfare) |
+| 36  | Large Complex (Factional Warfare)  |
 
 ### Signature Types
 
 | ID   | Description |
-|------|-------------|
+| ---- | ----------- |
 | 208  | Data Site   |
 | 209  | Gas Site    |
 | 210  | Relic Site  |
@@ -58,7 +58,7 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 ### Ship Tree Groups
 
 | ID   | Name                       |
-|------|----------------------------|
+| ---- | -------------------------- |
 | 4    | Corvette                   |
 | 8    | Frigate                    |
 | 9    | Navy Frigate               |
@@ -109,7 +109,7 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 ## Regions
 
 | From       | To         | Description                    |
-|------------|------------|--------------------------------|
+| ---------- | ---------- | ------------------------------ |
 | 10,000,000 | 10,999,999 | New Eden (known space) regions |
 | 11,000,000 | 11,999,999 | Wormhole regions               |
 | 12,000,000 | 12,999,999 | Abyssal regions                |
@@ -119,13 +119,13 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 ## Special Regions
 
 | ID         | Description               |
-|------------|---------------------------|
+| ---------- | ------------------------- |
 | 19,000,001 | Global PLEX Market region |
 
 ## Constellations
 
 | From       | To         | Description                           |
-|------------|------------|---------------------------------------|
+| ---------- | ---------- | ------------------------------------- |
 | 20,000,000 | 20,999,999 | New Eden (known space) constellations |
 | 21,000,000 | 21,999,999 | Wormhole constellations               |
 | 22,000,000 | 22,999,999 | Abyssal constellations                |
@@ -135,7 +135,7 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 ## Solar systems
 
 | From       | To         | Description                          |
-|------------|------------|--------------------------------------|
+| ---------- | ---------- | ------------------------------------ |
 | 30,000,000 | 30,999,999 | New Eden (known space) solar systems |
 | 31,000,000 | 31,999,999 | Wormhole solar systems               |
 | 32,000,000 | 32,999,999 | Abyssal systems                      |
@@ -145,7 +145,7 @@ Keep in mind it is not possible to tell if an ID is a character, as characters c
 ## Stations
 
 | From       | To         | Description                            |
-|------------|------------|----------------------------------------|
+| ---------- | ---------- | -------------------------------------- |
 | 60,000,000 | 60,999,999 | NPC stations                           |
 | 61,000,000 | 63,999,999 | Outposts                               |
 | 66,000,000 | 67,999,999 | Station folders of corporation offices |
