@@ -32,11 +32,14 @@ set class = class ~ " md-header--shadow md-header--lifted" %} {% elif
       <div class="esi-nav-header-item">
         <a href="/api-explorer">API Explorer</a>
       </div>
-      <div class="esi-nav-header-item">
-        <a href="/applications">Applications</a>
-      </div>
-      <div class="esi-nav-header-item">
-        <a href="/authorized-apps">Authorized Apps</a>
+      <div class="esi-nav-header-item esi-nav-header-item-dropdown">
+        Applications
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-1x header_angleDown__Q0pUE" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" scale="1.5"><path fill="currentColor" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+
+        <div class="esi-nav-header-dropdown-container">
+          <a href="/authorized-apps">Authorized Applications</a>
+          <a href="/applications">My Applications</a>
+        </div>
       </div>
       <div class="esi-nav-header-item">
         <a href="/docs/community/">Community Showcase</a>
