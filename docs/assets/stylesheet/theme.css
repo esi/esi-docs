@@ -193,6 +193,7 @@ body {
   background-image: url("../images/bg_main.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-size: cover;
 }
 
 body::before {
@@ -332,15 +333,14 @@ body::before {
 }
 
 .esi-hero {
-  min-height: 82px;
-  margin-top: 72px;
+  height: 82px;
+  margin-top: 57px;
   padding: 0 16px;
   display: grid;
   grid-template-areas: "title cta" "subtitle cta";
   grid-template-columns: 1fr min-content;
   grid-template-rows: 1fr min-content;
   row-gap: 8px;
-  min-height: 80px;
   column-gap: 24px;
   max-width: 1632px;
   align-self: center;
