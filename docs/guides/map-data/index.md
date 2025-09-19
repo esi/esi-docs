@@ -2,19 +2,19 @@
 
 ## General Information
 
-Map data is available in the [SDE](../../services/sde/index.md) or through [ESI](../../services/esi/overview/).  
+Map data is available in the [SDE](../../services/static-data/index.md) or through [ESI](../../services/esi/overview/).
 Objects like regions, constellations, solarsystems, planets, moons, and other celestial bodies have a position.
 
-There are two kinds of position, each using their own coordinate system:  
+There are two kinds of position, each using their own coordinate system:
 
-* Relative to the center of the New Eden cluster. (Used by regions, constellations, solarsystems)  
-  The center of the cluster lies near Zarzakh, labelled "Point of No Return" on the in-game map. (See the red dot on the cluster map below)  
+* Relative to the center of the New Eden cluster. (Used by regions, constellations, solarsystems)
+  The center of the cluster lies near Zarzakh, labelled "Point of No Return" on the in-game map. (See the red dot on the cluster map below)
 
-* Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)  
+* Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)
   The center of a solarsystem is it's star. Not every solarsystem has a star object; for abyssal deadspace systems with neither star nor planet, the origin is an arbitrary point.
-  Note: The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`.  
+  Note: The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`.
 
-These coordinate systems have the same scale (1.0 = 1 meter), but different directions.  
+These coordinate systems have the same scale (1.0 = 1 meter), but different directions.
 
 ## Universe
 
@@ -22,13 +22,13 @@ All region (& constellations, solarsystems) share a single coordinate system. Th
 
 The SDE organizes regions into folders by kind:
 
-* `/abyssal/`: Abyssal Deadspace, entered through abyssal filaments. (Not to be confused with Pochven)  
-* `/eve/`: The New Eden Cluster, the main space of the game; Highsec, Lowsec, Nullsec. (Including Pochven)  
-* `/void/`: Void Regions. Used for the tutorial & certain events.  
-* `/wormhole/`: Wormhole Space.  
+* `/abyssal/`: Abyssal Deadspace, entered through abyssal filaments. (Not to be confused with Pochven)
+* `/eve/`: The New Eden Cluster, the main space of the game; Highsec, Lowsec, Nullsec. (Including Pochven)
+* `/void/`: Void Regions. Used for the tutorial & certain events.
+* `/wormhole/`: Wormhole Space.
 (The SDE also contains a `/landmarks/` folder, which contains landmark information but not regions)
 
-In ESI, the endpoints return data for all regions/constellations/systems.  
+In ESI, the endpoints return data for all regions/constellations/systems.
 For both SDE and ESI, different kinds of space can be identified through [ID ranges](../../guides/id-ranges.md).
 
 ### Map
@@ -43,7 +43,7 @@ Note: This forms a **Left**-Handed coordinate system. If you are using a 3D grap
 
 ![New Eden map](./cluster_map.png)
 
-Note on SDE data:  
+Note on SDE data:
 Regions, constellations, and solarsystems each have  `max` and `min` fields denoting approximate bounding-boxes. These use a different coordinate system to the position field: The minimum and maximum `Z` values are negated. As-is the values are incorrect, and in most cases the `Z` position will not be in the range `Z_min to Z_max`, there are two workarounds:
 
 * Negate and swap z-axis `min` and `max` values; `Z_min, Z_max = -Z_max, -Z_min`
@@ -57,7 +57,7 @@ When matching the 'Space North' orientation as used by the in-game map (see abov
 
 In this orientation, the coordinates have the following directions:
 
-* `+X` is West/Left, `-X` is East/Right.  
+* `+X` is West/Left, `-X` is East/Right.
 * `+Y` is Up, `-Y` is Down.
 * `+Z` is North/Forward, `-Z` is South/Backward.
 
@@ -67,12 +67,12 @@ Note: This is different with the Universe's coordinate system, and is **Right**-
 
 ### Combining the coordinate systems
 
-Both coordinate systems have the same scale but different axes. To get the position of a planet within the larger 'universe' coordinate system, it's position can be added to that of the parent star with the x coordinate negated:  
-x = x<sub>system</sub> - x<sub>planet</sub>  
-y = y<sub>system</sub> + y<sub>planet</sub>  
+Both coordinate systems have the same scale but different axes. To get the position of a planet within the larger 'universe' coordinate system, it's position can be added to that of the parent star with the x coordinate negated:
+x = x<sub>system</sub> - x<sub>planet</sub>
+y = y<sub>system</sub> + y<sub>planet</sub>
 z = z<sub>system</sub> + z<sub>planet</sub>
 
-Caution: 32-bit floating point numbers do not have enough precision to handle both the 'large' scale of the interstellar distances and the 'small' scale of interplanetary distances. This results in a loss of precision and graphical glitches on objects distant from the origin.  
+Caution: 32-bit floating point numbers do not have enough precision to handle both the 'large' scale of the interstellar distances and the 'small' scale of interplanetary distances. This results in a loss of precision and graphical glitches on objects distant from the origin.
 This problem can be mitigated by either using 64-bit floating point numbers or by using "Floating Origin" techniques.
 
 
