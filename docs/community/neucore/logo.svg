@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="79.467049mm" height="79.375mm" viewBox="0 0 79.467048 79.375" version="1.1" id="svg1925" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" sodipodi:docname="logo.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview1927" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:document-units="mm" showgrid="false" inkscape:zoom="2" inkscape:cx="164.5" inkscape:cy="160.75" inkscape:window-width="1920" inkscape:window-height="1023" inkscape:window-x="1920" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="layer2"/>
+  <defs id="defs1922"/>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-17.285345,-12.283163)"/>
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="Layer 2">
+    <g id="g2059" transform="matrix(0.10843505,0,0,0.10830945,6.8334199,28.987864)">
+      <rect width="600" height="400" x="0" y="0" id="0" fill="none"/>
+      <g id="g2036" transform="matrix(2.0355354,0,0,2.0355354,-307.2828,-308.35)">
+        <path d="M 390,44.1154 A 180,180 0 0 1 455.8846,290 l -8.6603,-5 A 170,170 0 0 0 385,52.7757 Z" fill="#fac858" stroke="#eeeeee" stroke-width="0" stroke-linejoin="round" id="path2012"/>
+        <path d="M 390,355.8846 A 180,180 0 0 1 144.1154,290 l 8.6603,-5 A 170,170 0 0 0 385,347.2243 Z" fill="#fac858" stroke="#eeeeee" stroke-width="0" stroke-linejoin="round" id="path2016"/>
+        <path d="M 120,200 A 180,180 0 0 1 300,20 V 30 A 170,170 0 0 0 130,200 Z" fill="#fac858" stroke="#eeeeee" stroke-width="0" stroke-linejoin="round" id="path2020"/>
+        <path d="M 375,70.0962 A 150,150 0 0 1 429.9038,275 l -8.6602,-5 A 140,140 0 0 0 370,78.7564 Z" fill="#fac858" id="path2024"/>
+        <path d="M 375,329.9038 A 150,150 0 0 1 170.0962,275 l 8.6602,-5 A 140,140 0 0 0 370,321.2436 Z" fill="#fac858" id="path2028"/>
+        <path d="M 150,200 A 150,150 0 0 1 300,50 V 60 A 140,140 0 0 0 160,200 Z" fill="#fac858" id="path2032"/>
+        <path d="m 300,120 a 80,80 0 1 1 -0.008,0 M 300,140 a 60,60 0 1 0 0.006,0 z" fill="#fac858" id="path2034"/>
+        <rect fill="#fac858" id="rect645" width="9.9521809" height="23.232313" x="359.81635" y="-148.448" transform="rotate(29.995185)"/>
+        <rect fill="#fac858" id="rect645-3" width="9.9521809" height="23.232313" x="290.02972" y="28.227592" transform="rotate(0.01156044)"/>
+        <rect fill="#fac858" id="rect645-6" width="9.9521809" height="23.232313" x="190.2531" y="-151.24869" transform="rotate(89.913703)"/>
+        <rect fill="#fac858" id="rect645-7" width="9.9521809" height="23.232313" x="323.20697" y="-11.433558" transform="rotate(59.951565)"/>
+        <rect fill="#fac858" id="rect645-5" width="9.9521809" height="23.232313" x="150.87054" y="471.03262" transform="rotate(-29.879869)"/>
+        <rect fill="#fac858" id="rect645-35" width="9.9521809" height="23.232313" x="-23.428047" y="508.29724" transform="rotate(-60.024802)"/>
+      </g>
+    </g>
+  </g>
+</svg>
