@@ -2,7 +2,7 @@
 search:
   exclude: true
 
-title: EVE-SSO
+title: EVE SSO for PHP
 type: resource
 description: A PHP library supporting EVE Online SSO v2.
 maintainer:
@@ -10,7 +10,7 @@ maintainer:
   github: tkhamez
 ---
 
-# EVE-SSO
+# EVE SSO for PHP
 
 A PHP library supporting [EVE Online SSO v2](https://developers.eveonline.com/docs/services/sso/)
 for web applications including JWT signature verification.
