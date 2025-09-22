@@ -37,7 +37,7 @@ Alliance Auth (AA) is a web site that helps Eve Online organizations efficiently
 
 ## Features
 
-- Automatically grants or revokes user access to external services (e.g. Discord, Mumble) and web apps (e.g. SRP requests) based on the user's current membership to [in-game organizations](https://allianceauth.readthedocs.io/en/latest/features/core/states/) and [groups](https://allianceauth.readthedocs.io/en/latest/features/core/groups/)
+- Automatically grants or revokes user access to external services (e.g. Discord, Mumble) and web apps (e.g. SRP requests) based on the user's current membership to [in-game organizations](https://allianceauth.readthedocs.io/en/latest/features/core/states.html) and [groups](https://allianceauth.readthedocs.io/en/latest/features/core/groups.html)
 
 - Provides a central web site where users can directly access web apps (e.g. SRP requests, Fleet Schedule) and manage their access to external services and groups.
 
