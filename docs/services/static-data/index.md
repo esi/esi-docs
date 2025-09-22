@@ -63,18 +63,21 @@ This is because they can be deduced from the solar system name, and a few fields
 There are a few exceptions; in those cases the celestial has a `name` field with their name.
 In all other cases, follow the below table.
 
-| Celestial                        | Content                                           |
-| -------------------------------- | ------------------------------------------------- |
-| Solar System                     | Solar system name as in `mapSolarSystems`         |
-| Stars                            | `<solarSystemName>`                               |
-| Planets                          | `<orbitName> <celestialIndex>`                    |
-| Moons                            | `<orbitName> - Moon <orbitIndex>`                 |
-| Asteroid Belts                   | `<orbitName> - Asteroid Belt <orbitIndex>`        |
-| Stations (with `operationID`)    | `<orbitName> - <corporationName> <operationName>` |
-| Stations (without `operationID`) | `<orbitName> - <corporationName>`                 |
+| Celestial                                      | Content                                           |
+|------------------------------------------------|---------------------------------------------------|
+| Stars                                          | `<solarSystemName>`                               |
+| Planets                                        | `<orbitName> <celestialIndex>`                    |
+| Moons                                          | `<orbitName> - Moon <orbitIndex>`                 |
+| Asteroid Belts                                 | `<orbitName> - Asteroid Belt <orbitIndex>`        |
+| Stations (where `useOperationName` is true)    | `<orbitName> - <corporationName> <operationName>` |
+| Stations (where `useOperationName` isn't true) | `<orbitName> - <corporationName>`                 |
+| Stargates                                      | `Stargate (<solarSystemName>)`                    |
 
 Note:
 
+- For stars, use `solarSystemID` to look up the `solarSystemName` via `mapSolarSystems` (as `name`).
 - The `orbitName` is the name of the `orbitID` celestial, constructed via the table above.
 - The `celestialIndex` should be represented in Roman numerals.
-- For stations, use `corporationID` to look up the name via `npcCorporations`.
+- For stations, use `ownerID` to look up the `corporationName` via `npcCorporations` (as `name`).
+- For stations, use `operationID` to look up the `operationName` via `stationOperations`.
+- For stargates, use `destination.solarSystemID` to look up the `solarSystemName` via `mapSolarSystems` (as `name`).
