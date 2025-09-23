@@ -28,6 +28,10 @@ YAML supports integer keys, so it does not require the special encoding used in 
 Note that reading large YAML files can be memory-intensive and slow.
 When working with large datasets such as `mapMoons` and similar files, consider using the JSON Lines format.
 
+## Schema
+
+You can find community-provided schemas and alternative formats in the [community resources](../../community#libraries-and-resources) section.
+
 ## Schema Changes
 
 Schema changes are documented at: [developers.eveonline.com/static-data/tranquility/schema-changelog.yaml](https://developers.eveonline.com/static-data/tranquility/schema-changelog.yaml)
