@@ -30,7 +30,7 @@ When working with large datasets such as `mapMoons` and similar files, consider 
 
 ## Schema
 
-You can find community-provided schemas and alternative formats in the [community resources](../../community#libraries-and-resources) section.
+You can find community-provided schemas and alternative formats in the [community resources](../../community/#libraries-and-resources) section.
 
 ## Schema Changes
 
