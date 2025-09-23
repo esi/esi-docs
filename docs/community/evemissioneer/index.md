@@ -19,7 +19,7 @@ maintainer:
 * Browse agents for corporations, systems, constellations and regions
 * View faction-specific agent lists: career; circle; COSMOS; data centers; epic arcs; research
 * Set powerful filters to limit the agents you see
-* Links to DOTLAN, EveEye, zKillboard, EVE Tycoon and others
+* Links to DOTLAN :: EveMaps, Eveeye, zKillboard, EVE Tycoon and others
 
 ## Tools
 
