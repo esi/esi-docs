@@ -13,6 +13,11 @@ maintainer:
 # EVEMissioneer
 
 ![](icon.png)
+<div class="grid cards" markdown>
+
+- [:octicons-browser-16: **Website**](https://evemissioneer.com/){ .esi-card-link }
+
+</div>
 
 ## Browse and find agents using EVEMissioneer.com
 
@@ -33,9 +38,3 @@ maintainer:
 * Import your standings
 * Can enable geo-locator; waypoint setting; pilot LP
 * Nerdy medals and achievements
-
-<div class="grid cards" markdown>
-
-- [:octicons-browser-16: **Website**](https://evemissioneer.com/){ .esi-card-link }
-
-</div>
