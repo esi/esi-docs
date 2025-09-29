@@ -62,7 +62,7 @@ Wormhole connections or player-constructed 'Ansiblex' jump gates can be added to
 !!! note
 
     Route calculation may yield several alternative routes of the same (shortest) length. Some algorithms may inconsistently select between these and give different results for the same start and destination. The in-game route planner has no specific behaviour defined for this case.  
-    Routes may be also differ depending on avoidance lists, security preference, and the use of wormhole connections or player jump gates.
+    Routes may be also differ depending on avoidance lists, security preference, and the use of wormhole connections or player-constructed 'Ansiblex'.
 
 #### Jump drives
 
