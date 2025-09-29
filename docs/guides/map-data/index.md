@@ -103,11 +103,13 @@ x = x<sub>system</sub> - x<sub>planet</sub>
 y = y<sub>system</sub> + y<sub>planet</sub>
 z = z<sub>system</sub> + z<sub>planet</sub>
 
-!!! note
+!!! note "Note: Floating point precision"
 
-    32-bit floating point numbers do not have enough precision to handle both the 'large' scale of the interstellar distances and the 'small' scale of interplanetary distances. This results in a loss of precision and graphical glitches on objects distant from the origin.  
-
-    This problem can be mitigated by using 64-bit floating point numbers in rendering or using "Floating Origin" techniques if your graphics API only supports 32-bit rendering.
+    32-bit floating point numbers do not have enough precision to handle both the 'large' scale of the interstellar distances and the 'small' scale of interplanetary distances when combining the position of stars and the celestial bodies orbiting them as described above.
+    
+    This problem can be mitigated by using 64-bit "double precision" floating point numbers.
+    
+    In in 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also avoid this problem.
 
 
 ## Example: 2D map
