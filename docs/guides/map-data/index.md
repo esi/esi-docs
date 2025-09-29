@@ -109,7 +109,7 @@ z = z<sub>system</sub> + z<sub>planet</sub>
     
     This problem can be mitigated by using 64-bit "double precision" floating point numbers.
     
-    In in 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also avoid this problem.
+    In 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also mitigate this problem.
 
 
 ## Example: 2D map
