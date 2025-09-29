@@ -55,14 +55,12 @@ In ESI each solarsystem has a list of stargates (if present), whose destination 
 
 A graph can be constructed by taking each solarsystem as a node, and each stargate link as an edge. Each stargate of a pair linking two systems has a data entry in the SDE/ESI. These can be modelled as either a pair of edges in a directed graph, or merged into a single edge in an undirected graph.
 
-With a graph, pathfinding algorithms like Dijkstra's Algorithm can be used. For A\*, the distance between solarsystems can be used as a heuristic, but this may yield different or suboptimal results.
-
-Wormhole connections or player-constructed 'Ansiblex' jump gates can be added to this graph the same as stargates. Information about both of these connections is not available through the API.
+With a graph, pathfinding algorithms like Dijkstra's Algorithm can be used. Wormhole connections or player-constructed 'Ansiblex' jump gates can be added to this graph the same as stargates. While 'Ansiblex' jump gates are constructed in pairs, their access lists can be configured differently in each direction to make them one-way gates.
 
 !!! note
 
     Route calculation may yield several alternative routes of the same (shortest) length. Some algorithms may inconsistently select between these and give different results for the same start and destination. The in-game route planner has no specific behaviour defined for this case.  
-    Routes may be also differ depending on avoidance lists, security preference, and the use of wormhole connections or player-constructed 'Ansiblex'.
+    Routes may be also differ depending on avoidance lists, security preference, and the use of wormhole connections or player-constructed 'Ansiblex' jump gates.
 
 #### Jump drives
 
