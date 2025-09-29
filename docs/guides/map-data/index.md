@@ -72,7 +72,7 @@ Jump drive range is determined by the ship the player is piloting and their 'Jum
 A graph can be built by linking each solarsystem to every other solar system that may be jumped to.  
 For a given system<sub>1</sub> and system<sub>2</sub> and their positions (x, y, z), the systems are in jump range if:
 
-$\sqrt{\left(x_1-x_2\right)^2+\left(y_1-y_2\right)^2+\left(z_1-z_2\right)^2}\le\ (Jump\ range\ in\ LY\ \ast\ {9,460,000,000,000,000.0})$
+$\sqrt{\left(x_1-x_2\right)^2+\left(y_1-y_2\right)^2+\left(z_1-z_2\right)^2}\le\ (Jump\ range\ in\ LY\ \ast\ {9\,460\,000\,000\,000\,000.0})$
 
 !!! warning "Caution"
 
