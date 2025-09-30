@@ -42,7 +42,7 @@ When displayed by the in-game map & most community maps, the mapping convention 
 
 ### Route calculation
 
-ESI provides two routes for in-game navigation. The [`/route/`](/api-explorer#/operations/GetRouteOriginDestination) endpoint generates routes closely matching the ingame route planner.
+ESI provides two routes for in-game navigation. The [`/route/`](/api-explorer#/operations/PostRoute) endpoint generates routes closely matching the ingame route planner.
 And the [`/ui/autopilot/waypoint/`](/api-explorer#/operations/PostUiAutopilotWaypoint) endpoint enables setting the in-game autopilot destination without needing to calculate a route.
 
 When not using ESI or more fine-grained control is desired, routes can be calculated manually from map data.
