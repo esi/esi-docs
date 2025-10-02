@@ -7,11 +7,11 @@ Objects like regions, constellations, solarsystems, planets, moons, and other ce
 
 There are two kinds of position, each using their own coordinate system:
 
-* Relative to the center of the New Eden cluster. (Used by regions, constellations, solarsystems)
+* Relative to the center of the New Eden cluster. (Used by regions, constellations, solarsystems)<br>
   The center of the cluster lies near Zarzakh, labelled "Point of No Return" on the in-game map. (See the red dot on the cluster map below)
 
-* Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)
-  The center of a solarsystem is it's star. The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`  
+* Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)<br>
+  The center of a solarsystem is it's star. The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`<br>
   Not every solarsystem has a star object; for abyssal deadspace systems with neither star nor planet, the origin is an arbitrary point.
 
 These coordinate systems have the same scale (1.0 = 1 meter), but different directions.
@@ -20,10 +20,10 @@ These coordinate systems have the same scale (1.0 = 1 meter), but different dire
 
 All regions, constellations, and solarsystems share a single coordinate system.
 
-The SDE contains map data in the `map`-prefixed files, such as `mapRegions`, `mapConstellations`, and `mapSolarSystems`.  
+The SDE contains map data in the `map`-prefixed files, such as `mapRegions`, `mapConstellations`, and `mapSolarSystems`.
 ESI provides this data through endpoints under the `/universe/` such as [`/universe/regions/`](/api-explorer#/operations/GetUniverseRegions).
 
-For both SDE and ESI, data is provided for all kinds ('known space', 'wormhole space', 'abyssal space') of space. Different kinds of space can be identified by the [ID ranges](../../guides/id-ranges.md) for the regionID, constellationID or solarSystemID.  
+For both SDE and ESI, data is provided for all kinds ('known space', 'wormhole space', 'abyssal space') of space. Different kinds of space can be identified by the [ID ranges](../../guides/id-ranges.md) for the regionID, constellationID or solarSystemID.
 Only the 'New Eden' solarsystems (`SolarSystemID` in the range `30,000,000 to 30,999,999`) are included on the in-game map.
 
 ### Map
@@ -42,39 +42,21 @@ When displayed by the in-game map & most community maps, the mapping convention 
 
 ### Route calculation
 
-ESI provides two routes for in-game navigation. The [`/route/`](/api-explorer#/operations/PostRoute) endpoint generates routes closely matching the ingame route planner.
-And the [`/ui/autopilot/waypoint/`](/api-explorer#/operations/PostUiAutopilotWaypoint) endpoint enables setting the in-game autopilot destination without needing to calculate a route.
+See [Route Calculation](../route-calculation.md) for details how to calculate a route in New Eden.
 
-When not using ESI or more fine-grained control is desired, routes can be calculated manually from map data.
-
-#### Stargate to stargate
-
-Information about how systems are connected by stargates is available through both the SDE and ESI.  
-In the SDE this data can be found in `mapStargates`.  
-In ESI each solarsystem has a list of stargates (if present), whose destination may be retrieved from the [`/universe/stargates/` endpoint](/api-explorer#/operations/GetUniverseStargatesStargateId).
-
-A graph can be constructed by taking each solarsystem as a node, and each stargate link as an edge. Each stargate of a pair linking two systems has a data entry in the SDE/ESI. These can be modelled as either a pair of edges in a directed graph, or merged into a single edge in an undirected graph.
-
-With a graph, pathfinding algorithms like Dijkstra's Algorithm can be used. Wormhole connections or player-constructed 'Ansiblex' jump gates can be added to this graph the same as stargates. While 'Ansiblex' jump gates are constructed in pairs, their access lists can be configured differently in each direction to make them one-way gates.
-
-!!! note
-
-    Route calculation may yield several alternative routes of the same (shortest) length. Some algorithms may inconsistently select between these and give different results for the same start and destination. The in-game route planner has no specific behaviour defined for this case.  
-    Routes may be also differ depending on avoidance lists, security preference, and the use of wormhole connections or player-constructed 'Ansiblex' jump gates.
-
-#### Jump drives
+### Jump drives
 
 Unlike stargate connections, jump drives can reach any valid system within range in a single jump. Jump drives allow jumping *to* any low- and nullsec system, with the exclusion of Pochven and the Jove regions. Ships can also jump *from* high-sec space into low- or nullsec.
 Jump drive range is determined by the ship the player is piloting and their 'Jump Drive Calibration' skill.
 
-A graph can be built by linking each solarsystem to every other solar system that may be jumped to.  
+A graph can be built by linking each solarsystem to every other solar system that may be jumped to.
 For a given system<sub>1</sub> and system<sub>2</sub> and their positions (x, y, z), the systems are in jump range if:
 
 $\sqrt{\left(x_1-x_2\right)^2+\left(y_1-y_2\right)^2+\left(z_1-z_2\right)^2}\le\ (Jump\ range\ in\ LY\ \ast\ {9\,460\,000\,000\,000\,000.0})$
 
 !!! warning "Caution"
 
-    For the purposes of jump drive range calculation, a single lightyear is exactly `9,460,000,000,000,000.0` (9.46 × 10^15) meters, slightly less than the real world scientific definition of a lightyear.  
+    For the purposes of jump drive range calculation, a single lightyear is exactly `9,460,000,000,000,000.0` (9.46 × 10^15) meters, slightly less than the real world scientific definition of a lightyear.
     Using the incorrect value may cause routes to include impossible jumps.
 
 
@@ -106,9 +88,9 @@ z = z<sub>system</sub> + z<sub>planet</sub>
 !!! note "Note: Floating point precision"
 
     32-bit floating point numbers do not have enough precision to handle both the 'large' scale of the interstellar distances and the 'small' scale of interplanetary distances when combining the position of stars and the celestial bodies orbiting them as described above.
-    
+
     This problem can be mitigated by using 64-bit "double precision" floating point numbers.
-    
+
     In 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also mitigate this problem.
 
 
