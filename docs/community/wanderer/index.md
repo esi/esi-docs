@@ -28,7 +28,7 @@ Wanderer is an EVE Online mapper tool, light and fast alternative to Pathfinder.
 
 [Wanderer](https://wanderer.ltd/) is an EVE Online mapper tool, light and fast alternative to Pathfinder. You can self-host Wanderer Community Edition or have us manage Wanderer for you in the cloud. Made and hosted in the EU 🇪🇺
 
-![Wanderer](info.png)
+![Wanderer](info.jpg)
 
 ## Why Wanderer?
 
