@@ -6,6 +6,7 @@
 * Services and Resources
     * ESI
         * [Overview](services/esi/overview.md)
+        * [Cursor-Based Pagination](services/esi/pagination/cursor-based.md)
         * [Best Practices](services/esi/best-practices.md)
         * [Endpoints](services/esi/endpoints.md)
     * services/*/index.md
