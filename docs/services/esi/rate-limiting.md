@@ -29,8 +29,8 @@ Each `rate limit group` and `userID` pair is assigned their own bucket.
 
 - `rate limit group`: Each route is assigned to a rate limit group. This is mentioned both in the response headers as in the API specifications.
 - `userID`:
-    - For authenticated requests: `<applicationID>:<characterID>` of the Access Token.
-    - For anonymous requests: `<sourceIP>`.
+    - Authenticated routes: `<applicationID>:<characterID>` from the Access Token.
+    - Non-authenticated routes: `<sourceIP>` (or `<sourceIP>:<applicationID>` if an Access Token is supplied).
 
 On each request, ESI verifies that you haven't exceeded the maximum tokens allocated for your assigned bucket.
 If you have exceeded that limit, you receive a 429, together with a `Retry-After` header.
