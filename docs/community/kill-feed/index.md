@@ -4,7 +4,7 @@ search:
 
 title: KillFeed by Lak Moore
 type: service
-description: Discord bot to post filtered killmails using data from zKillboard.
+description: Discord bot to post filtered killmails from the Massively Multiplayer Online Role Playing Game (MMORPG) EVE-Online using data from zKillboard and Janice.
 maintainer:
   name: Lak Moore
   github: LakMoore
@@ -36,7 +36,7 @@ Filters available include:
  - Minimum ISK value
  - Kill/Loss/All
 
-Filters can be AND or ORed to capture everything or fine tune your requirements.
+Filters can be ANDed or ORed to capture everything or fine tune your requirements.
 
 Current bot stats (as at 19th October 2025):
  - Serving KillMails on 66 servers.
