@@ -21,7 +21,7 @@ Eve Online zKillboard Discord Bot.
 
 </div>
 
-## Features
+## About
 
 Add the bot to your Discord server and use some simple commands to apply filters of interest.  The bot will then post matching killmails from zKillboard.com into that Discord channel.
 
