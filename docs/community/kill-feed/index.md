@@ -23,7 +23,18 @@ Eve Online zKillboard Discord Bot.
 
 ## About
 
-Add the bot to your Discord server and use some simple commands to apply filters of interest.  The bot will then post matching killmails from zKillboard.com into that Discord channel.
+Use the Discord link below to add the bot to your Discord server and use the simple commands to apply filters of interest.  The bot will then post matching killmails from zKillboard.com into that Discord channel.
+
+[Add the bot to your server](https://discord.com/api/oauth2/authorize?client_id=1041057662432968745&permissions=2048&scope=applications.commands%20bot)
+
+| Command | Description |
+| ------------- | ------------- |
+| /init | Intialise the channel and set up the bot, needs Send Message and Manage Message permissions.  Note: the bot does not have Read Permissions on messages so cannot read any messages in any channel on your server. | 
+| /add | Add a rule to the filter in this channel. |
+| /remove | Remove a rule from the filter in this channel. |
+| /show | Choose whether to show Killmails, Lossmails or both. |
+| /filter_mode | Choose whether to apply boolean OR or AND to the filters in this channel. |
+| /min_isk | Only show results above a minimum value in ISK. |
 
 Filters available include:
  - Character
