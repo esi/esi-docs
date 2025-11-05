@@ -48,7 +48,8 @@ def community_pages(filter="service"):
             )
             for f in files
             if meta[f].get("type") == filter
-        ]
+        ],
+        key=lambda it: it[0].casefold(),
     )
     return tpl.render(
         items=items,
