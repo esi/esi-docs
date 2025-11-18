@@ -45,12 +45,12 @@ This header indicates, in seconds, when you will have enough tokens to make a re
 
 Every request consumes tokens based on the response status:
 
-| Status Code | Token Cost | Reasoning                                              |
-|-------------|------------|--------------------------------------------------------|
-| 2XX         | 2 tokens   |                                                        |
-| 3XX         | 1 token    | Promote the use of `If-Modified-Since` and `If-Match`. |
-| 4XX         | 5 tokens   | Discourage hitting user-errors.                        |
-| 5XX         | 0 tokens   | You shouldn't be penalized for server-side errors.     |
+| Status Code | Token Cost | Reasoning                                                        |
+|-------------|------------|------------------------------------------------------------------|
+| 2XX         | 2 tokens   |                                                                  |
+| 3XX         | 1 token    | Promote the use of `If-Modified-Since` and `If-Match`.           |
+| 4XX         | 5 tokens   | Discourage hitting user-errors. Does not apply to 429 responses. |
+| 5XX         | 0 tokens   | You shouldn't be penalized for server-side errors.               |
 
 ## Rate Limit Headers
 
