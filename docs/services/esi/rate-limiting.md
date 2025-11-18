@@ -12,6 +12,17 @@ In most cases you should be fine with far less requests than the rate limit allo
     Rate limiting isn't active on all routes yet.
     Check the OpenAPI Specs or the HTTP response headers for up-to-date information.
 
+!!! warning
+
+    For routes that do not have this new rate limiting enabled, there is still an older "error rate limit" active.
+    This allows at most 100 non-2xx/3xx responses per minute. After that, it will return 420s on all ESI routes, even those with the new rate limiting enabled.
+
+!!! important
+
+    Some routes also have a rate limiter deep in EVE Server code.
+    This can also cause 429s to be returned, without the rate limiter headers indicating why.
+    We are working on deprecating these, but in the mean time, be aware this can be the case.
+
 ## Floating Window
 
 A floating window is a mathematical approximation where tokens consumed by a request are released back to your bucket after the window size has passed.
