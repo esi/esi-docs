@@ -7,7 +7,10 @@
     * ESI
         * [Overview](services/esi/overview.md)
         * [Rate Limiting](services/esi/rate-limiting.md)
-        * [Cursor-Based Pagination](services/esi/pagination/cursor-based.md)
+        * Pagination
+            * [Cursor-Based Pagination](services/esi/pagination/cursor-based.md)
+            * [X-Pages Pagination](services/esi/pagination/x-pages.md)
+            * [From-ID Pagination](services/esi/pagination/from-id.md)
         * [Best Practices](services/esi/best-practices.md)
         * [Endpoints](services/esi/endpoints.md)
     * services/*/index.md

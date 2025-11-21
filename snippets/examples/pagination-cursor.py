@@ -68,7 +68,7 @@ def monitor_new_data(url, headers, after_token):
     return new_records
 
 if __name__ == "__main__":
-    url = "https://esi.evetech.net/listing" # ... (replace with actual route)
+    url = "https://esi.evetech.net/..." # ... (replace with actual route)
     headers = {
         "User-Agent": "ESI-Example/1.0",
         "X-Compatibility-Date": "2025-09-30",
