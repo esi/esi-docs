@@ -26,4 +26,6 @@ evecia.online is a scan tool for the EVE-Online that can scan characters on chat
 
 <hr/>
 
-If you have questions or need assistance feel free to message coodwatyy on zbuntowani[Discord](https://discord.gg/wgEFAf5H).
+API documentation can be found [here](https://evecia.online/doc).
+
+If you have questions or need assistance feel free to message #coodwatyy on zbuntowani[Discord](https://discord.gg/wgEFAf5H).
