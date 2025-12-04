@@ -65,15 +65,25 @@ eveseat:eveapi/5.0.22 (admin contact: foo@example) (https://github.com/eveseat/s
 RIFT/1.2.3 (foo@example.com)
 ```
 
-## Error Limit
+## Requests Limit
 
-ESI limits how many errors you’re allowed to get within a set time frame. Once you reach the error limit, all your request are automatically discarded until the end of the time frame. Failing to respect the error limit can get you banned from ESI. This system allows ESI to not use a fixed request rate limit.
+ESI can limit your requests in two way : with global errors limits, and with endpoint-specific bucket limit.
+
+Not abiding to the information transmitted can lead to your app being **banned**, for various time, from accessing the resources.
+
+### Error limit
+
+ESI limits how many errors you’re allowed to get within a set time frame. Once you reach the error limit, all your request are automatically discarded until the end of the time frame.
 
 Error limit headers:  
 `X-ESI-Error-Limit-Remain` errors left in this time frame.  
 `X-ESI-Error-Limit-Reset` seconds left until next time frame and errors reset to zero.
 
 The details are explained in this blog post: [Error Rate Limiting](/blog/error-rate-limiting-imminent)
+
+### Bucket Limit
+
+This limitation is described in [its own dedicated page](./rate-limiting.md)
 
 ## Caching
 
