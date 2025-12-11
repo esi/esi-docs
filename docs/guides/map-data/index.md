@@ -8,7 +8,8 @@ Objects like regions, constellations, solarsystems, planets, moons, and other ce
 There are two kinds of position, each using their own coordinate system:
 
 * Relative to the center of the New Eden cluster. (Used by regions, constellations, solarsystems)<br>
-  The center of the cluster lies near Zarzakh, labelled "Point of No Return" on the in-game map. (See the red dot on the cluster map below)
+  The center of the cluster lies near Zarzakh, labelled "Point of No Return" on the in-game map. (See the red dot on the cluster map below)<br>
+  For systems in the New Eden Cluster both a 'geographic' position and a 'schematic' position ("position2D") is provided. The former is the actual position of the solarsystem, used for jump range calculations and the in-game 3D map. The latter is used for the in-game 2D map.
 
 * Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)<br>
   The center of a solarsystem is it's star. The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`<br>
@@ -39,6 +40,12 @@ When displayed by the in-game map & most community maps, the mapping convention 
     This forms a **Left**-Handed coordinate system. If you are using a 3D graphics or geometry library, it may expect either Left- or Right-Handed coordinates. Using incorrect handedness results in a 'mirrored' image which rotations alone cannot correct. You can convert handedness by negating a single axis. (e.g. `[X, Y, -Z]`)
 
 ![New Eden map](./cluster_map.png)
+
+### 2D 'schematic' Map
+
+The 2D 'schematic' positions follow the same conventions, with the position2D `X` coordinate pointing in the same direction as the 3D position `X` coordinate, and position2D `Y` coordinate pointing in the same direction as the 3D position `Z` coordinate.
+
+![New Eden '2D' diagram map](./cluster_map_2d.png)
 
 ### Route calculation
 
@@ -94,9 +101,9 @@ z = z<sub>system</sub> + z<sub>planet</sub>
     In 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also mitigate this problem.
 
 
-## Example: 2D map
+## Example: 3D map rendered as an image
 
-To draw a 2D map of the universe, the 3D coordinates need to be transformed into 2D positions on an image. The transformation required varies depending on the coordinate system used by the image.
+To draw a map of the universe, the 3D coordinates need to be transformed into 2D positions on an image. The transformation required varies depending on the coordinate system used by the image.
 
 This example uses the common "top-left origin" coordinate system widely used in images & 2D graphics. Here the `(0,0)` origin lies in the top-left corner of the image, the X axis points **right** and the Y axis points **down**.
 
@@ -110,9 +117,14 @@ These image axes map onto the axes of the universe data as follows:
 
 After this, the coordinates must be moved and resized to fit within the image canvas. This can be done by calculating a bounding box, subtracting the position of the top-left corner of the bounding box from each coordinate, then dividing by width or height of the bounding box. This yields a position in the range 0 to 1, which can then be multiplied by the image width or height to get a final pixel position.
 
---8<-- "snippets/examples/map-2d-cluster.md"
+--8<-- "snippets/examples/map-cluster.md"
 
-A 2D solarsystem map can be drawn through the same approach, but as the X-axis points in the opposite direction for celestial body coordinates, both the X<sub>eve</sub> and Z<sub>eve</sub> are negated:
+The 2D "schematic" positions can be used similarly, with the 3D `Z` coordinate replaced by the 2D `Y` coordinate:
+
+* X<sub>img</sub> = X<sub>eve</sub>
+* Y<sub>img</sub> = -Y<sub>eve</sub>
+
+A solarsystem map uses different axes; The X-axis points in the opposite direction for celestial body coordinates, both the X<sub>eve</sub> and Z<sub>eve</sub> are negated:
 
 * X<sub>img</sub> = -X<sub>eve</sub>
 * Y<sub>img</sub> = -Z<sub>eve</sub>
