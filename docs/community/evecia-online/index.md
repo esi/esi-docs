@@ -4,7 +4,7 @@ search:
 
 title: evecia.online
 type: tool
-description: evecia.online is a scan tool for the EVE-Online.
+description: evecia.online is a scan tool for EVE-Online.
 maintainer:
   name: HKMP5
   github: HKHK55
@@ -22,10 +22,10 @@ maintainer:
 
 ## About
 
-evecia.online is a scan tool for the EVE-Online that can scan characters on chats (including local) in the game and present data on web page.
+evecia.online is a scaning tool for EVE-Online. It can monitor characters in in-game chat (including Local) and display information about them on a web interface.
 
 <hr/>
 
 API documentation and source files can be found [here](https://github.com/HKHK55/evecia-online-technical-documentacion/tree/main).
 
-If you have questions or need assistance feel free to message coodwatyy on zbuntowani[Discord](https://discord.gg/wgEFAf5H).
+If you have questions or need assistance feel free to message coodwatyy on Zbuntowani[Discord](https://discord.gg/wgEFAf5H).
