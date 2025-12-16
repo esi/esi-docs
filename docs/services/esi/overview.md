@@ -22,16 +22,17 @@ If this minimum bar is raised, this will be clearly communicated via dev-blogs.
 The API changes date at 11:00 UTC.
 So if you want to use the date of today, use (pseudocode): `now() - 11 * 60 * 60`, to get the current date of the API.
 
-### Breaking changes
+### New Compatibility Date
 
-Any breaking changes will be released under a new `X-Compatibility-Date`. Breaking changes include:
+The following changes will always be released under a new compatibility date:
 
+- Adding of new routes.
+- Adding or changing of (now to be) required request parameters.
+- Changing the type of request parameters / response fields / response headers.
 - Removing of request parameters.
 - Removing of response fields / response headers / enum values.
-- Adding or changing request parameters that are (now) required.
-- Changing the type of request parameters / response fields / response headers.
 
-Any non-breaking changes will not introduce a new `X-Compatibility-Date`. Non-breaking changes include:
+The following changes will always be released as part of the existing compatibility dates:
 
 - Adding of optional request parameters.
 - Adding of response fields / response headers / enum values.
