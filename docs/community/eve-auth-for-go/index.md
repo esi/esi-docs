@@ -8,7 +8,6 @@ description: A Go library for authorizing desktop applications with the EVE Onli
 maintainer:
   name: Erik Kalkoken
   github: ErikKalkoken
-  repository: https://github.com/ErikKalkoken/eveauth/
 ---
 
 # EVE Auth for Go
