@@ -8,11 +8,12 @@ description: A Go library for authorizing desktop applications with the EVE Onli
 maintainer:
   name: Erik Kalkoken
   github: ErikKalkoken
+  repository: https://github.com/ErikKalkoken/eveauth/
 ---
 
 # EVE Auth for Go
 
-eveauth is a Go library for authorizing desktop applications with the EVE Online SSO service.
+**eveauth** is a Go library for authorizing desktop applications with the EVE Online SSO service.
 
 [![GitHub Release](https://img.shields.io/github/v/release/ErikKalkoken/eveauth)](https://github.com/ErikKalkoken/eveauth/eveauth)
 [![GitHub License](https://img.shields.io/github/license/ErikKalkoken/eveauth)](https://github.com/ErikKalkoken/eveauth?tab=MIT-1-ov-file#readme)
