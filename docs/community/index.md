@@ -26,14 +26,16 @@ The general rule of thumb is that if your project is something that a developer 
 
 ## Requirements
 
+In order to be listed, your service/resource must meet the following requirements:
+
 1. Your service/resource must be directly related to EVE Online.
 2. Your service/resource adheres to the [EVE Online Developer License Agreement](/license-agreement).
 3. Your service/resource must be a public service/resource. :material-information-outline:{ title="This listing is not meant for private services." }
-4. Your service/resource must be considered production-ready. :material-information-outline:{ title="Is your service/resource usable by the general EVE public" }
+4. Your service/resource must be considered production-ready. :material-information-outline:{ title="Is your service/resource usable by the general EVE public." }
 5. Your service/resource must be public for at least three months.
-6. Your service/resource must be actively maintained in the last year.
+6. Your service/resource must be actively maintained in the last year. :material-information-outline:{ title="This doesn't mean your service needs to be a year old; just that it receives regular updates." }
 
-As always, we reserve the right to remove any service from this list at any time for any reason, or decline to add a service to this list.
+Additionally, services/resources that no longer meets these requirements might be removed without notice.
 
 !!! note "A note about search"
 
