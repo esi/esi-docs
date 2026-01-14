@@ -85,3 +85,18 @@ Note:
 - For stations, use `ownerID` to look up the `corporationName` via `npcCorporations` (as `name`).
 - For stations, use `operationID` to look up the `operationName` via `stationOperations`.
 - For stargates, use `destination.solarSystemID` to look up the `solarSystemName` via `mapSolarSystems` (as `name`).
+
+Localization:
+
+The following strings are used for the other languages supported by EVE Online.  
+Formatting uses the same rules above.
+
+| en-us (English) | Moon | Asteroid Belt          | Stargate          |
+|-----------------|------|------------------------|-------------------|
+| zh (Chinese)    | 卫星   | 小行星带                   | 星门                |
+| fr (French)     | Lune | Ceinture d'astéroïdes  | Portail stellaire |
+| de (German)     | Moon | Asteroid Belt          | Stargate          |
+| ja (Japanese)   | 衛星   | アステロイドベルト              | スターゲート            |
+| ko (Korean)     | 위성   | 소행성 벨트                 | 스타게이트             |
+| ru (Russian)    | Moon | Asteroid Belt          | Stargate          |
+| es (Spanish)    | Luna | Cinturón de asteroides | Portal estelar    |
