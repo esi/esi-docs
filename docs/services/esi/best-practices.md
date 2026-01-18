@@ -73,11 +73,13 @@ Not abiding to the information transmitted can lead to your app being **banned**
 
 ### Error limit
 
-ESI limits how many errors you’re allowed to get within a set time frame. Once you reach the error limit, all your request are automatically discarded until the end of the time frame.
+ESI limits how many errors you’re allowed to get within a set time frame. This Limit uses a fixed time frame, in contrast to the Bucket Limit which is a sliding window. Once you reach the error limit, all your request are automatically discarded until the end of the time frame.
 
 Error limit headers:  
 `X-ESI-Error-Limit-Remain` errors left in this time frame.  
 `X-ESI-Error-Limit-Reset` seconds left until next time frame and errors reset to zero.
+
+These headers are mutually exclusive to those described in the Bucket based Rate Limit.
 
 The details are explained in this blog post: [Error Rate Limiting](/blog/error-rate-limiting-imminent)
 
