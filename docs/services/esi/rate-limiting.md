@@ -98,3 +98,4 @@ Each route in the same group will show the same `window-size` and `max-tokens`.
 - If you need to burst, that is fine; just not every window-size.
 - Use staggered scheduling for periodic requests when possible. Ideally not `*/5` cronjobs. But rather: 5 minutes after the last job was finished.
 - Respect cache times to minimize unnecessary requests.
+- For Error Limiting, see [Best Practices](./best-practices.md)
