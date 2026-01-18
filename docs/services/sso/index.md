@@ -206,7 +206,7 @@ The `exp` claim in the JWT token is the expiration time of the token, represente
 
 Now that you have verified the JWT Token, you can use the claims belonging to the token to get more information about the access the token has, and for whom it was issued.
 
-The `sub` claim in the JWT token is in the format of `EVE:CHARACTER:<character-id>` and can be used to get the current character's ID. The `name` claim contains the character's name, and the `scp` claim is an array of scopes that have been granted to this token.
+The `sub` claim in the JWT token is in the format of `CHARACTER:EVE:<character-id>` and can be used to get the current character's ID. The `name` claim contains the character's name, and the `scp` claim is an array of scopes that have been granted to this token.
 
 ## Log in with EVE Online buttons
 
