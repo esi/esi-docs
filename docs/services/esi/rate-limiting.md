@@ -16,6 +16,7 @@ In most cases you should be fine with far less requests than the rate limit allo
 
     For routes that do not have this new rate limiting enabled, there is still an older "error rate limit" active.
     This allows at most 100 non-2xx/3xx responses per minute. After that, it will return 420s on all ESI routes, even those with the new rate limiting enabled.
+    The headers described in this document are mutually exclusive to those described in the Error Limit documentation.
 
 !!! important
 
