@@ -20,5 +20,18 @@ function checkScrollPosition() {
   }
 }
 
+function initDropdownToggle() {
+  document.querySelectorAll(".esi-nav-header-item-dropdown").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      if (item.dataset.open) {
+        delete item.dataset.open;
+      } else {
+        item.dataset.open = "true";
+      }
+    });
+  });
+}
+
 window.addEventListener("scroll", checkScrollPosition);
 window.addEventListener("load", checkScrollPosition);
+window.addEventListener("load", initDropdownToggle);

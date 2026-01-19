@@ -2,7 +2,7 @@
 search:
   exclude: true
 
-title: Sample Service
+title: Sample Service # The title of your project, this should match the name of the directory that you are putting this file in, as it influences sorting. For the directory name, use kebab-case with lowercase letters.
 type: sample  # Should be either 'service' or 'resource'
 description: A short one-line description that will appear in the table on the community page.
 maintainer:  # `name` is required, and exactly one of `github`, `gitlab`, or 'repository' is required
