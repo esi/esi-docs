@@ -16,6 +16,7 @@ In most cases you should be fine with far less requests than the rate limit allo
 
     For routes that do not have this new rate limiting enabled, there is still an older "error rate limit" active.
     This allows at most 100 non-2xx/3xx responses per minute. After that, it will return 420s on all ESI routes, even those with the new rate limiting enabled.
+    The headers described in this document are mutually exclusive to those described in the Error Limit documentation found under "Best Practices".
 
 !!! important
 
@@ -97,3 +98,4 @@ Each route in the same group will show the same `window-size` and `max-tokens`.
 - If you need to burst, that is fine; just not every window-size.
 - Use staggered scheduling for periodic requests when possible. Ideally not `*/5` cronjobs. But rather: 5 minutes after the last job was finished.
 - Respect cache times to minimize unnecessary requests.
+- For Error Limiting, see [Best Practices](./best-practices.md)
