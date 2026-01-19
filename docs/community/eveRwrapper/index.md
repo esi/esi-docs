@@ -29,4 +29,4 @@ The main focus of this wrapper is to make it easy for fellow [R programming lang
 
 - May be used in the development of [R Shiny](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) web applications.
 
-- Some examples using the library may be found at https://github.com/kandrsn99/eveR or over at the Discord.
+- Some examples using the library may be found at [eveR](https://github.com/kandrsn99/eveR) or over at the Discord.
