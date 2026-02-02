@@ -88,7 +88,7 @@ Note:
 
 Localization:
 
-The following strings are used for the other languages supported by EVE Online.  
+The following strings are used for the other languages supported by EVE Online.
 Formatting uses the same rules above.
 
 | en-us (English) | Moon | Asteroid Belt          | Stargate          |
@@ -100,3 +100,8 @@ Formatting uses the same rules above.
 | ko (Korean)     | 위성   | 소행성 벨트                 | 스타게이트             |
 | ru (Russian)    | Moon | Asteroid Belt          | Stargate          |
 | es (Spanish)    | Luna | Cinturón de asteroides | Portal estelar    |
+
+## Security Office
+
+The SDE lists stations having a Security Office; however, only the ones in Lowsec-located CONCORD / DED stations are available to you.
+
