@@ -103,5 +103,5 @@ Formatting uses the same rules above.
 
 ## Security Office
 
-The SDE lists stations having a Security Office; however, only the ones in Lowsec-located CONCORD / DED stations are available to you.
+The SDE lists stations having a Security Office; however, only the ones in [Lowsec](../../guides/system-security.md)-located CONCORD / DED stations are available to you.
 
