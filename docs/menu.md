@@ -15,6 +15,7 @@
         * [Endpoints](services/esi/endpoints.md)
     * services/*/index.md
 * Guides and Examples
+    * [Getting Started](guides/getting-started.md)
     * guides/*.md
     * guides/*/index.md
 * [Community Showcase](community/index.md)

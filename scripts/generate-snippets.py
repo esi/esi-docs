@@ -13,6 +13,7 @@ EXTENSION_MAPPING = {
     ".py": "Python",
     ".cs": "C#",
     ".kt": "Kotlin",
+    ".ts": "TypeScript",
 }
 
 # The mapping of file extensions to syntax highlighting names. The key is the file
@@ -21,6 +22,7 @@ SYNTAX_MAPPING = {
     ".py": "python",
     ".cs": "csharp",
     ".kt": "kotlin",
+    ".ts": "typescript",
 }
 
 # The file extension for the combined markdown file.
