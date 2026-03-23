@@ -10,7 +10,7 @@ maintainer:
   github: scotdex
 ---
 
-# zKillboard.com
+# socketkill.com
 
 <div class="grid cards" markdown>
 
