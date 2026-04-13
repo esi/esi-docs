@@ -5,3 +5,4 @@
 /.idea/
 /snippets/**/*.md
 __pycache__/
+.vscode/
