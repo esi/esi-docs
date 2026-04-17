@@ -41,7 +41,7 @@ Socket.Kill or socketkill.com is a nearly stateless high performance web site to
 
 ## Screenshot
 
-![alt text](image.png)
+![alt text](image.jpeg)
 
 
 
