@@ -1,11 +1,11 @@
 # System Security
 
-You can find the security status of any solar system in [SDE](../services/static-data/index.md)'s `mapSolarSystems.jsonl` file.
+You can find the security status of any solar system in [SDE](../services/static-data/index.md)'s `mapSolarSystems.jsonl` file. Or through ESI's [`/universe/systems/{system_id}` route](/api-explorer#/operations/GetUniverseSystemsSystemId)
 It is under the `securityStatus` field, which is a floating point value given with full precision, usually 6 decimal places.
 
 Not to be confused with the `securityClass` field, which is a string value with unknown meaning.
 
-In-game, the security status (also known as security level) is shown with 1 decimal place precision, from -1.0 to 1.0. In the SDE, it is given with full precision and needs to be rounded to 1 decimal place to match the in-game display.
+In-game, the security status (also known as security level) is shown with 1 decimal place precision, from -1.0 to 1.0. In the APIs it is given with full precision and needs to be rounded to 1 decimal place to match the in-game display.
 
 ## Rounding
 
