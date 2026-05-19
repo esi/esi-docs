@@ -56,11 +56,14 @@ Some sets of types don't map cleanly onto 'Groups' or 'Categories'. TypeLists de
 
 TypeLists are available in the SDE's `typelists.jsonl` file.
 
-A TypeList consists of a set of included Categories, Groups, and Types, and a set of excluded Categories, Groups, and Types. A given type is included in a typelist if any of the following match:
+A TypeList consists of a set of included Categories, Groups, and Types, and a set of excluded Categories, Groups, and Types. To get the full list of all types in a TypeList, do the following (in this order):
 
-* The type's categoryID is included in `includedCategoryIDs` but not in `excludedCategoryIDs` and the type's groupID and typeID are not in `excludedGroupIDs` and `excludedTypeIDs` respectively.
-* The type's groupID is included in `includedGroupIDs` but not in `excludedGroupIDs` and the type's typeID is not in `excludedTypeIDs`
-* The type's typeID is included in `includedTypeIDs` but not in `excludedTypeIDs`
+* Add all items with a category in `includedCategoryIDs` to the list.
+* Remove all items with a category in `excludedCategoriesIDs` from the list. 
+* Add all items with a group in `includedGroupIDs` to the list.
+* Remove all items with a group in `excludedGroupIDs` from the list.
+* Add all items in `includedTypeIDs` to the list.
+* Remove all items in `excludedTypeIDs` from the list.
 
 --8<-- "snippets/examples/staticdata-typelist.md"
 
