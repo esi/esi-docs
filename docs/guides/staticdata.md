@@ -58,12 +58,12 @@ TypeLists are available in the SDE's `typelists` file.
 
 A TypeList consists of a set of included Categories, Groups, and Types, and a set of excluded Categories, Groups, and Types. To get the full list of all types in a TypeList, do the following (in this order):
 
-1) Add all items with a category in `includedCategoryIDs` to the list.
-2) Remove all items with a category in `excludedCategoriesIDs` from the list. 
-3) Add all items with a group in `includedGroupIDs` to the list.
-4) Remove all items with a group in `excludedGroupIDs` from the list.
-5) Add all items in `includedTypeIDs` to the list.
-6) Remove all items in `excludedTypeIDs` from the list.
+1. Add all items with a category in `includedCategoryIDs` to the list.
+2. Remove all items with a category in `excludedCategoriesIDs` from the list. 
+3. Add all items with a group in `includedGroupIDs` to the list.
+4. Remove all items with a group in `excludedGroupIDs` from the list.
+5. Add all items in `includedTypeIDs` to the list.
+6. Remove all items in `excludedTypeIDs` from the list.
 
 !!! example
     ```
