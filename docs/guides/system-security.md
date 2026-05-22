@@ -5,7 +5,7 @@ It is under the `securityStatus` field, which is a floating point value given wi
 
 Not to be confused with the `securityClass` field, which is a string value with unknown meaning.
 
-In-game, the security status (also known as security level) is shown with 1 decimal place precision, from -1.0 to 1.0. In the APIs it is given with full precision and needs to be rounded to 1 decimal place to match the in-game display.
+In-game, the security status (also known as security level) is shown with 1 decimal place precision, from -1.0 to 1.0. In the SDE and ESI it is given with full precision and needs to be rounded to 1 decimal place to match the in-game display.
 
 ## Rounding
 
