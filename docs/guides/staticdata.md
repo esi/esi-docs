@@ -50,6 +50,33 @@ Formatting uses the same rules above.
 
 The SDE lists stations having a Security Office; however, only the ones in [Lowsec](system-security.md)-located CONCORD / DED stations are available to players.
 
+## Skill Requirements
+
+Many items require skills to use. Which skills and levels are specified in the item attributes, with pairs of "Required Skill" and "Required Skill Level" attributes:
+
+|                              | First | Second | Third | Fourth | Fifth | Sixth |
+|------------------------------|-------|--------|-------|--------|-------|-------|
+| 'Required Skill' AttributeID | 182   | 183    | 184   | 1285   | 1289  | 1290  |
+| 'Required Level' AttributeID | 277   | 278    | 279   | 1286   | 1287  | 1288  |
+
+These same attributes apply to the skills required to train a skill.
+
+!!! example
+    The 'Stork' command destroyer has the following skill requirement attributes:  
+        
+    * \#182: `33092`    -> TypeID #33092 is the skill "Caldari Destroyer"
+    * \#183: `37615`    -> TypeID #37615 is the skill "Command Destroyers"
+    * \#277: `5`        -> The first skill has to be at least level 5
+    * \#278: `1`        -> The second skill has to be at least level 1
+
+    Therefore: The 'Stork' requires "Caldari Destroyer" level 5 and "Command Destroyers" level 1.
+
+## Alpha Clone Restrictions
+
+The general restrictions on Alpha Clone characters can be found on the [EVE Online Help Center.](https://support.eveonline.com/hc/en-us/articles/213020969-Alpha-and-Omega-Clone)
+
+An exact list of skills and maximum levels that can be trained by Alpha Clone characters is available in the Static Data's `cloneGrades` file. This list can then be used to determine whether a module or ship can be used by Alpha Clone characters by checking the item's required skills against the list.
+
 ## TypeLists
 
 Some sets of types don't map cleanly onto 'Groups' or 'Categories'. TypeLists describe arbitrary sets of types and are used for a variety of purposes, such as the different groupings of ore, the groups of ships that are allowed to enter certain acceleration gates, or which objects generate a killmail when destroyed.
