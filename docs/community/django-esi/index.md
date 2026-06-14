@@ -4,7 +4,7 @@ search:
 
 title: Django-ESI
 type: resource
-description: Django app for easy access to the EVE Swagger Interface (ESI)
+description: Django app for easy access to the EVE Stable Interface (ESI)
 maintainer:
   name: Alliance Auth Team
   gitlab: allianceauth
@@ -12,7 +12,7 @@ maintainer:
 
 # Django-ESI
 
-Django app for easy access to the EVE Swagger Interface (ESI)
+Django app for easy access to the EVE Stable Interface (ESI)
 
 [![Version](https://img.shields.io/pypi/v/django-esi)](https://pypi.org/project/django-esi/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/django-esi)](https://pypi.org/project/django-esi/)
@@ -27,17 +27,17 @@ Django app for easy access to the EVE Swagger Interface (ESI)
 
 - [:simple-discord: __Discord__](https://discord.gg/fjnHAmk){ .esi-card-link }
 - [:simple-gitlab: __GitLab__](https://gitlab.com/allianceauth/django-esi){ .esi-card-link }
-- [:octicons-browser-16: __Documentation__](https://django-esi.readthedocs.io/en/latest/){ .esi-card-link }
+- [:octicons-browser-16: __Documentation__](https://django-esi.readthedocs.io/){ .esi-card-link }
 
 </div>
 
 ## Description
 
-Django-esi is a Django app that provides an interface for easy access to the EVE Swagger Interface (ESI), the official API for the game [EVE Online](https://www.eveonline.com/).
+Django-ESI is a Django app that provides an interface for easy access to the EVE Stable Interface (ESI).
 
-It is build upon [Bravado](https://github.com/Yelp/bravado) - a python client library for Swagger 2.0 services.
+It is built upon [aiopenapi3](https://github.com/commonism/aiopenapi3) - A Pydantic Client library for OpenAPI 3
 
-Django-esi adds the following main functionalities to a Django site:
+Django-ESI adds the following main functionalities to a Django site:
 
 - Dynamically generated client for interacting with public and private ESI endpoints
 - Support for adding EVE SSO to authenticate characters and retrieve tokens
