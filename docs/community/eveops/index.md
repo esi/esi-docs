@@ -12,9 +12,9 @@ maintainer:  # `name` is required, and exactly one of `github`, `gitlab`, or 're
 ---
 
 ## Screenshots
-![Menubar](menubar.png)
+![Menubar](menubar.jpg)
 
-![Menubar](desktop.png)
+![Menubar](desktop.jpg)
 
 ## Features
 
