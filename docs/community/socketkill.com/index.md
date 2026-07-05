@@ -2,7 +2,7 @@
 search:
   exclude: true
 
-title: socketkill.com
+title: Socket.Kill
 type: service
 description: socketkill.com is a high performance web site streaming live kill mails, design focus is optimisation and aesthetics. 
 maintainer:
@@ -35,8 +35,8 @@ Visit [About](https://socketkill.com/about/) to learn more
 - Selectable Killmails for further inspection.
 - ISK Destroyed Counter (From 14th Jan 2026)
 - Automated posting to X and BlueSky with 40 bill isk threshold.
-- Query builder to review daily kill mails. (Coming soon)
-- Killmail RAW data access for further dev opportunities.
+- Search engine to inspect killmails since 0001 UTC
+- Integrated Dogma Engine to review fits.
 
 ## Infrastructure
 
@@ -51,7 +51,8 @@ Visit [About](https://socketkill.com/about/) to learn more
 - Observing an ongoing battle (filter x2 alliances)
 - Hunt a region (Filter for black rise)
 - Locate officers for that juicy purple loot (Discord tracker)
-- Who is smartbombing in the area (Filter "Smartbomb" & Region) - Coming soon TM
+- Who is smartbombing in the area (Filter "Smartbomb" & Region) 
+- How many battleships have been destroyed in drone lands since 0001 UTC?
 
 ## Screenshot
 
