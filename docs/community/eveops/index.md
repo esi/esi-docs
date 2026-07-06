@@ -1,6 +1,6 @@
 ---
 search:
-  exclude: false
+  exclude: true
 
 title: EVEOps # The title of your project, this should match the name of the directory that you are putting this file in, as it influences sorting. For the directory name, use kebab-case with lowercase letters.
 type: Service  # Should be either 'service' or 'resource'
