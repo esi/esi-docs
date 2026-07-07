@@ -1,9 +1,9 @@
 ---
 search:
-  exclude: false
+  exclude: true
 
 title: evecia.online
-type: tool
+type: service
 description: evecia.online is a scan tool for EVE-Online.
 maintainer:
   name: HKMP5
