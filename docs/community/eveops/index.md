@@ -3,13 +3,15 @@ search:
   exclude: true
 
 title: EVEOps # The title of your project, this should match the name of the directory that you are putting this file in, as it influences sorting. For the directory name, use kebab-case with lowercase letters.
-type: Service  # Should be either 'service' or 'resource'
-description: A native macOS companion app for EVE Online. Monitor up to three characters, and corporation at a glance, right from your menu bar. Want more - open the companion app to explore an entirely connected experience with your charcaters as if you were in-game.
+type: service  # Should be either 'service' or 'resource'
+description: A native macOS companion app for EVE Online. Monitor up to three characters, and corporation at a glance, right from your menu bar. Want more - open the companion app to explore an entirely connected experience with your characters as if you were in-game.
 maintainer:  # `name` is required, and exactly one of `github`, `gitlab`, or 'repository' is required
   name: Citizen Coder
   github: MikeManzo # GitHub username, this will generate a link to your GitHub profile
   repository: https://github.com/MikeManzo/EVEOps # If your source control is somewhere else, enter the full URL of your user profile
 ---
+
+# EVEOps
 
 ## Screenshots
 ![Menubar](menubar.jpg)
