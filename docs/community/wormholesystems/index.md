@@ -4,7 +4,7 @@ search:
 
 title: WormholeSystems
 type: service
-description: A modern mapping platform designed specifically for the wormhole community in EVE Online. Developed by capsuleers for capsuleers, offering tools to enhance navigation and collaboration within wormhole space.
+description: Live, collaborative wormhole mapping for EVE Online. Open source, with smart routing, intel, and Discord alerts.
 maintainer:
   name: WormholeSystems Team
   github: WormholeSystems
@@ -14,70 +14,69 @@ maintainer:
 
 ![](icon.png){ width="128" }
 
-A modern mapping platform designed specifically for the wormhole community in EVE Online. Developed by capsuleers for capsuleers, it offers a suite of tools to enhance navigation and collaboration within wormhole space.
+WormholeSystems is a live, collaborative map for wormhole space. Your whole corp works on the same picture of the chain, and every change appears for everyone in real time.
+
+[![License](https://img.shields.io/github/license/WormholeSystems/WormholeSystems)](https://github.com/WormholeSystems/WormholeSystems/blob/main/LICENSE)
+[![wsctl](https://img.shields.io/github/v/release/WormholeSystems/wormholesystems-cli?label=wsctl)](https://github.com/WormholeSystems/wormholesystems-cli)
+[![Self-host](https://img.shields.io/badge/self--host-wormholesystems--containers-blue)](https://github.com/WormholeSystems/wormholesystems-containers)
 
 <div class="grid cards" markdown>
 
 - [:octicons-browser-16: **Website**](https://wormhole.systems){ .esi-card-link }
+- [:octicons-book-16: **Documentation**](https://wormhole.systems/documentation){ .esi-card-link }
 - [:simple-discord: **Discord**](https://discord.gg/rpfWCzVJS7){ .esi-card-link }
 - [:simple-github: **GitHub**](https://github.com/WormholeSystems){ .esi-card-link }
 
 </div>
 
-## Interactive Maps
+## Mapping
 
-WormholeSystems provides real-time wormhole mapping with intuitive drag-and-drop controls, allowing users to visualize their chains effectively. Key features include:
+Systems are nodes, wormholes are the connections between them. You can add systems by hand, or let the app map as you fly: with location tracking enabled, it notices your jumps, asks which signature you went through, and draws the new system and connection for you. Disconnected leftovers are cleaned up automatically, pinned systems stay put, and an ignore list keeps trade hubs off the map.
 
-- **Real-time Updates:** Maps update automatically as new connections are discovered or existing ones change.
-- **Drag-and-Drop Interface:** Easily arrange and organize your wormhole connections with intuitive controls.
-- **Visual Chain Representation:** Clear visualization of wormhole chains and system relationships.
+![](map.png)
 
-## Collaborative Mapping
+*A mapped chain, with signatures, navigation, threat analysis, and pilot tracking alongside.*
 
-WormholeSystems enables seamless real-time collaboration with fellow players, facilitating coordinated exploration and operations:
+## Signatures and mass
 
-- **Real-time Synchronization:** All team members see updates instantly as connections are mapped.
-- **Multi-user Support:** Multiple capsuleers can work on the same map simultaneously.
-- **Coordinated Operations:** Perfect for fleet operations and group exploration activities.
+Paste your probe scanner output into the signatures panel and the app reconciles it with what is already recorded, showing what is new, updated, or gone before anything is saved. Wormhole connections track lifetime, remaining mass, and maximum ship size. Members can log jumps through a hole, and the app estimates the mass it has left.
 
-## Activity Monitoring
+## Routing
 
-WormholeSystems offers real-time insights into activities within your chains and systems, keeping you informed of ongoing events:
+The route planner combines stargates, your mapped wormholes, and optionally EVE Scout's public Thera and Turnur connections. Filters exclude holes by lifetime and mass, and a preference setting weighs shorter routes against safer ones. Finished routes can be sent to the in-game autopilot, for one character or all your connected ones. A watch list shows live jump counts to systems you care about, and shared home system and rally point markers keep the group oriented.
 
-- **Real-time Activity Tracking:** Monitor what's happening in your mapped systems.
-- **Event Notifications:** Stay informed about important changes in your wormhole chains.
-- **System Intelligence:** Automatic insights about activities and potential threats.
+## Intel
 
-## Access Control
+A live feed from zKillboard shows kills in and around the chain, and 90 days of kill history give every wormhole system a threat rating, visible directly on the map. Discord alerts can notify your server when a system comes within a set number of jumps of the chain, when kills happen nearby, or when a new exit puts a target system within capital jump range, configurable by ship class and jump skills.
 
-WormholeSystems features a unified access control system that simplifies permission management, ensuring secure and efficient collaboration:
+## Access
 
-- **Role-based Permissions:** Control who can view, edit, or manage different aspects of your maps.
-- **Secure Collaboration:** Ensure only authorized members have access to sensitive wormhole intelligence.
-- **Easy Management:** Streamlined interface for managing team access and permissions.
+Access is granted per map to characters, corporations, or alliances, and every grant can carry an expiration date. A user's level is the highest of all entries matching their character, corporation, and alliance.
 
-## Smart Routing
+| Action                                     | Viewer | Member | Manager | Owner |
+| ------------------------------------------ | :----: | :----: | :-----: | :---: |
+| View systems, connections, and signatures  |   ✓    |   ✓    |    ✓    |   ✓   |
+| See live character positions               |        |   ✓    |    ✓    |   ✓   |
+| Edit the map (systems, signatures, chain)  |        |   ✓    |    ✓    |   ✓   |
+| Manage access and share links              |        |        |    ✓    |   ✓   |
+| Delete the map                             |        |        |         |   ✓   |
 
-WormholeSystems utilizes intelligent pathfinding through complex wormhole chains, incorporating mass calculations to optimize routes:
+Maps can also be made public or shared through a revocable guest link; both are read-only and never show live character positions.
 
-- **Intelligent Pathfinding:** Find the best routes through complex wormhole networks.
-- **Mass Calculations:** Automatically factor in wormhole mass limits when planning routes.
-- **Route Optimization:** Get the most efficient paths for your operations and logistics.
+![](access.png)
 
-## Signature Tracking
+*Managing who has access to a map, at which level, and until when.*
 
-WormholeSystems consolidates all necessary information about wormhole signatures in one place, streamlining the tracking process:
+## Customization
 
-- **Comprehensive Signature Database:** Track all discovered signatures with detailed information.
-- **Automatic Classification:** Smart identification and categorization of signature types.
-- **Historical Data:** Keep records of signature changes and lifecycle information.
+Panels for signatures, kills, routing, intel, and more can be rearranged, resized, or hidden, and a finished layout can be copied as text and shared with corpmates. Per-map bookmark naming templates keep in-game bookmarks consistent across the corp, and a `Cmd+K` command palette searches systems, threats, and notes.
 
-## Intelligence System
+## Open source and self-hosting
 
-The platform generates automatic notes and insights about your wormhole systems, ensuring you never miss critical details:
+WormholeSystems is MIT-licensed and developed on [GitHub](https://github.com/WormholeSystems). The hosted service exposes a REST API with personal access tokens, and a self-hosted instance is one command away:
 
-- **Automatic Intelligence Gathering:** System generates insights based on observed activities.
-- **Smart Annotations:** Automatic notes about system characteristics and potential opportunities.
-- **Critical Alerts:** Never miss important information about your mapped systems.
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://install.wormhole.systems | sh
+```
 
-
+This installs the `wsctl` CLI, whose setup wizard handles the whole Docker stack: configuration, secrets, SSL, and database initialization including the EVE static data. The server needs git and Docker with Compose v2.24 or newer, and for production a domain pointing at it with ports 80 and 443 open. You also need an [EVE developer application](https://developers.eveonline.com/); the wizard tells you how to configure its callback URL and scopes. A login allowlist can restrict a private instance to your own corp or alliance.
