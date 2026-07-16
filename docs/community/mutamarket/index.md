@@ -4,7 +4,7 @@ search:
 
 title: MutaMarket
 type: service
-description: Web tool for managing abyssal modules. Import modules, browse contracts, and analyze values with ease.
+description: The marketplace for abyssal modules. Browse contracts, appraise your rolls, and trade with other capsuleers.
 maintainer:
   name: Nicolas Kion
   github: nicolaskion
@@ -12,73 +12,55 @@ maintainer:
 
 # MutaMarket
 
-![](logo.png)
+![](logo.png){ width="128" }
 
-A free web-based platform to seamlessly manage, analyze, and share abyssal modules. We provide a comprehensive inventory management system, live contracts, and an advanced calculator to help you make informed decisions and maximize your profits.
+Every abyssal module is a unique roll, so the regular market can't price or list them. MutaMarket does: it keeps a database of mutated modules, estimates their value, and connects buyers and sellers.
+
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fmutamarket.com&label=mutamarket.com)](https://mutamarket.com)
+[![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)](https://github.com/MutaMarket/MutaMarket)
+[![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?logo=vuedotjs&logoColor=white)](https://github.com/MutaMarket/MutaMarket)
 
 <div class="grid cards" markdown>
 
 - [:octicons-browser-16: **Website**](https://mutamarket.com){ .esi-card-link }
 - [:simple-discord: **Discord**](https://discord.gg/FuwdBZ5cXq){ .esi-card-link }
-- [:simple-github: **GitHub**](https://github.com/nicolaskion){ .esi-card-link }
+- [:simple-github: **GitHub**](https://github.com/MutaMarket/MutaMarket){ .esi-card-link }
+- [:octicons-code-16: **API Documentation**](https://mutamarket.com/api/documentation){ .esi-card-link }
 
 </div>
 
-## Contract Browser
+## Browsing
 
-The Contract Browser module provides a technical interface for querying and filtering live abyssal module contracts. Key features include:
+The browser lists every abyssal module currently for sale, from public in-game contracts and MutaMarket listings. You can filter by module type, rolled attribute ranges, meta level, price, and estimated value, and sort by any stat. Notably good rolls are flagged, and a contract can be opened directly in the game client.
 
-- **View Modes:** Toggle between grid and list views for optimal data presentation.
-- **Sorting & Filtering:** Sort contracts by price, module attributes, and availability. Apply filters by module type, meta group, and other parameters.
-- **Detailed Data:** Each listing displays attribute bars and key statistics for easy comparison.
+![](browser.png)
+
+*Modules for sale, with attribute bars and estimated values.*
 
 ![](filters.png)
 
-*Filtering options for live abyssal module contracts.*
+*Filters for type, rolled attributes, price, and roll quality.*
 
-## Inventory Management
+## Appraisal
 
-The Inventory Management system is designed to keep an accurate record of your abyssal modules. It supports multiple import methods:
+Paste an in-game item link and MutaMarket reads the module's rolled stats from ESI and estimates its value. Estimates come from machine-learning models trained per module type on recorded sales, and each model's accuracy statistics are public. A mutation calculator computes the probability of hitting chosen attribute ranges before you roll.
 
-- **ESI Integration:** Automatically imports module data directly from EVE Online’s API.
-- **EveMail Import:** Processes module information sent via EVE Mail.
-- **Manual Import:** Accepts pasted chat messages to capture module details.
-  The interface displays modules with visual cues and attribute scores, making it simple to identify and manage valuable rolls.
+![](estimate.png)
 
+*A module's value prediction, with the model's confidence and accuracy.*
 
-![](inventory.png)
+## Selling and trading
 
-*Lists of modules with visual cues and attribute scores.*
+Import your assets, mark a module as public, and it is listed for sale. Buyers send offers through the site and both sides negotiate in a built-in message thread. Notifications arrive in the app, by EVE mail, and optionally on Discord.
 
-## Probability Calculator
+## Inventory
 
-This tool calculates the odds of achieving desired module attributes and estimates associated costs. It features:
+MutaMarket imports abyssal modules from all your characters via ESI, showing what you own, where it is stored, and what it is worth. Collections group modules into public or private sets and can sync automatically with selected in-game locations on every asset import. A shareable workbench compares modules side by side.
 
-- **Statistical Analysis:** Computes the likelihood of rolling specific stats based on current market data.
-- **Cost Estimation:** Provides an expected cost value for obtaining certain module attributes.
-- **Data-Driven Insights:** Uses both inventory and market data to support informed decision-making during module mutation and trading.
+![](inventory.jpg)
 
-## Trading System
+*Your modules, grouped by where they are stored, with estimated values.*
 
-The built-in Trading System facilitates direct communication between players about module transactions. Its capabilities include:
+## Developer API
 
-- **In-Platform Messaging:** Allows users to negotiate, share module details, and coordinate trade offers without leaving MutaMarket.
-- **Transaction Coordination:** Simplifies the process of arranging trades and verifying module details.
-- **Integrated Workflow:** Seamlessly links trading communications with other management features.
-
-## Collections
-
-Collections enable users to organize modules into custom groups for easier reference and sharing. Features include:
-
-- **Grouping & Organization:** Create user-defined sets (e.g., by ship fit, module type, or valuation).
-- **Annotation:** Add notes to individual modules within a collection for additional context.
-- **Visibility Settings:** Configure collections as private or public, allowing for controlled sharing with the community.
-
-## Module Database
-
-Our database is the comprehensive repository for abyssal module data. It offers:
-
-- **Advanced Search:** Locate modules based on type, attributes, or custom criteria.
-- **Detailed Records:** Each module entry includes images, numerical attributes, and valuation estimates.
-
-
+A free public JSON API exposes modules for sale (with the full filter syntax), single-module lookups, module imports, and per-type roll statistics. No authentication is required. The [API documentation](https://mutamarket.com/api/documentation) is interactive and includes an OpenAPI spec and a Postman collection.
