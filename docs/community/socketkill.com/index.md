@@ -30,21 +30,33 @@ Visit [About](https://socketkill.com/about/) to learn more
 
 - Multimode Filter (Corp, System, Region, Alliance) to monitor kills as the arrive
 - NPC Global Death Counter
-- Public web socket access with integrated schema validation.
 - Discord Killmail Relay with multiple categories.
 - Selectable Killmails for further inspection.
 - ISK Destroyed Counter (From 14th Jan 2026)
 - Automated posting to X and BlueSky with 40 bill isk threshold.
 - Search engine to inspect killmails since 0001 UTC
 - Integrated Dogma Engine to review fits.
+- OBS Overlay integration feature https://socketkill.com/obs
+- Losses for Corps/Alliances/Pilots scoped to 30 days, obtainable using the front end *entity lookup* tool.
+
+* https://socketkill.com/pilot/95282689
+
+* https://socketkill.com/corp/98764551
+
+* https://socketkill.com/alliance/99014027
 
 ## Infrastructure
 
-- Zero Onboard Database & No Fully Stored Killmails
+- No Fully Stored Killmails
 - Tailwind/Svelte/Astro
 - Cloudflare Workers
 - R2 & KV Persistence
 - Image Proxy for performance boost
+- Strictly no automated AI agents were involved in the making of this platform.
+
+## Support
+
+- Discord - https://discord.gg/UnFN8UY6Dz - everyone is welcome to ask questions or suggest some ideas.
 
 ## Use Cases
 
@@ -53,15 +65,3 @@ Visit [About](https://socketkill.com/about/) to learn more
 - Locate officers for that juicy purple loot (Discord tracker)
 - Who is smartbombing in the area (Filter "Smartbomb" & Region) 
 - How many battleships have been destroyed in drone lands since 0001 UTC?
-
-## Screenshot
-
-![alt text](image.jpg)
-
-
-
-## API
-
-API documentation can be found [here](https://api.socketkill.com/docs/).
-
-
