@@ -21,6 +21,8 @@ This document is a list of common or unusual terms used in EVE third-party devel
 
 * [*EFT*](./fitting.md#eft) — "EVE Fitting Tool"<br>
   Human-Readable format for ship fittings from the now-defunct third-party program of the same name, used in-game for fit copying and pasting.
+* [*EVE HTML*](./eve-html.md)<br>
+  HTML-like markup used for formatted text written in-game; mail bodies, character bios and item descriptions. Also called *EVE formatted text*, and the links inside it *chat links* or *in-game links*.
 * [*Ship DNA*](./fitting.md#dna)<br>
   Compact data format for ship fittings, used in-game for fit links.
 * [*XML Fitting*](./fitting.md#xml)<br>

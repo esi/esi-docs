@@ -89,7 +89,7 @@ Module IDs can be followed by an underscore to indicate they are unfitted. Charg
 
 `72904:4250;2:4258;1:11577;1:33199;1:33201;1:33197;1:9580;1:9568;1:1405;2:31220;1:31788;1:30488;8::`
 
-As a chat link:
+As an [in-game link](eve-html.md#links):
 `<url=fitting:72904:4250;2:4258;1:11577;1:33199;1:33201;1:33197;1:9580;1:9568;1:1405;2:31220;1:31788;1:30488;8::>Deepflow Rift Dredger</url>`
 
 ## XML
