@@ -23,18 +23,10 @@ EVE STARWEB is a web tool for EVE Online **market**, **LP store**, **appraisal**
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem">
-  <div style="aspect-ratio:16/9;overflow:hidden;border-radius:6px">
-    <img src="market.jpg" alt="Market" style="width:100%;height:100%;object-fit:fill;display:block" />
-  </div>
-  <div style="aspect-ratio:16/9;overflow:hidden;border-radius:6px">
-    <img src="appraisal.jpg" alt="Appraisal" style="width:100%;height:100%;object-fit:fill;display:block" />
-  </div>
-  <div style="aspect-ratio:16/9;overflow:hidden;border-radius:6px">
-    <img src="lp.jpg" alt="LP Store" style="width:100%;height:100%;object-fit:fill;display:block" />
-  </div>
-  <div style="aspect-ratio:16/9;overflow:hidden;border-radius:6px">
-    <img src="ai.jpg" alt="AI" style="width:100%;height:100%;object-fit:fill;display:block" />
-  </div>
+  <img src="market.jpg" alt="Market" style="width:100%;height:auto;display:block" />
+  <img src="appraisal.jpg" alt="Appraisal" style="width:100%;height:auto;display:block" />
+  <img src="lp.jpg" alt="LP Store" style="width:100%;height:auto;display:block" />
+  <img src="ai.jpg" alt="AI" style="width:100%;height:auto;display:block" />
 </div>
 
 ## Features
