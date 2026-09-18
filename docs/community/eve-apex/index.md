@@ -12,10 +12,6 @@ maintainer:
 
 # EVE Apex
 
-<figure markdown="span" style="width: 250px; margin: auto;">
-  ![EVE Apex](eve-apex-portrait.jpg)
-</figure>
-
 EVE Apex is a web application for EVE Online intelligence and analytics. It combines killmail-based character, corporation, alliance, and system intel with wormhole and Pochven tools, a D-Scan parser, corp recruitment, and a Discord server directory.
 
 Login uses EVE SSO for authentication only (no extra ESI scopes).
