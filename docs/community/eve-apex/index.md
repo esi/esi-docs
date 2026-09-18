@@ -38,6 +38,20 @@ Login uses EVE SSO for authentication only (no extra ESI scopes).
 - **Corp recruitment** — browse corporations by timezone, activity, and space.
 - **Discord directory** — discover EVE Online Discord servers with live member counts.
 
+## Screenshots
+
+### Wormhole leaderboards
+
+![Wormhole corporation leaderboards on EVE Apex, ranked by ISK destroyed](wormhole-leaderboards.jpg)
+
+### Pochven map
+
+![Interactive Pochven map showing Triglavian systems, kills, and ISK destroyed](pochven-map.jpg)
+
+### Discord server directory
+
+![EVE Online Discord server directory with live member counts](discord-directory.jpg)
+
 ## Community and Support
 
 - Website: [eveapex.com](https://eveapex.com)
