@@ -100,6 +100,98 @@ z = z<sub>system</sub> + z<sub>planet</sub>
 
     In 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also mitigate this problem.
 
+### Orbit paths
+
+The SDE gives each celestial's current position and its parent (`orbitID`: planets orbit the star, moons orbit their planet), but it does not say which plane an orbit lies in. A position and a centre fix the radius of the orbit, but any circle about the parent that passes through the child is equally valid.
+
+The in-game map picks one of those circles with a fixed rule, and following the same rule makes your orbit lines match what players see:
+
+1. Start with a circle of radius $R$ in the XZ plane, centred on the origin and passing through $(-R, 0, 0)$.
+2. Rotate it by the shortest-arc rotation that turns the unit vector $(-1, 0, 0)$ onto the direction from the parent to the child.
+3. Translate it to the parent's position.
+
+Because of this, the tilt of each ring is an artefact of the rule rather than physical data. Bodies on the parent's `+X` side get the largest tilts. The `orbitRadius` and `eccentricity` values in the SDE's celestial statistics don't describe this ring, so draw a plain circle through the body's current position.
+
+#### The math
+
+For a parent at $\vec{P}$ and a child at $\vec{C}$:
+
+$$
+\vec{d} = \vec{C} - \vec{P}, \qquad R = |\vec{d}|, \qquad \hat{u} = \frac{\vec{d}}{R} = (u_x, u_y, u_z)
+$$
+
+$\hat{u}$ is the first axis of the ring's plane. The second axis $\hat{v}$ is $(0, 0, 1)$ turned by the same rotation that takes $(-1, 0, 0)$ onto $\hat{u}$. You can build that rotation as a quaternion around the axis $(-1,0,0) \times \hat{u} = (0, u_z, -u_y)$ by the angle $\arccos(-u_x)$, or you can use the closed form:
+
+$$
+\hat{v} = \left(u_z,\ \ -\frac{u_y u_z}{1 - u_x},\ \ 1 - \frac{u_z^2}{1 - u_x}\right)
+$$
+
+$\hat{v}$ is a unit vector perpendicular to $\hat{u}$. For any angle $\theta$, a point on the ring is:
+
+$$
+\vec{p}(\theta) = \vec{P} + R\left(\hat{u}\cos\theta + \hat{v}\sin\theta\right)
+$$
+
+At $\theta = 0$ this gives exactly $\vec{C}$, so the line always passes through the body. To draw the ring, step $\theta$ from $0$ to $2\pi$ and connect the points as a line strip. The normal of the orbital plane, if you need it, is $\hat{u} \times \hat{v}$.
+
+!!! note "Edge cases"
+
+    * If $u_x = 1$ (the child is directly on the parent's `+X` side), the formula divides by zero. The two directions point opposite ways, so any 180° rotation works. Rotate around the Y axis to get $\hat{v} = (0, 0, -1)$.
+    * If $u_x = -1$, no rotation is needed and $\hat{v} = (0, 0, 1)$. The closed form handles this case without special code.
+    * Numerically, test $1 - u_x$ against a small epsilon rather than comparing to exactly zero.
+
+#### Worked example: Jita IV
+
+Jita IV (`40009082`) orbits the star Jita (`40009076`, at the origin):
+
+| | Value |
+|---|---|
+| $\vec{P}$ (star) | $(0,\ 0,\ 0)$ |
+| $\vec{C}$ (planet) | $(-107\,354\,576\,606,\ -18\,753\,785\,170,\ 436\,797\,007\,078)$ |
+| $R$ | $450\,187\,000\,000$ m (≈ 3.009 AU) |
+| $\hat{u}$ | $(-0.238467,\ -0.041658,\ 0.970257)$ |
+| $1 - u_x$ | $1.238467$ |
+| $\hat{v}$ | $(0.970257,\ 0.032636,\ 0.239868)$ |
+
+Checking the values: $\hat{u} \cdot \hat{v} = 0$ and $|\hat{v}| = 1$. Sample points around the ring:
+
+| $\theta$ | $\vec{p}(\theta)$ (m) |
+|---|---|
+| 0° | $(-107\,354\,576\,606,\ -18\,753\,785\,170,\ 436\,797\,007\,078)$, which is Jita IV itself |
+| 90° | $(436\,797\,007\,078,\ 14\,692\,352\,243,\ 107\,985\,389\,577)$ |
+| 180° | $(107\,354\,576\,606,\ 18\,753\,785\,170,\ -436\,797\,007\,078)$ |
+| 270° | $(-436\,797\,007\,078,\ -14\,692\,352\,243,\ -107\,985\,389\,577)$ |
+
+The plane normal $\hat{u} \times \hat{v} \approx (-0.0417,\ 0.9986,\ 0.0326)$, so this ring is tilted about 3.03° from the XZ plane.
+
+```python
+import math
+
+def orbit_ring(parent, child, segments=128):
+    """Points of the orbit ring through `child`, centred on `parent` (both [x, y, z])."""
+    d = [c - p for c, p in zip(child, parent)]
+    R = math.sqrt(sum(x * x for x in d))
+    ux, uy, uz = (x / R for x in d)
+
+    k = 1.0 - ux
+    if k < 1e-12:                      # child is on the parent's +X side
+        v = (0.0, 0.0, -1.0)
+    else:
+        v = (uz, -uy * uz / k, 1.0 - uz * uz / k)
+
+    u = (ux, uy, uz)
+    points = []
+    for i in range(segments + 1):      # +1 closes the loop
+        t = 2 * math.pi * i / segments
+        c, s = math.cos(t) * R, math.sin(t) * R
+        points.append([parent[j] + u[j] * c + v[j] * s for j in range(3)])
+    return points
+```
+
+!!! tip
+
+    Every orbit ring shares the precision problem described above: a moon's ring may be only tens of thousands of km across while sitting hundreds of millions of km from the star. Subtract the camera (or parent) position in 64-bit *before* converting the ring's points to 32-bit floats for the GPU.
+
 
 ## Example: 3D map rendered as an image
 
