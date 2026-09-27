@@ -102,96 +102,66 @@ z = z<sub>system</sub> + z<sub>planet</sub>
 
 ### Orbit paths
 
-The SDE gives each celestial's current position and its parent (`orbitID`: planets orbit the star, moons orbit their planet), but it does not say which plane an orbit lies in. A position and a centre fix the radius of the orbit, but any circle about the parent that passes through the child is equally valid.
+The in-game map shows planet's and moon's orbits. These orbit paths are not directly provided by the SDE or ESI, but can be calculated from either.
 
-The in-game map picks one of those circles with a fixed rule, and following the same rule makes your orbit lines match what players see:
+!!! abstract "Abstract: Orbits in EVE Online"
 
-1. Start with a circle of radius $R$ in the XZ plane, centred on the origin and passing through $(-R, 0, 0)$.
-2. Rotate it by the shortest-arc rotation that turns the unit vector $(-1, 0, 0)$ onto the direction from the parent to the child.
-3. Translate it to the parent's position.
+    Planet and Moon orbits in EVE Online are all perfectly circular with no eccentricity. (See Celestial Statistics note below)  
+    Moon orbits use the same logic as planet orbits, but with the parent planet taking the role of the sun.
+    
+    When rendering orbit paths on a map, the orbit path is a circle in 3D space. Centered on the star, with a radius of the planet's distance to the sun, and a specific rotation `q` to intersect the planet.
 
-Because of this, the tilt of each ring is an artefact of the rule rather than physical data. Bodies on the parent's `+X` side get the largest tilts. The `orbitRadius` and `eccentricity` values in the SDE's celestial statistics don't describe this ring, so draw a plain circle through the body's current position.
+    The orbit rotation is defined by the following steps:
 
-#### The math
+    1. The orbit path circle is placed horizontally in the solarsystem's X-Z plane.
+    2. The rotation is that which moves the point `(-radius, 0.0, 0.0)` onto the planet's position by rotating around the sun's position with the shortest arc.
+    
+    After applying this rotation to the circle, it now intersects the planet's position and has the same orbital inclination as on the in-game map.
 
-For a parent at $\vec{P}$ and a child at $\vec{C}$:
+!!! warning "Note: Celestial Statistics"
 
-$$
-\vec{d} = \vec{C} - \vec{P}, \qquad R = |\vec{d}|, \qquad \hat{u} = \frac{\vec{d}}{R} = (u_x, u_y, u_z)
-$$
+    Planet and moon orbits in EVE Online do not use the `statistics` field and `eccentricity` or `orbitRadius` values found in the SDE.
 
-$\hat{u}$ is the first axis of the ring's plane. The second axis $\hat{v}$ is $(0, 0, 1)$ turned by the same rotation that takes $(-1, 0, 0)$ onto $\hat{u}$. You can build that rotation as a quaternion around the axis $(-1,0,0) \times \hat{u} = (0, u_z, -u_y)$ by the angle $\arccos(-u_x)$, or you can use the closed form:
+    The `orbitRadius` value is correct for only some *but not all* planets and moons, and must instead be calculated from the planet/moon position to obstain the correct value.
 
-$$
-\hat{v} = \left(u_z,\ \ -\frac{u_y u_z}{1 - u_x},\ \ 1 - \frac{u_z^2}{1 - u_x}\right)
-$$
+#### Formula
 
-$\hat{v}$ is a unit vector perpendicular to $\hat{u}$. For any angle $\theta$, a point on the ring is:
+To calculate the rotation, the following formula is used:
 
-$$
-\vec{p}(\theta) = \vec{P} + R\left(\hat{u}\cos\theta + \hat{v}\sin\theta\right)
-$$
+1. Calculate orbit radius $r$, vector $\vec{V_0}$ pointing at $(-r, 0, 0)$, and vector $\vec{V_1}$ pointing at $Position_{planet}$. Both vectors 'normalized' to length 1
+    $r=\|Position_{planet}-Position_{sun}\| = \sqrt{(x_{planet}-x_{sun})^2+(y_{planet}-y_{sun})^2+(z_{planet}-z_{sun})^2}$  
+    $\vec{v_0}=\left[-1,0,0\right]$  
+    $\vec{v_1}=\frac{Position_{planet}-Position_{sun}}{r}$
+2. Calculate cross product $c$ and dot product $d$ of vectors $\vec{v_0}$ and $\vec{v_1}$  
+    $\vec{c}=\vec{v_0} \times \vec{v_1}$  
+    $d=\vec{v_0} \cdot \vec{v_1}$
+3. Depending on desired representation:
+    1. [Axis-Angle rotation]  
+        Rotate around vector $\vec{c}$ by $\theta$ radians  
+        $\theta=\arccos(d)$
+    2. [Quaternion]  
+        Calculate angle value $s$, then construct quaternion $q$ from components.  
+        $s=\sqrt{2 \times (d+1)}$  
+        $q = [q_x, q_y, q_z, q_w] = [c_x/s, c_y/s, c_z/s, s/2]$  
 
-At $\theta = 0$ this gives exactly $\vec{C}$, so the line always passes through the body. To draw the ring, step $\theta$ from $0$ to $2\pi$ and connect the points as a line strip. The normal of the orbital plane, if you need it, is $\hat{u} \times \hat{v}$.
+        !!! warning ""
+            Quaternions may be stored in memory scalar-first `wxyz` or scalar-last `xyzw`, check the argument order for the library you're using.
 
-!!! note "Edge cases"
+    3. [Other]  
+        Convert from axis-angle or quaternion.
 
-    * If $u_x = 1$ (the child is directly on the parent's `+X` side), the formula divides by zero. The two directions point opposite ways, so any 180° rotation works. Rotate around the Y axis to get $\hat{v} = (0, 0, -1)$.
-    * If $u_x = -1$, no rotation is needed and $\hat{v} = (0, 0, 1)$. The closed form handles this case without special code.
-    * Numerically, test $1 - u_x$ against a small epsilon rather than comparing to exactly zero.
+For moons, substitute the parent planet for the sun and the moon for the planet in the above formulae.  
+If only calculating orbits for planets rather than a general implementation, subtracting the sun's position may be omitted as that position is always (0, 0, 0)
 
-#### Worked example: Jita IV
+#### Visualisation
 
-Jita IV (`40009082`) orbits the star Jita (`40009076`, at the origin):
+<video controls>
+  <source src="./Orbit-Visualization.mp4" type="video/mp4">
+</video>
 
-| | Value |
-|---|---|
-| $\vec{P}$ (star) | $(0,\ 0,\ 0)$ |
-| $\vec{C}$ (planet) | $(-107\,354\,576\,606,\ -18\,753\,785\,170,\ 436\,797\,007\,078)$ |
-| $R$ | $450\,187\,000\,000$ m (≈ 3.009 AU) |
-| $\hat{u}$ | $(-0.238467,\ -0.041658,\ 0.970257)$ |
-| $1 - u_x$ | $1.238467$ |
-| $\hat{v}$ | $(0.970257,\ 0.032636,\ 0.239868)$ |
+#### Example code implementation
 
-Checking the values: $\hat{u} \cdot \hat{v} = 0$ and $|\hat{v}| = 1$. Sample points around the ring:
-
-| $\theta$ | $\vec{p}(\theta)$ (m) |
-|---|---|
-| 0° | $(-107\,354\,576\,606,\ -18\,753\,785\,170,\ 436\,797\,007\,078)$, which is Jita IV itself |
-| 90° | $(436\,797\,007\,078,\ 14\,692\,352\,243,\ 107\,985\,389\,577)$ |
-| 180° | $(107\,354\,576\,606,\ 18\,753\,785\,170,\ -436\,797\,007\,078)$ |
-| 270° | $(-436\,797\,007\,078,\ -14\,692\,352\,243,\ -107\,985\,389\,577)$ |
-
-The plane normal $\hat{u} \times \hat{v} \approx (-0.0417,\ 0.9986,\ 0.0326)$, so this ring is tilted about 3.03° from the XZ plane.
-
-```python
-import math
-
-def orbit_ring(parent, child, segments=128):
-    """Points of the orbit ring through `child`, centred on `parent` (both [x, y, z])."""
-    d = [c - p for c, p in zip(child, parent)]
-    R = math.sqrt(sum(x * x for x in d))
-    ux, uy, uz = (x / R for x in d)
-
-    k = 1.0 - ux
-    if k < 1e-12:                      # child is on the parent's +X side
-        v = (0.0, 0.0, -1.0)
-    else:
-        v = (uz, -uy * uz / k, 1.0 - uz * uz / k)
-
-    u = (ux, uy, uz)
-    points = []
-    for i in range(segments + 1):      # +1 closes the loop
-        t = 2 * math.pi * i / segments
-        c, s = math.cos(t) * R, math.sin(t) * R
-        points.append([parent[j] + u[j] * c + v[j] * s for j in range(3)])
-    return points
-```
-
-!!! tip
-
-    Every orbit ring shares the precision problem described above: a moon's ring may be only tens of thousands of km across while sitting hundreds of millions of km from the star. Subtract the camera (or parent) position in 64-bit *before* converting the ring's points to 32-bit floats for the GPU.
-
+--8<-- "snippets/examples/map-orbitpath.md"
 
 ## Example: 3D map rendered as an image
 
