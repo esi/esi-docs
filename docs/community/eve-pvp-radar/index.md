@@ -2,7 +2,7 @@
 search:
   exclude: true
 
-title: eve-pvp-radar
+title: Eve PvP Radar
 type: service
 description: Find Eve Online PvP opportunities nearby at easily engageable locations like stargates and stations.
 maintainer:
@@ -22,6 +22,8 @@ The service searches for recent PvP activity around trade hubs and in close prox
 - [:octicons-mark-github-16: __GitHub__](https://github.com/Skybladev2/EvePvpRadar){ .esi-card-link }
 
 </div>
+
+![](screenshot1.png)
 
 ## Features
 
