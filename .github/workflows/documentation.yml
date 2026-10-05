@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
@@ -60,11 +60,11 @@ jobs:
 
       - name: Prepare GitHub Pages artifact if not deploying to S3
         if: ${{ steps.using-s3.conclusion == 'skipped' }}
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
       - name: Deploy to GitHub Pages
         if: ${{ steps.using-s3.conclusion == 'skipped' }}
         continue-on-error: true
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
