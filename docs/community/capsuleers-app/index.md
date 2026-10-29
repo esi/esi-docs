@@ -4,7 +4,7 @@ search:
 
 title: Capsuleers.app
 type: service
-description: Community hub and gameplay toolbox for EVE Online - news and player-written articles, public profiles, a live killboard, live and sovereignty maps, fitting, industry and fleet tools - plus two companion desktop apps for Local and D-Scan intel, one with a local AI assistant.
+description: Community hub and gameplay toolbox for EVE Online - news and player-written articles, public profiles, a live killboard, live and sovereignty maps, fitting, industry and fleet tools - plus companion desktop apps for Local and D-Scan intel (one with a local AI assistant) and for copying client settings between characters.
 maintainer:
   name: TremalJack
   github: WilliamFalci
@@ -29,6 +29,7 @@ the character belongs to the session and carries the required scope.
 - [:simple-discord: __Discord__](https://discord.com/invite/hdbtSFBGD3){ .esi-card-link }
 - [:octicons-download-16: __Capsuleers.Intel__](https://github.com/capsuleers-app/capsuleers.intel/releases/latest){ .esi-card-link }
 - [:octicons-download-16: __Capsuleers.IA__](https://github.com/capsuleers-app/capsuleers.ia/releases/latest){ .esi-card-link }
+- [:octicons-download-16: __Capsuleers.Settings__](https://github.com/capsuleers-app/capsuleers.settings/releases/latest){ .esi-card-link }
 
 </div>
 
@@ -89,6 +90,14 @@ scan into a 24-hour share link on the site. Source is MIT.
   VRAM for the chat model you pick.
 
 Pick Intel if you only want the intel; pick IA if you also want the assistant.
+
+A third app does a different job.
+**[Capsuleers.Settings](https://github.com/capsuleers-app/capsuleers.settings)** copies EVE
+client settings — window layout, chat channels, overview, shortcuts — from one character to
+many. Characters are grouped by account, every target is backed up before it is overwritten,
+and nothing is written while a client is running. Its only ESI call is the public, unauthenticated
+`/universe/names/` endpoint, used to show character names. It is a single binary for Windows
+and Linux, with no account and no telemetry; source is MIT.
 
 ## Streaming
 
