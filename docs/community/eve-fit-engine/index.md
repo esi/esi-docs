@@ -23,7 +23,7 @@ so that other developers can build fitting tools without reimplementing dogma.
 
 <div class="grid cards" markdown>
 
-- [:octicons-mark-github-16: __GitHub__](https://github.com/WilliamFalci/capsuleers.fitting-engine){ .esi-card-link }
+- [:octicons-mark-github-16: __GitHub__](https://github.com/capsuleers-app/capsuleers.fitting-engine){ .esi-card-link }
 - [:simple-npm: __npm__](https://www.npmjs.com/package/eve-fit-engine){ .esi-card-link }
 - [:simple-discord: __Discord__](https://discord.com/invite/hdbtSFBGD3){ .esi-card-link }
 
