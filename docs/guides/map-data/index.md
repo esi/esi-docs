@@ -2,7 +2,7 @@
 
 ## General Information
 
-Map data is available in the [SDE](../../services/static-data/index.md) or through [ESI](../../services/esi/overview.md).
+Map data is available in the [SDE](../../services/static-data/index.md).
 Objects like regions, constellations, solarsystems, planets, moons, and other celestial bodies have a position.
 
 There are two kinds of position, each using their own coordinate system:
@@ -12,7 +12,7 @@ There are two kinds of position, each using their own coordinate system:
   For systems in the New Eden Cluster both a 'geographic' position and a 'schematic' position ("position2D") is provided. The former is the actual position of the solarsystem, used for jump range calculations and the in-game 3D map. The latter is used for the in-game 2D map.
 
 * Relative to the center of a solarsystem. (used by planets, moons, stars, as well as other positions within a solarsystem such as killmails)<br>
-  The center of a solarsystem is it's star. The star objects themselves do not have an explicit position in the SDE or ESI, as their position is always `[0.0, 0.0, 0.0]`<br>
+  The center of a solarsystem is it's star. The star objects themselves do not have an explicit position in the SDE, as their position is always `[0.0, 0.0, 0.0]`<br>
   Not every solarsystem has a star object; for abyssal deadspace systems with neither star nor planet, the origin is an arbitrary point.
 
 These coordinate systems have the same scale (1.0 = 1 meter), but different directions.
@@ -21,10 +21,9 @@ These coordinate systems have the same scale (1.0 = 1 meter), but different dire
 
 All regions, constellations, and solarsystems share a single coordinate system.
 
-The SDE contains map data in the `map`-prefixed files, such as `mapRegions`, `mapConstellations`, and `mapSolarSystems`.
-ESI provides this data through endpoints under the `/universe/` such as [`/universe/regions/`](/api-explorer#/operations/GetUniverseRegions).
+The SDE contains map data in the `map`-prefixed tables, such as `mapRegions`, `mapConstellations`, and `mapSolarSystems`.
 
-For both SDE and ESI, data is provided for all kinds ('known space', 'wormhole space', 'abyssal space') of space. Different kinds of space can be identified by the [ID ranges](../../guides/id-ranges.md) for the regionID, constellationID or solarSystemID.
+Data is provided for all kinds ('known space', 'wormhole space', 'abyssal space') of space. Different kinds of space can be identified by the [ID ranges](../../guides/id-ranges.md) for the regionID, constellationID or solarSystemID.
 Only the 'New Eden' solarsystems (`SolarSystemID` in the range `30,000,000 to 30,999,999`) are included on the in-game map.
 
 ### Map
@@ -102,7 +101,7 @@ z = z<sub>system</sub> + z<sub>planet</sub>
 
 ### Orbit paths
 
-The in-game map shows planet's and moon's orbits. These orbit paths are not directly provided by the SDE or ESI, but can be calculated from either.
+The in-game map shows planet's and moon's orbits. These orbit paths are not directly provided by the SDE, but can be calculated from it.
 
 !!! abstract "Abstract: Orbits in EVE Online"
 
