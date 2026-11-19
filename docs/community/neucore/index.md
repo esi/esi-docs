@@ -30,13 +30,9 @@ build upon.
 
 ## Features
 
-Main features:
-
-- Management of group memberships, manually and with various ways to automate membership.
-- API for various data including an ESI proxy for all characters.
-- Plugin system for service registration (e.g. Discord, Mumble) and general purposes.
-- Corporation member tracking and character watchlists.
+- **Management of group memberships**, manually and with various ways to automate membership
+- **[API](https://github.com/tkhamez/neucore/blob/main/doc/API.md)** for various data including an ESI proxy for all characters
+- **[MCP server](https://github.com/tkhamez/neucore/blob/main/doc/MCP-Server.md)** for AI assistants to query data, including from ESI
+- **[Plugin system](https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md)** for service registration (e.g. Discord, Mumble) and general purposes
+- **Corporation member tracking** and **character watchlists**
 - ... [and much more](https://github.com/tkhamez/neucore/blob/main/doc/Documentation.md#features)
-
-For more information, see the [doc directory](https://github.com/tkhamez/neucore/tree/main/doc), 
-which also contains some screenshots.

@@ -100,6 +100,68 @@ z = z<sub>system</sub> + z<sub>planet</sub>
 
     In 3D rendering or other situations where 64-bit numbers are unavailable, "Floating Origin" techniques can also mitigate this problem.
 
+### Orbit paths
+
+The in-game map shows planet's and moon's orbits. These orbit paths are not directly provided by the SDE or ESI, but can be calculated from either.
+
+!!! abstract "Abstract: Orbits in EVE Online"
+
+    Planet and Moon orbits in EVE Online are all perfectly circular with no eccentricity. (See Celestial Statistics note below)  
+    Moon orbits use the same logic as planet orbits, but with the parent planet taking the role of the sun.
+    
+    When rendering orbit paths on a map, the orbit path is a circle in 3D space. Centered on the star, with a radius of the planet's distance to the sun, and a specific rotation `q` to intersect the planet.
+
+    The orbit rotation is defined by the following steps:
+
+    1. The orbit path circle is placed horizontally in the solarsystem's X-Z plane.
+    2. The rotation is that which moves the point `(-radius, 0.0, 0.0)` onto the planet's position by rotating around the sun's position with the shortest arc.
+    
+    After applying this rotation to the circle, it now intersects the planet's position and has the same orbital inclination as on the in-game map.
+
+!!! warning "Note: Celestial Statistics"
+
+    Planet and moon orbits in EVE Online do not use the `statistics` field and `eccentricity` or `orbitRadius` values found in the SDE.
+
+    The `orbitRadius` value is correct for only some *but not all* planets and moons, and must instead be calculated from the planet/moon position to obstain the correct value.
+
+#### Formula
+
+To calculate the rotation, the following formula is used:
+
+1. Calculate orbit radius $r$, vector $\vec{V_0}$ pointing at $(-r, 0, 0)$, and vector $\vec{V_1}$ pointing at $Position_{planet}$. Both vectors 'normalized' to length 1
+    $r=\|Position_{planet}-Position_{sun}\| = \sqrt{(x_{planet}-x_{sun})^2+(y_{planet}-y_{sun})^2+(z_{planet}-z_{sun})^2}$  
+    $\vec{v_0}=\left[-1,0,0\right]$  
+    $\vec{v_1}=\frac{Position_{planet}-Position_{sun}}{r}$
+2. Calculate cross product $c$ and dot product $d$ of vectors $\vec{v_0}$ and $\vec{v_1}$  
+    $\vec{c}=\vec{v_0} \times \vec{v_1}$  
+    $d=\vec{v_0} \cdot \vec{v_1}$
+3. Depending on desired representation:
+    1. [Axis-Angle rotation]  
+        Rotate around vector $\vec{c}$ by $\theta$ radians  
+        $\theta=\arccos(d)$
+    2. [Quaternion]  
+        Calculate angle value $s$, then construct quaternion $q$ from components.  
+        $s=\sqrt{2 \times (d+1)}$  
+        $q = [q_x, q_y, q_z, q_w] = [c_x/s, c_y/s, c_z/s, s/2]$  
+
+        !!! warning ""
+            Quaternions may be stored in memory scalar-first `wxyz` or scalar-last `xyzw`, check the argument order for the library you're using.
+
+    3. [Other]  
+        Convert from axis-angle or quaternion.
+
+For moons, substitute the parent planet for the sun and the moon for the planet in the above formulae.  
+If only calculating orbits for planets rather than a general implementation, subtracting the sun's position may be omitted as that position is always (0, 0, 0)
+
+#### Visualisation
+
+<video controls>
+  <source src="./Orbit-Visualization.mp4" type="video/mp4">
+</video>
+
+#### Example code implementation
+
+--8<-- "snippets/examples/map-orbitpath.md"
 
 ## Example: 3D map rendered as an image
 
