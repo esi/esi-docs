@@ -47,24 +47,24 @@ This document is a list of common or unusual terms used in EVE third-party devel
 * *MetaGroup*<br>
   Tech-tier such as T1/T2/T3/Faction.<br>
   Not to be confused with regular item *Group* or *MarketGroup*.<br>
-  Found in the SDE in `metaGroups`, not available through ESI.
+  Found in the SDE in `metaGroups`
 * *MarketGroup*<br>
   A single tab (or tab group) in the market.<br>
   Not to be confused with regular item *Group* or *MetaGroup*.<br>
-  Found in the SDE in `marketGroups`, through ESI under `/markets/groups/`.
+  Found in the SDE in `marketGroups`.
 * *Icon*<br>
   Icon images, such as inventory icons, UI icons, overview icons, etc.<br>
-  Found in the SDE in `icons`, not available through ESI.
+  Found in the SDE in `icons`.
 * *Graphic*<br>
   Data about 3D models; Model geometry, textures, icons/renders of those models.<br>
   Found in the SDE in `graphics`.
 * *Attribute*<br>
   (Additional) properties of a *Type*, such as HP, maximum velocity, and other item stats.<br>
-  Found in the SDE in `dogmaAttributes`, through ESI under `/dogma/attributes/`.
+  Found in the SDE in `dogmaAttributes`.
 * *Effect*<br>
   Game logic element. Describes interactions between attributes.<br>
   Some properties are also stored as effects rather than attributes (E.g. which slot a module uses).<br>
-  Found in the SDE in `dogmaEffects`, through ESI under `/dogma/effects/`.
+  Found in the SDE in `dogmaEffects`.
 
 ### Technical & other terms
 
