@@ -21,7 +21,6 @@ maintainer:
 - [:octicons-browser-16: __Website__](https://nkillboard.com){ .esi-card-link }
 - [:simple-github: __GitHub__](https://github.com/nKillboard){ .esi-card-link }
 - [:simple-discord: __Discord__](https://discord.gg/xmcmJTnx6R){ .esi-card-link }
-- [:simple-email: __Email__](mailto:support@nkillboard.com){ .esi-card-link }
 
 </div>
 
@@ -46,6 +45,8 @@ nKillboard includes:
 - **EVEMail Inbox**: read, write, send and delete your EVEMails.
 - **Industry Jobs**: view your current active industry jobs, blueprints and PI.
 - **Industry Calculator**: use more advanced version of the industry calculator with an improved UI, enhanced shareability for invoices, and shareable links.
+- **Ship Fits & Simulations**: make and simulate ship fits just like in the game and made to looks like the game UI using Dogma-Engine, Make, Simulate, and Share your fits!
+- **Market Appraisal**: get market appraisals for your assets based on major trade hubs and get the best deal.
 
 For more visit [nKillboard](https://nkillboard.com)
 
