@@ -14,7 +14,7 @@ Third-party developers call it *EVE HTML*, *EVE-flavored HTML* or *EVE formatted
 | `/characters/{character_id}` | `description` (the character's bio) |
 | `/corporations/{corporation_id}` | `description` |
 | `/characters/{character_id}/calendar/{event_id}` | `text` |
-| `/universe/types/{type_id}`, and `types.yaml` in the [SDE](../services/static-data/index.md) | `description` |
+| `types` in the [SDE](../services/static-data/index.md) | `description` |
 
 Assume any player-written or CCP-written prose that ESI returns may contain it: faction descriptions, NPC corporation descriptions and dogma attribute descriptions all carry it too.
 ESI's own example response for a calendar event is a good illustration of how ordinary it is:
@@ -337,7 +337,7 @@ Owners (`character`, `corporation`, `alliance`, `faction`) map to a profile page
 For `item` there is nothing useful to link to: render the text and drop the target.
 
 Groups 1, 2, 19 and 32 are the whole of category 1 (Owner), so a single category check covers all four if you do not care which kind of owner it is.
-Without the SDE the same walk is two calls — `/universe/types/{type_id}` gives you `group_id` and `/universe/groups/{group_id}` gives you `category_id`.
+Without a local copy of the SDE the same walk is two calls to the SDE API — `types/{typeID}.json` gives you `groupID` and `groups/{groupID}.json` gives you `categoryID`.
 For characters, corporations, alliances, stations and the map, `/universe/names` is a shortcut: pass it the itemID and it returns a `category` directly. It does not cover celestials, player structures or individual items, so it is not a full substitute — and since the IDs come out of a message a stranger wrote, expect some of them not to resolve. ESI leaves those out of the response rather than failing, and returns 404 only when none of them resolve.
 Group 1 currently holds fifteen type IDs — 1373 to 1386 and 34574 — and which one a given character link carries varies, so treat all fifteen alike.
 
