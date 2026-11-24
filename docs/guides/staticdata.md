@@ -127,19 +127,19 @@ This data is generally used in conjunction with ESI endpoints like [`/characters
     
     The Operation name & impacts can be retrieved from `mercenaryTacticalOperations` with the dungeonID as key:
     ```json
-    {"_key": 12367, "anarchyImpact": -20, "description": { /* omitted */ }, "developmentImpact": 10, "dungeonID": 12367, "infomorphBonus": 350, "name": { /* omitted */ }}
+    {"dungeonID": 12367, "anarchyImpact": -20, "description": { /* omitted */ }, "developmentImpact": 10, "infomorphBonus": 350, "name": { /* omitted */ }}
     ```
     The Operation's dungeon info can be retrieved from `dungeons` with the dungeonID as key:
 
     ```json
-    {"_key": 12367, "allowedShipsList": [793], "archetypeID": 80, "factionID": 500021, "name": { /* omitted */ }}
+    {"dungeonID": 12367, "allowedShipsList": [793], "archetypeID": 80, "factionID": 500021, "name": { /* omitted */ }}
     ```
     
     The ships allowed access to the site are specified in the `allowedShipsList` typeList (Note: A dungeon can specify multiple allow-lists, a ship is allowed if it matches any)  
     For this dungeon, the allow-list is TypeList #793, which can be retrieved from `typeLists` static data:
 
     ```json
-    {"_key": 793, "includedGroupIDs": [26, 25, 420, 324, 830, 893, 1283, 831, 1527, 1534, 541, 1305, 834], "name": "Mercenary Den - Ship Restriction list"}
+    {"typeListID": 793, "includedGroupIDs": [26, 25, 420, 324, 830, 893, 1283, 831, 1527, 1534, 541, 1305, 834], "name": "Mercenary Den - Ship Restriction list"}
     ```
     
     The ship can then be matched against this [(TypeList)](#typelists).  

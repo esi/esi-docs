@@ -57,8 +57,8 @@ The four SKINR material slots have to be mapped onto these values.
 The mapping depends on the **faction of the hull**, because the same physical area of an Amarr hull and a Caldari hull is authored as a different material index.
 `skinrSlotsToMaterials` holds that mapping:
 
-- `_key` is a `factionID`. Look it up in `factions`.
-- `_value` is a list of `{slotID, materialID}` pairs, where `materialID` is the `N` in Trinity's `materialN`.
+- `factionID`: look it up in `factions`.
+- `slots`: a list of `{slotID, materialID}` pairs, where `materialID` is the `N` in Trinity's `materialN`.
 
 For the four empires:
 
