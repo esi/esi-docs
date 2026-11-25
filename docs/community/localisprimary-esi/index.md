@@ -7,8 +7,7 @@ type: resource
 description: A slightly opinionated TypeScript client for the EVE Online API.
 maintainer:
   name: Tujiko Noriko
-  github: nfinished
-  repository: https://github.com/localisprimary/esi
+  github: localisprimary
 ---
 
 # @localisprimary/esi
