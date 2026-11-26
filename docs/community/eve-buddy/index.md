@@ -4,23 +4,28 @@ search:
 
 title: EVE Buddy
 type: service
-description: EVE Buddy is a companion app for Eve Online players available on Windows, macOS, Linux and Android.
+description: EVE Buddy is a free and open source companion app for EVE Online players, available on Windows, Linux, macOS and Android.
 maintainer:
   name: Erik Kalkoken
   github: ErikKalkoken
 ---
 
-# EVE Buddy
+<div style="text-align: center; margin-bottom: 2em" markdown>
 
-EVE Buddy is a multi-platform companion app for Eve Online players. It is available on Windows, macOS, Linux and Android.
+# <img src="icon.png" width="42" alt="" style="vertical-align: middle"> EVE Buddy
 
 [![GitHub Release](https://img.shields.io/github/v/release/ErikKalkoken/evebuddy)](https://github.com/ErikKalkoken/evebuddy/releases)
 [![GitHub License](https://img.shields.io/github/license/ErikKalkoken/evebuddy)](https://github.com/ErikKalkoken/evebuddy?tab=MIT-1-ov-file#readme)
 [![chat](https://img.shields.io/discord/790364535294132234)](https://discord.gg/tVSCQEVJnJ)
 [![GitHub Downloads](https://img.shields.io/github/downloads/ErikKalkoken/evebuddy/total)](https://tooomm.github.io/github-release-stats/?username=ErikKalkoken&repository=evebuddy)
 
+A multi-platform companion app for EVE Online players.<br>Free and open source.<br>Available on Windows, Linux, macOS and Android.
+
+</div>
+
 <div class="grid cards" markdown>
 
+- [:octicons-browser-16: __Website__](https://evebuddy.kalkoken.net){ .esi-card-link }
 - [:octicons-mark-github-16: __GitHub__](https://github.com/ErikKalkoken/evebuddy){ .esi-card-link }
 - [:simple-discord: __Discord__](https://discord.gg/tVSCQEVJnJ){ .esi-card-link }
 
@@ -28,46 +33,24 @@ EVE Buddy is a multi-platform companion app for Eve Online players. It is availa
 
 ## Features
 
-The following is an overview of EVE Buddy's key features. All features are available for both desktop and mobile:
+- __Consolidated views__: All your characters and corporations in one view per topic, with answers the game can't give you at a glance – assets, colonies, industry jobs and more
+- __Character monitor__: Keep track of each character – training queue, assets, clones, wallet and more
+- __Corporation monitor__: Keep your corporation running – structures, wallets, industry jobs and members
+- __Notifications__: Get notified about structure attacks, new mail, empty training queues and more
+- __New Eden search__: Search live on the game server for characters, corporations, systems, types and more
+- __Information windows__: Details for most objects on screen, just like the in-game information windows
+- __Mail client__: Full mail client for all your characters
+- __Automatic updates__: Data for all your characters and corporations is updated automatically in the background
+- __Run in background__: Keeps running and notifying you while you do something else, like playing EVE. Desktop only
 
-- __Character monitor__: Check current information about each of your characters, e.g. inspect the training queue of a character or browse it's assets.
-- __Corporation monitor__: Check current information about each of your corporations: e.g. check corporation wallets or see all current members.
-- __Overviews__: Keep track of and get unique insights about all your characters and corporations with consolidated views, e.g. find assets across of your characters or see which character has manufacturing slots available.
-- __Notifications__: Get notified on your desktop or mobile about new EVE communications and other important updates, e.g. a structure was attacked or a training queue became empty.
-- __New Eden search__: Search live on the game server, similar to in-game search bar, e.g. search for characters, corporations solar systems.
-- __Information windows__: Show additional information for most objects on screen, similar to in-game information windows, e.g. the sender of a mail
-- __Mail client__: Send and receive EVE mails for all your characters
-- __Run in Background__: The app can run in the background and continue to notify you while you are doing something else (e.g. play Eve Online)
-- __Theming__: Configurable color theme, e.g. light and dark.
+See the [website](https://evebuddy.kalkoken.net) for all features, install guides and support.
 
 ## Screenshots
 
-This section contains screenshots from the desktop and mobile version for a selection of features.
+Desktop version (Linux GNOME 42)
 
-### Desktop
+<img src="desktop.webp" width="800" height="436" alt="EVE Buddy desktop version">
 
-Screenshots from the desktop version (Linux Ubuntu).
+Mobile version (Android 17)
 
-#### Asset search across all characters
-
-![assets](desktop_asset_search.png)
-
-#### Industry slots
-
-![assets](desktop_industry_slots.png)
-
-### Mobile
-
-Screenshots from the mobile version (Google Pixel).
-
-#### Home screen
-
-<img src="mobile_home.png" width="300" height="666" alt="Mobile Home">
-
-### Training overview
-
-<img src="mobile_training.png" width="300" height="666" alt="Mobile Home">
-
-## More information
-
-For more information please visit our website on Github or please join our Discord server if you have any questions.
+<img src="mobile.webp" width="300" height="666" alt="EVE Buddy mobile version">
