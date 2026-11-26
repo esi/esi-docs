@@ -12,17 +12,9 @@ In most cases you should be fine with far less requests than the rate limit allo
     Rate limiting isn't active on all routes yet.
     Check the OpenAPI Specs or the HTTP response headers for up-to-date information.
 
-!!! warning
-
     For routes that do not have this new rate limiting enabled, there is still an older "error rate limit" active.
     This allows at most 100 non-2xx/3xx responses per minute. After that, it will return 420s on all ESI routes, even those with the new rate limiting enabled.
     The headers described in this document are mutually exclusive to those described in the Error Limit documentation found under "Best Practices".
-
-!!! important
-
-    Some routes also have a rate limiter deep in EVE Server code.
-    This can also cause 429s to be returned, without the rate limiter headers indicating why.
-    We are working on deprecating these, but in the mean time, be aware this can be the case.
 
 ## Floating Window
 
@@ -99,3 +91,57 @@ Each route in the same group will show the same `window-size` and `max-tokens`.
 - Use staggered scheduling for periodic requests when possible. Ideally not `*/5` cronjobs. But rather: 5 minutes after the last job was finished.
 - Respect cache times to minimize unnecessary requests.
 - For Error Limiting, see [Best Practices](./best-practices.md)
+
+## Monolith Rate Limits
+
+Some routes also have a rate limiter deep in EVE Server code.
+This can cause HTTP 429 and 520 responses to be returned, without the normal rate limit headers indicating why.
+We are working on deprecating these, but in the meantime, be aware this can be the case.
+
+The following routes have monolith rate limits:
+
+- [GET /characters/{character_id}/corporationhistory/](https://developers.eveonline.com/api-explorer#/operations/GetCharactersCharacterIdCorporationhistory): 100 requests per minute, per IP address.
+
+    Reaching the limit will result in HTTP 429 responses.
+    Error response body:
+
+    ```json
+    {"error":"Too many requests."}
+    ```
+
+- [GET /markets/{region_id}/history/](https://developers.eveonline.com/api-explorer#/operations/GetMarketsRegionIdHistory): 100 requests per minute, per IP address.
+
+    Reaching the limit will result in HTTP 429 responses.
+    Error response body:
+
+    ```json
+    {"error":"Too many requests."}
+    ```
+
+- [GET /corporations/{corporation_id}/contracts/{contract_id}/items](https://developers.eveonline.com/api-explorer#/operations/GetCorporationsCorporationIdContractsContractIdItems): 20 requests per 10 seconds, per authenticated character.
+
+    Reaching the limit will result in HTTP 520 responses.
+    Example error response body:
+
+    ```json
+    {"error": "{'error_label': 'ConStopSpamming', 'error_dict': {'remainingTime': 12345678L}}"}
+    ```
+
+- [POST /characters/{character_id}/mail](https://developers.eveonline.com/api-explorer#/operations/PostCharactersCharacterIdMail): 5 requests per minute, per authenticated character.
+
+    Reaching the limit will result in HTTP 520 responses.
+    Example error response body:
+
+    ```json
+    {"error": "{'error_label': 'MailStopSpamming', 'error_dict': {'remainingTime': 12345678L}}"}
+    ```
+
+
+Be aware that the error field contains a Python string and is not valid JSON. The `remainingTime` value is in 100-nanosecond ticks. Divide by `10,000,000` to get the number of seconds remaining, and keep in mind the trailing 'L' character.
+
+These limits are shared with all applications that might be requesting this data, including the game client itself. 
+Don't assume you have the entire quota for yourself.
+
+!!! note
+
+    The limits above are what they are currently, and may change in the future without notice.
